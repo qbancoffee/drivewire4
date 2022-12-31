@@ -1,15 +1,20 @@
 # DriveWire 4
 DriveWire 4 Java version
 
-Get the original source files from sourceforge.
-https://sourceforge.net/projects/drivewireserver/
+
 
 This repo holds a version of DriveWire 4 java that has been slightly modified so that it can be compiled and run with newer versions of Java.
+This was done using the source files available on sourceforge.<br>
+
+Get the original source files from sourceforge.
+https://sourceforge.net/projects/drivewireserver/<br>
+
 Watch this video to see how it was done.<br>
 - [Compiling and running DriveWire 4 with OpenJDK 17](https://youtu.be/7fjNQZ2uRJI)
 
-Make sure you have a JDK installed. I used OpenJDK 17 but any other JDK should work as well.
-Install ant and at least NetBeans 16
+
+To compile an run, make sure you have a JDK installed. I used OpenJDK 17 but any other JDK should work as well.
+Install ant and at install NetBeans 16 or higher.
 
 With ant installed, navigate to the project directory and type the following to compile:
 ```bas
