@@ -1,0 +1,7 @@
+<<<<<<< passwd.txt
+root,7j2oRsbxSxTy1kg/mI3e6jU12J8V5oDx,0
+guest,1ZECijeABTar/HkAG/IqFgnYrQAp7Jem,9
+wayne,imQjlVKTCbcIaaQUQnTC+8ugeTnT4K2/,1=======
+root,b265guOd3n46d6GBwncbDp6J5OY5+psR,0
+guest,guest,0
+>>>>>>> 1.2

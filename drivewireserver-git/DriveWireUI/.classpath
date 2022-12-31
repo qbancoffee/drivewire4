@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="lib/commons-configuration-1.6.jar"/>
+	<classpathentry kind="lib" path="lib/commons-configuration-1.6-sources.jar"/>
+	<classpathentry kind="lib" path="lib/commons-configuration-1.6-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="lib/swtjar.jar"/>
+	<classpathentry kind="lib" path="lib/dwimages.jar"/>
+	<classpathentry kind="lib" path="lib/swing2swt.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.15.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/org.eclipse.swt"/>
+	<classpathentry kind="src" path="/DriveWire"/>
+	<classpathentry kind="lib" path="C:/eclipse/plugins/org.eclipse.core.databinding_1.3.100.I20100601-0800.jar" sourcepath="C:/eclipse/plugins/org.eclipse.core.databinding_1.3.100.I20100601-0800.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse/plugins/org.eclipse.core.databinding.beans_1.2.100.I20100601-0800.jar" sourcepath="C:/eclipse/plugins/org.eclipse.core.databinding.beans_1.2.100.I20100601-0800.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse/plugins/org.eclipse.core.databinding.observable_1.3.0.I20100601-0800.jar" sourcepath="C:/eclipse/plugins/org.eclipse.core.databinding.observable_1.3.0.I20100601-0800.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse/plugins/org.eclipse.core.databinding.property_1.3.0.I20100601-0800.jar" sourcepath="C:/eclipse/plugins/org.eclipse.core.databinding.property_1.3.0.I20100601-0800.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse/plugins/org.eclipse.jface.databinding_1.4.0.I20100601-0800.jar" sourcepath="C:/eclipse/plugins/org.eclipse.jface.databinding_1.4.0.I20100601-0800.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse/plugins/org.eclipse.equinox.common_3.6.0.v20100503.jar" sourcepath="C:/eclipse/plugins/org.eclipse.equinox.common_3.6.0.v20100503.jar"/>
+	<classpathentry kind="lib" path="C:/eclipse/plugins/com.ibm.icu_4.2.1.v20100412.jar" sourcepath="C:/eclipse/plugins/com.ibm.icu_4.2.1.v20100412.jar"/>
+	<classpathentry kind="lib" path="/DriveWire/lib/commons-vfs-1.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

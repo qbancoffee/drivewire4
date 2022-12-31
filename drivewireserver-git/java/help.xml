@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- DriveWire 4 help -->
+<drivewire-help>
+<wikiurl>http://sourceforge.net/apps/mediawiki/drivewireserver/index.php?title=The_%27dw%27_commands</wikiurl>
+<wikiupdate>120</wikiupdate>
+<topics>
+<dw>
+<disk>
+<dump>
+<text>dw disk dump # sector</text>
+<text/>
+<text>Dump sector from disk</text>
+</dump>
+<text/>
+<text>Usage: dw disk [command]</text>
+<text/>
+<text>The dw disk commands allow you to manage the DriveWire virtual drives.</text>
+<text/>
+<show>
+<text/>
+<text>Usage: dw disk show [{# | all | dset [#]}]</text>
+<text/>
+<text>Show current disk/set details</text>
+<text/>
+<text>The dw disk show command is a useful tool for quickly determining the</text>
+<text>status of the many virtual disk drives that DW4 provides. It can be</text>
+<text>abbreviated as "dw d sh".</text>
+<text/>
+<text>Examples:</text>
+<text/>
+<text>dw disk sh         : show overview of the currently loaded drives</text>
+<text>dw disk sh 0       : show details about disk in drive 0</text>
+<text>dw disk sh all     : show all available disksets</text>
+<text>dw disk sh myset   : show overview of the diskset 'myset'</text>
+<text>dw disk sh myset 0 : show details about disk 0 in 'myset'</text>
+<text/>
+</show>
+<eject>
+<text/>
+<text>Usage: dw disk eject [dset] {# | all}</text>
+<text/>
+<text>Eject disk from drive #</text>
+<text/>
+<text>This command lets you eject disk images from the virtual drives, or remove</text>
+<text>disk definitions from disk sets. The special word 'all' may be used in</text>
+<text>place of a drive number to eject all disks.</text>
+<text/>
+<text>Examples:</text>
+<text/>
+<text>dw disk eject 1        : eject disk from virtual drive 1</text>
+<text>dw disk eject myset 1  : remove disk definition 1 from set myset</text>
+<text>dw disk eject all      : unload all virtual drives</text>
+<text>dw d e myset all       : clear all definitions from set myset</text>
+<text/>
+</eject>
+<insert>
+<text/>
+<text>Usage: dw disk insert [dset] # path</text>
+<text/>
+<text>Load disk into drive #</text>
+<text/>
+<text>The disk insert command is used to load a disk image into the virtual</text>
+<text>drives or to add a disk definition to a diskset. The path argument can be</text>
+<text>either a local file path or a URI. See the wiki information on paths for</text>
+<text>more details.</text>
+<text/>
+<text>Examples:</text>
+<text/>
+<text>dw disk insert 0 c:\\cocodisks\\mydisk.dsk  : load disk into drive 0</text>
+<text>dw d i myset 5 ftp://site.com/nitros9.dsk : add disk definition to myset</text>
+<text/>
+</insert>
+<reload>
+<text/>
+<text>Usage: dw disk reload {# | all}</text>
+<text/>
+<text>Reload disk in drive #</text>
+<text/>
+<text>This command tells the server to reload a buffer from it's current source</text>
+<text>path. This will overwrite any unsaved changes in the buffer.</text>
+<text/>
+<text>Example:</text>
+<text/>
+<text>dw d reload 5  : reload disk image for drive 5</text>
+<text/>
+</reload>
+<write>
+<text/>
+<text>Usage: dw disk write {# [path] | dset [dset]}</text>
+<text/>
+<text>Write disk images and disksets</text>
+<text/>
+<text>The dw disk write command can do a handful of different operations</text>
+<text>depending on the arguments you provide. In the simplest form, it will write</text>
+<text>a drive's current buffer contents back to the source path. You can specify</text>
+<text>a different path if you'd like to write the buffer to somewhere else. If</text>
+<text>you specify a diskset name instead of a drive number, the server will write</text>
+<text>definitions of the currently loaded disks into the named set. Specifying</text>
+<text>two diskset names will tell the server to write one diskset to another,</text>
+<text>creating the destination set if it does not exist.</text>
+<text/>
+<text>Examples:</text>
+<text/>
+<text>dw disk write 9                 : write buffer for drive 9 to the source path</text>
+<text>dw d w 9 /home/coco/backup1.dsk : write drive 9 buffer to an alternate path</text>
+<text>dw disk write myset             : write current drives to diskset myset</text>
+<text>dw disk write myset newset      : copy definitions in myset to newset</text>
+<text/>
+</write>
+<create>
+<text/>
+<text>Usage: dw disk create {# path | dset}</text>
+<text/>
+<text>Create new disk image or set</text>
+<text/>
+<text>This command will create a new disk image (0 byte file) at the specified</text>
+<text>path and mount it in the specified drive, or create a new blank disk</text>
+<text>definition with the specified name.</text>
+<text/>
+<text>Examples:</text>
+<text/>
+<text>dw disk create mynewset      : create new diskset 'mynewset'</text>
+<text>dw d c 0 c:\\coco\\newdisk.dsk : create new .dsk in drive 0</text>
+<text/>
+</create>
+<set>
+<text/>
+<text>Usage: dw disk set {dset [#] | #} param [val]</text>
+<text/>
+<text>Set disk/diskset parameters</text>
+<text/>
+<text>The disk set command allows you to set or unset a variety of parameters on</text>
+<text>disks, disksets, and disk definitions inside a disk set. For information on</text>
+<text>the various parameters available, see the relevant wiki topic.</text>
+<text/>
+<text>Examples:</text>
+<text/>
+<text>dw d set 1 writeprotect true     : Enable an option for disk loaded in drive 1</text>
+<text>dw d set myset SaveChanges false : Disable an option for the diskset 'myset'.</text>
+<text>dw d set myset 1 sizelimit       : Unset a paramter on disk def 1 in 'myset'.</text>
+<text/>
+</set>
+</disk>
+<server>
+<status>
+<text>dw server status</text>
+<text/>
+<text>Show server status information</text>
+</status>
+<show>
+<text>dw server show [option]</text>
+<text/>
+<text>Show various server information</text>
+<threads>
+<text>dw server show threads</text>
+<text/>
+<text>Show server threads</text>
+</threads>
+<handlers>
+<text>dw server show handlers</text>
+<text/>
+<text>Show handler instances</text>
+</handlers>
+</show>
+<list>
+<text>dw server list URI/path</text>
+<text/>
+<text>List contents of file on server</text>
+</list>
+<dir>
+<text>dw server dir URI/path</text>
+<text/>
+<text>Show directory of URI or local path</text>
+</dir>
+<turbo>
+<text>dw server turbo</text>
+<text/>
+<text>Turn on DATurbo mode (testing only)</text>
+</turbo>
+<print>
+<text>dw server print URI/path</text>
+<text/>
+<text>Print contents of file on server</text>
+</print>
+<help>
+<text>dw help [command]</text>
+<text/>
+<text>Manage the help system</text>
+<show>
+<text>dw help show [topic]</text>
+<text/>
+<text>Show help topic</text>
+</show>
+<reload>
+<text>dw help reload</text>
+<text/>
+<text>Reload help topics</text>
+</reload>
+<gentopics>
+<text>dw server help gentopics</text>
+<text/>
+<text>Generate help topics from internal commands</text>
+</gentopics>
+</help>
+<text/>
+<text>dw server show              - Show server status</text>
+<text>dw server show threads      - Show server threads</text>
+<text>dw server show handlers     - Show server handler instances</text>
+<text>dw server show config       - Show server level configuration</text>
+<text>dw server dir [filepath]    - Show directory on server</text>
+<text>dw server list [filepath]   - List file on server</text>
+<text>dw server makepass [text]   - Return encrypted form of text (use with auth)</text>
+<text/>
+</server>
+<config>
+<show>
+<text>dw config show [item]</text>
+<text/>
+<text>Show current instance config (or item)</text>
+</show>
+<set>
+<text>dw config set item [value]</text>
+<text/>
+<text>Set config item, omit value to remove item</text>
+</set>
+<save>
+<text>dw config save</text>
+<text/>
+<text>Save configuration)</text>
+</save>
+<text/>
+<text>dw config show              - Show current configuration</text>
+<text>dw config show [key]        - Show current value for key</text>
+<text>dw config set [key] [value] - Set config item key = value</text>
+<text>dw config save              - Save current configuration to disk</text>
+<text>dw config load              - Load configuration from disk</text>
+<text/>
+</config>
+<port>
+<show>
+<text>dw port show</text>
+<text/>
+<text>Show port status</text>
+</show>
+<close>
+<text>dw port close #</text>
+<text/>
+<text>Close port #</text>
+</close>
+<open>
+<text>dw port open port# host:port</text>
+<text/>
+<text>Connect port # to tcp host:port</text>
+</open>
+<text/>
+<text>dw port show                - Show current port status</text>
+<text>dw port close #             - Force port # to close</text>
+<text/>
+</port>
+<log>
+<show>
+<text>dw log show [#]</text>
+<text/>
+<text>Show last 20 (or #) log entries</text>
+</show>
+<text/>
+<text>dw log show                 - Show last 20 log lines</text>
+<text>dw log show #               - Show last # log lines</text>
+<text/>
+</log>
+<net>
+<text/>
+<show>
+<text>dw net close #</text>
+<text/>
+</show>
+</net>
+<midi>
+<status>
+<text>dw midi status</text>
+<text/>
+<text>Show MIDI status</text>
+</status>
+<output>
+<text>dw midi output #</text>
+<text/>
+<text>Set midi output to device #</text>
+</output>
+<synth>
+<text>dw midi synth [command]</text>
+<text/>
+<text>Manage the MIDI synth</text>
+<status>
+<text>dw midi synth status</text>
+<text/>
+<text>Show internal synth status</text>
+</status>
+<show>
+<text>dw midi synth show [item]</text>
+<text/>
+<text>View details about the synth</text>
+<channels>
+<text>dw midi synth show channels</text>
+<text/>
+<text>Show internal synth channel status</text>
+</channels>
+<instr>
+<text>dw midi synth show instr</text>
+<text/>
+<text>Show internal synth instruments</text>
+</instr>
+<profiles>
+<text>dw midi synth show profiles</text>
+<text/>
+<text>Show internal synth profiles</text>
+</profiles>
+</show>
+<bank>
+<text>dw midi synth bank filepath</text>
+<text/>
+<text>Load soundbank file</text>
+</bank>
+<profile>
+<text>dw midi synth profile name</text>
+<text/>
+<text>Load synth translation profile</text>
+</profile>
+<lock>
+<text>dw midi synth lock</text>
+<text/>
+<text>Toggle instrument lock</text>
+</lock>
+<instr>
+<text>dw midi synth instr #X #Y</text>
+<text/>
+<text>Manually set chan X to instrument Y</text>
+</instr>
+</synth>
+<text/>
+<text>dw midi show                  - Show midi status</text>
+<text>dw midi output #              - Set midi output to device #</text>
+<text>dw midi synth show            - Show internal synth status</text>
+<text>dw midi synth show channels   - Show internal synth channel status</text>
+<text>dw midi synth show instr      - Show available instruments</text>
+<text>dw midi synth show profiles   - Show available sound translation profiles</text>
+<text>dw midi synth bank [filepath] - Load soundbank file</text>
+<text>dw midi synth profile [name]  - Load sound tranlastion profile</text>
+<text>dw midi synth instr lock      - Toggle instrument lock (ignore program changes)</text>
+<text>dw midi synth instr [#x] [#y] - Set channel X to instrument Y</text>
+<text/>
+<text>Retrieved from "</text>
+<text>http://sourceforge.net/apps/mediawiki/drivewireserver/index.php?title=The_%27dw%27_commands</text>
+<text>&lt;http://sourceforge.net/apps/mediawiki/drivewireserver/index.php?title=The_%27dw%27_commands&gt;</text>
+<text>"</text>
+<text/>
+<text>Views</text>
+<text/>
+<text>* Page</text>
+<text>&lt;/apps/mediawiki/drivewireserver/index.php?title=The_%27dw%27_commands&gt;</text>
+<text>* Discussion</text>
+<text>&lt;/apps/mediawiki/drivewireserver/index.php?title=Talk:The_%27dw%27_commands&amp;action=edit&amp;redlink=1&gt;</text>
+<text>* View source</text>
+<text>&lt;/apps/mediawiki/drivewireserver/index.php?title=The_%27dw%27_commands&amp;action=edit&gt;</text>
+<text>* History</text>
+<text>&lt;/apps/mediawiki/drivewireserver/index.php?title=The_%27dw%27_commands&amp;action=history&gt;</text>
+<text/>
+<text>Personal tools &lt;/apps/mediawiki/drivewireserver/index.php?title=Main_Page&gt;</text>
+<text/>
+<text>Navigation</text>
+<text/>
+<text>* Main Page &lt;/apps/mediawiki/drivewireserver/index.php?title=Main_Page&gt;</text>
+<text>* Community portal</text>
+<text>&lt;/apps/mediawiki/drivewireserver/index.php?title=drivewireserver:Community_Portal&gt;</text>
+<text>* Current events</text>
+<text>&lt;/apps/mediawiki/drivewireserver/index.php?title=drivewireserver:Current_events&gt;</text>
+<text>* Recent changes</text>
+<text>&lt;/apps/mediawiki/drivewireserver/index.php?title=Special:RecentChanges&gt;</text>
+<text>* Random page</text>
+<text>&lt;/apps/mediawiki/drivewireserver/index.php?title=Special:Random&gt;</text>
+<text>* Help &lt;/apps/mediawiki/drivewireserver/index.php?title=Help:Contents&gt;</text>
+<text/>
+<text>Search</text>
+<text/>
+</midi>
+<text/>
+<text>Usage: dw [command]</text>
+<text/>
+<text>The various 'dw' commands allow you to control and configure every aspect</text>
+<text>of the server. These commands can be sent to the server in a number of</text>
+<text>ways, including the dw command utility in OS9 or the DriveWire User</text>
+<text>Interface graphical tool.</text>
+<text/>
+<text>All commands may be abbreviated to their shortest unique form. For help on</text>
+<text>any dw command, enter the portion you know followed by ?.</text>
+<text/>
+<text>Examples:</text>
+<text/>
+<text>dw disk ?  : show help for 'dw disk'</text>
+<text>dw d sh    : abbreviated form of 'dw disk show'</text>
+<text/>
+</dw>
+</topics>
+</drivewire-help>

@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'DriveWire' target in the 'DriveWire' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import <TeeBoy/TBLog.h>
+#endif

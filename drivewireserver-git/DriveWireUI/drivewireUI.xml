@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+<AutoCreated>true</AutoCreated>
+<CmdHistory>dw inst restart 1</CmdHistory>
+<CmdHistory>dw inst restart 2</CmdHistory>
+<CmdHistory>dw</CmdHistory>
+<CmdHistory>dw inst stop 2</CmdHistory>
+<CmdHistory>dw</CmdHistory>
+<CmdHistory>dw server terminate force</CmdHistory>
+<ServerHistory>192.168.128.100:6800</ServerHistory>
+<LastHost>127.0.0.1</LastHost>
+<LastPort>6800</LastPort>
+<DiskHistory>C:\\Users\\Aaron\\workspace\\drivewireserver\\DriveWireUI\\testgraph2.dsk</DiskHistory>
+<DiskHistorySize>20</DiskHistorySize>
+<ServerHistorySize>20</ServerHistorySize>
+<DWOpsHistorySize>20</DWOpsHistorySize>
+<CmdHistorySize>20</CmdHistorySize>
+<TCPTimeout>15000</TCPTimeout>
+<TermServerOnExit>false</TermServerOnExit>
+<RememberWindowPositions>true</RememberWindowPositions>
+<CmdHistory>dw server terminate</CmdHistory>
+<CmdHistory>dw</CmdHistory>
+<ServerHistory>127.0.0.1:6800</ServerHistory>
+<CmdHistory>dw in sh</CmdHistory>
+<CmdHistory>dw in sh 0</CmdHistory>
+<DiskHistory>C:\\Users\\Aaron\\workspace\\drivewireserver\\DriveWireUI\\testgraph1.dsk</DiskHistory>
+<MainWin_Width>960</MainWin_Width>
+<MainWin_Height>728</MainWin_Height>
+<SashForm_Weights>145</SashForm_Weights>
+<SashForm_Weights>854</SashForm_Weights>
+<LocalServer>true</LocalServer>
+<LastInstance>2</LastInstance>
+<DiskExtensions>dsk</DiskExtensions>
+<DiskExtensions>dmk</DiskExtensions>
+<DiskExtensions>vhd</DiskExtensions>
+<DiskExtensions>os9</DiskExtensions>
+<DiskExtensions>vdk</DiskExtensions>
+<DiskExtensions>img</DiskExtensions>
+<DOSExtensions>bas</DOSExtensions>
+<DOSExtensions>bin</DOSExtensions>
+<DOSExtensions>arc</DOSExtensions>
+<OS9Extensions>lzh</OS9Extensions>
+<OS9Extensions>ar</OS9Extensions>
+<ArchiveExtensions>zip</ArchiveExtensions>
+<ServerHistory>192.168.128.115:6800</ServerHistory>
+<DiskHistory>C:\\Users\\Aaron\\workspace\\drivewireserver\\DriveWireUI\\test.dsk</DiskHistory>
+<DiskHistory>C:\\Users\\Aaron\\workspace\\drivewireserver\\DriveWireUI\\testgraph.dsk</DiskHistory>
+<DiskHistory>E:\\cocodisks\\fpgauucp.dsk</DiskHistory>
+<DiskHistory>E:/cocodisks/fpga3uucp.dsk</DiskHistory>
+<DiskHistory>C:\\Users\\Aaron\\workspace\\drivewireserver\\DriveWireUI\\test3</DiskHistory>
+<DiskHistory>E:\\cocodisks\\cc2.dsk</DiskHistory>
+<CmdHistory>ui in</CmdHistory>
+<CmdHistory>ui in st</CmdHistory>
+<CmdHistory>ui in pr</CmdHistory>
+<CmdHistory>ui in d</CmdHistory>
+<CmdHistory>ui in d sh</CmdHistory>
+<CmdHistory>ui in p</CmdHistory>
+<CmdHistory>ui in po</CmdHistory>
+<CmdHistory>ui in st</CmdHistory>
+<CmdHistory>dw in sh</CmdHistory>
+<CmdHistory>dw se st</CmdHistory>
+<DiskHistory>E:\\cocodisks\\CoCoBoot-.43a\\testccb</DiskHistory>
+<DiskHistory>E:\\cocodisks\\muzak\\ume1.dsk</DiskHistory>
+<DiskHistory>E:\\cocodisks\\80t_18spt_1024bps_2s.dsk</DiskHistory>
+<DiskHistory>e:\\cocodisks\\crtest1.dsk</DiskHistory>
+<DiskHistory>asdasd</DiskHistory>
+<DiskHistory>http://www.nitros9.org/latest/goldrush_dw3.dsk</DiskHistory>
+<DiskHistory>E:\\cocodisks\\muzak\\LyraOS9.dsk</DiskHistory>
+<DiskHistory>E:\\cocodisks\\vdktest1vdk</DiskHistory>
+<DiskHistory>E:\\cocodisks\\CCMAX512.DSK</DiskHistory>
+<DiskHistory>E:\\cocodisks\\80t_18spt_256bps_2s.dsk</DiskHistory>
+<DiskHistory>E:\\cocodisks\\blackcauldron_dw3.dsk</DiskHistory>
+<DiskHistory>http://www.nitros9.org/latest/goldrus3h_dw3.dsk</DiskHistory>
+<DiskTable_Items>LED</DiskTable_Items>
+<DiskTable_Items>Drive</DiskTable_Items>
+<DiskTable_Items>File</DiskTable_Items>
+<DiskTable_Items>Location</DiskTable_Items>
+<DiskTable_Items>_lsn</DiskTable_Items>
+<DiskTable_Items>_reads</DiskTable_Items>
+<DiskTable_Items>_writes</DiskTable_Items>
+<DiskTable_Items>_sectors</DiskTable_Items>
+<LED_ColWidth>24</LED_ColWidth>
+<Drive_ColWidth>40</Drive_ColWidth>
+<File_ColWidth>262</File_ColWidth>
+<Location_ColWidth>216</Location_ColWidth>
+<_sectors_ColWidth>50</_sectors_ColWidth>
+<_lsn_ColWidth>50</_lsn_ColWidth>
+<_reads_ColWidth>50</_reads_ColWidth>
+<_writes_ColWidth>50</_writes_ColWidth>
+<_format_ColWidth>50</_format_ColWidth>
+<writeprotect_ColWidth>80</writeprotect_ColWidth>
+<syncto_ColWidth>50</syncto_ColWidth>
+<syncfrom_ColWidth>67</syncfrom_ColWidth>
+<offset_ColWidth>46</offset_ColWidth>
+<sizelimit_ColWidth>61</sizelimit_ColWidth>
+<expand_ColWidth>50</expand_ColWidth>
+<DiskWin_0_x>165</DiskWin_0_x>
+<DiskWin_0_y>314</DiskWin_0_y>
+<DiskWin_0_open>false</DiskWin_0_open>
+<DiskWin_1_open>false</DiskWin_1_open>
+<DiskWin_2_open>false</DiskWin_2_open>
+<DiskWin_3_open>false</DiskWin_3_open>
+<DiskWin_4_open>false</DiskWin_4_open>
+<DiskWin_5_open>false</DiskWin_5_open>
+<DiskWin_6_open>false</DiskWin_6_open>
+<DiskWin_7_open>false</DiskWin_7_open>
+<DiskWin_8_open>false</DiskWin_8_open>
+<DiskWin_9_open>false</DiskWin_9_open>
+<DiskWin_10_open>false</DiskWin_10_open>
+<DiskWin_11_open>false</DiskWin_11_open>
+<DiskWin_12_open>false</DiskWin_12_open>
+<DiskWin_13_open>false</DiskWin_13_open>
+<DiskWin_14_open>false</DiskWin_14_open>
+<DiskWin_15_open>false</DiskWin_15_open>
+<DiskWin_16_open>false</DiskWin_16_open>
+<DiskWin_17_open>false</DiskWin_17_open>
+<DiskWin_18_open>false</DiskWin_18_open>
+<DiskWin_19_open>false</DiskWin_19_open>
+<DiskWin_20_open>false</DiskWin_20_open>
+<DiskWin_21_open>false</DiskWin_21_open>
+<DiskWin_22_open>false</DiskWin_22_open>
+<DiskWin_23_open>false</DiskWin_23_open>
+<DiskWin_24_open>false</DiskWin_24_open>
+<DiskWin_25_open>false</DiskWin_25_open>
+<DiskWin_26_open>false</DiskWin_26_open>
+<DiskWin_27_open>false</DiskWin_27_open>
+<DiskWin_28_open>false</DiskWin_28_open>
+<DiskWin_29_open>false</DiskWin_29_open>
+<DiskWin_30_open>false</DiskWin_30_open>
+<DiskWin_31_open>false</DiskWin_31_open>
+<DiskWin_32_open>false</DiskWin_32_open>
+<DiskWin_33_open>false</DiskWin_33_open>
+<DiskWin_34_open>false</DiskWin_34_open>
+<DiskWin_35_open>false</DiskWin_35_open>
+<DiskWin_36_open>false</DiskWin_36_open>
+<DiskWin_37_open>false</DiskWin_37_open>
+<DiskWin_38_open>false</DiskWin_38_open>
+<DiskWin_39_open>false</DiskWin_39_open>
+<DiskWin_40_open>false</DiskWin_40_open>
+<DiskWin_41_open>false</DiskWin_41_open>
+<DiskWin_42_open>false</DiskWin_42_open>
+<DiskWin_43_open>false</DiskWin_43_open>
+<DiskWin_44_open>false</DiskWin_44_open>
+<DiskWin_45_open>false</DiskWin_45_open>
+<DiskWin_46_open>false</DiskWin_46_open>
+<DiskWin_47_open>false</DiskWin_47_open>
+<DiskWin_48_open>false</DiskWin_48_open>
+<DiskWin_49_open>false</DiskWin_49_open>
+<DiskWin_50_open>false</DiskWin_50_open>
+<DiskWin_51_open>false</DiskWin_51_open>
+<DiskWin_52_open>false</DiskWin_52_open>
+<DiskWin_53_open>false</DiskWin_53_open>
+<DiskWin_54_open>false</DiskWin_54_open>
+<DiskWin_55_open>false</DiskWin_55_open>
+<DiskWin_56_open>false</DiskWin_56_open>
+<DiskWin_57_open>false</DiskWin_57_open>
+<DiskWin_58_open>false</DiskWin_58_open>
+<DiskWin_59_open>false</DiskWin_59_open>
+<DiskWin_60_open>false</DiskWin_60_open>
+<DiskWin_61_open>false</DiskWin_61_open>
+<DiskWin_62_open>false</DiskWin_62_open>
+<DiskWin_63_open>false</DiskWin_63_open>
+<DiskWin_64_open>false</DiskWin_64_open>
+<DiskWin_65_open>false</DiskWin_65_open>
+<DiskWin_66_open>false</DiskWin_66_open>
+<DiskWin_67_open>false</DiskWin_67_open>
+<DiskWin_68_open>false</DiskWin_68_open>
+<DiskWin_69_open>false</DiskWin_69_open>
+<DiskWin_70_open>false</DiskWin_70_open>
+<DiskWin_71_open>false</DiskWin_71_open>
+<DiskWin_72_open>false</DiskWin_72_open>
+<DiskWin_73_open>false</DiskWin_73_open>
+<DiskWin_74_open>false</DiskWin_74_open>
+<DiskWin_75_open>false</DiskWin_75_open>
+<DiskWin_76_open>false</DiskWin_76_open>
+<DiskWin_77_open>false</DiskWin_77_open>
+<DiskWin_78_open>false</DiskWin_78_open>
+<DiskWin_79_open>false</DiskWin_79_open>
+<DiskWin_80_open>false</DiskWin_80_open>
+<DiskWin_81_open>false</DiskWin_81_open>
+<DiskWin_82_open>false</DiskWin_82_open>
+<DiskWin_83_open>false</DiskWin_83_open>
+<DiskWin_84_open>false</DiskWin_84_open>
+<DiskWin_85_open>false</DiskWin_85_open>
+<DiskWin_86_open>false</DiskWin_86_open>
+<DiskWin_87_open>false</DiskWin_87_open>
+<DiskWin_88_open>false</DiskWin_88_open>
+<DiskWin_89_open>false</DiskWin_89_open>
+<DiskWin_90_open>false</DiskWin_90_open>
+<DiskWin_91_open>false</DiskWin_91_open>
+<DiskWin_92_open>false</DiskWin_92_open>
+<DiskWin_93_open>false</DiskWin_93_open>
+<DiskWin_94_open>false</DiskWin_94_open>
+<DiskWin_95_open>false</DiskWin_95_open>
+<DiskWin_96_open>false</DiskWin_96_open>
+<DiskWin_97_open>false</DiskWin_97_open>
+<DiskWin_98_open>false</DiskWin_98_open>
+<DiskWin_99_open>false</DiskWin_99_open>
+<DiskWin_100_open>false</DiskWin_100_open>
+<DiskWin_101_open>false</DiskWin_101_open>
+<DiskWin_102_open>false</DiskWin_102_open>
+<DiskWin_103_open>false</DiskWin_103_open>
+<DiskWin_104_open>false</DiskWin_104_open>
+<DiskWin_105_open>false</DiskWin_105_open>
+<DiskWin_106_open>false</DiskWin_106_open>
+<DiskWin_107_open>false</DiskWin_107_open>
+<DiskWin_108_open>false</DiskWin_108_open>
+<DiskWin_109_open>false</DiskWin_109_open>
+<DiskWin_110_open>false</DiskWin_110_open>
+<DiskWin_111_open>false</DiskWin_111_open>
+<DiskWin_112_open>false</DiskWin_112_open>
+<DiskWin_113_open>false</DiskWin_113_open>
+<DiskWin_114_open>false</DiskWin_114_open>
+<DiskWin_115_open>false</DiskWin_115_open>
+<DiskWin_116_open>false</DiskWin_116_open>
+<DiskWin_117_open>false</DiskWin_117_open>
+<DiskWin_118_open>false</DiskWin_118_open>
+<DiskWin_119_open>false</DiskWin_119_open>
+<DiskWin_120_open>false</DiskWin_120_open>
+<DiskWin_121_open>false</DiskWin_121_open>
+<DiskWin_122_open>false</DiskWin_122_open>
+<DiskWin_123_open>false</DiskWin_123_open>
+<DiskWin_124_open>false</DiskWin_124_open>
+<DiskWin_125_open>false</DiskWin_125_open>
+<DiskWin_126_open>false</DiskWin_126_open>
+<DiskWin_127_open>false</DiskWin_127_open>
+<DiskWin_128_open>false</DiskWin_128_open>
+<DiskWin_129_open>false</DiskWin_129_open>
+<DiskWin_130_open>false</DiskWin_130_open>
+<DiskWin_131_open>false</DiskWin_131_open>
+<DiskWin_132_open>false</DiskWin_132_open>
+<DiskWin_133_open>false</DiskWin_133_open>
+<DiskWin_134_open>false</DiskWin_134_open>
+<DiskWin_135_open>false</DiskWin_135_open>
+<DiskWin_136_open>false</DiskWin_136_open>
+<DiskWin_137_open>false</DiskWin_137_open>
+<DiskWin_138_open>false</DiskWin_138_open>
+<DiskWin_139_open>false</DiskWin_139_open>
+<DiskWin_140_open>false</DiskWin_140_open>
+<DiskWin_141_open>false</DiskWin_141_open>
+<DiskWin_142_open>false</DiskWin_142_open>
+<DiskWin_143_open>false</DiskWin_143_open>
+<DiskWin_144_open>false</DiskWin_144_open>
+<DiskWin_145_open>false</DiskWin_145_open>
+<DiskWin_146_open>false</DiskWin_146_open>
+<DiskWin_147_open>false</DiskWin_147_open>
+<DiskWin_148_open>false</DiskWin_148_open>
+<DiskWin_149_open>false</DiskWin_149_open>
+<DiskWin_150_open>false</DiskWin_150_open>
+<DiskWin_151_open>false</DiskWin_151_open>
+<DiskWin_152_open>false</DiskWin_152_open>
+<DiskWin_153_open>false</DiskWin_153_open>
+<DiskWin_154_open>false</DiskWin_154_open>
+<DiskWin_155_open>false</DiskWin_155_open>
+<DiskWin_156_open>false</DiskWin_156_open>
+<DiskWin_157_open>false</DiskWin_157_open>
+<DiskWin_158_open>false</DiskWin_158_open>
+<DiskWin_159_open>false</DiskWin_159_open>
+<DiskWin_160_open>false</DiskWin_160_open>
+<DiskWin_161_open>false</DiskWin_161_open>
+<DiskWin_162_open>false</DiskWin_162_open>
+<DiskWin_163_open>false</DiskWin_163_open>
+<DiskWin_164_open>false</DiskWin_164_open>
+<DiskWin_165_open>false</DiskWin_165_open>
+<DiskWin_166_open>false</DiskWin_166_open>
+<DiskWin_167_open>false</DiskWin_167_open>
+<DiskWin_168_open>false</DiskWin_168_open>
+<DiskWin_169_open>false</DiskWin_169_open>
+<DiskWin_170_open>false</DiskWin_170_open>
+<DiskWin_171_open>false</DiskWin_171_open>
+<DiskWin_172_open>false</DiskWin_172_open>
+<DiskWin_173_open>false</DiskWin_173_open>
+<DiskWin_174_open>false</DiskWin_174_open>
+<DiskWin_175_open>false</DiskWin_175_open>
+<DiskWin_176_open>false</DiskWin_176_open>
+<DiskWin_177_open>false</DiskWin_177_open>
+<DiskWin_178_open>false</DiskWin_178_open>
+<DiskWin_179_open>false</DiskWin_179_open>
+<DiskWin_180_open>false</DiskWin_180_open>
+<DiskWin_181_open>false</DiskWin_181_open>
+<DiskWin_182_open>false</DiskWin_182_open>
+<DiskWin_183_open>false</DiskWin_183_open>
+<DiskWin_184_open>false</DiskWin_184_open>
+<DiskWin_185_open>false</DiskWin_185_open>
+<DiskWin_186_open>false</DiskWin_186_open>
+<DiskWin_187_open>false</DiskWin_187_open>
+<DiskWin_188_open>false</DiskWin_188_open>
+<DiskWin_189_open>false</DiskWin_189_open>
+<DiskWin_190_open>false</DiskWin_190_open>
+<DiskWin_191_open>false</DiskWin_191_open>
+<DiskWin_192_open>false</DiskWin_192_open>
+<DiskWin_193_open>false</DiskWin_193_open>
+<DiskWin_194_open>false</DiskWin_194_open>
+<DiskWin_195_open>false</DiskWin_195_open>
+<DiskWin_196_open>false</DiskWin_196_open>
+<DiskWin_197_open>false</DiskWin_197_open>
+<DiskWin_198_open>false</DiskWin_198_open>
+<DiskWin_199_open>false</DiskWin_199_open>
+<DiskWin_200_open>false</DiskWin_200_open>
+<DiskWin_201_open>false</DiskWin_201_open>
+<DiskWin_202_open>false</DiskWin_202_open>
+<DiskWin_203_open>false</DiskWin_203_open>
+<DiskWin_204_open>false</DiskWin_204_open>
+<DiskWin_205_open>false</DiskWin_205_open>
+<DiskWin_206_open>false</DiskWin_206_open>
+<DiskWin_207_open>false</DiskWin_207_open>
+<DiskWin_208_open>false</DiskWin_208_open>
+<DiskWin_209_open>false</DiskWin_209_open>
+<DiskWin_210_open>false</DiskWin_210_open>
+<DiskWin_211_open>false</DiskWin_211_open>
+<DiskWin_212_open>false</DiskWin_212_open>
+<DiskWin_213_open>false</DiskWin_213_open>
+<DiskWin_214_open>false</DiskWin_214_open>
+<DiskWin_215_open>false</DiskWin_215_open>
+<DiskWin_216_open>false</DiskWin_216_open>
+<DiskWin_217_open>false</DiskWin_217_open>
+<DiskWin_218_open>false</DiskWin_218_open>
+<DiskWin_219_open>false</DiskWin_219_open>
+<DiskWin_220_open>false</DiskWin_220_open>
+<DiskWin_221_open>false</DiskWin_221_open>
+<DiskWin_222_open>false</DiskWin_222_open>
+<DiskWin_223_open>false</DiskWin_223_open>
+<DiskWin_224_open>false</DiskWin_224_open>
+<DiskWin_225_open>false</DiskWin_225_open>
+<DiskWin_226_open>false</DiskWin_226_open>
+<DiskWin_227_open>false</DiskWin_227_open>
+<DiskWin_228_open>false</DiskWin_228_open>
+<DiskWin_229_open>false</DiskWin_229_open>
+<DiskWin_230_open>false</DiskWin_230_open>
+<DiskWin_231_open>false</DiskWin_231_open>
+<DiskWin_232_open>false</DiskWin_232_open>
+<DiskWin_233_open>false</DiskWin_233_open>
+<DiskWin_234_open>false</DiskWin_234_open>
+<DiskWin_235_open>false</DiskWin_235_open>
+<DiskWin_236_open>false</DiskWin_236_open>
+<DiskWin_237_open>false</DiskWin_237_open>
+<DiskWin_238_open>false</DiskWin_238_open>
+<DiskWin_239_open>false</DiskWin_239_open>
+<DiskWin_240_open>false</DiskWin_240_open>
+<DiskWin_241_open>false</DiskWin_241_open>
+<DiskWin_242_open>false</DiskWin_242_open>
+<DiskWin_243_open>false</DiskWin_243_open>
+<DiskWin_244_open>false</DiskWin_244_open>
+<DiskWin_245_open>false</DiskWin_245_open>
+<DiskWin_246_open>false</DiskWin_246_open>
+<DiskWin_247_open>false</DiskWin_247_open>
+<DiskWin_248_open>false</DiskWin_248_open>
+<DiskWin_249_open>false</DiskWin_249_open>
+<DiskWin_250_open>false</DiskWin_250_open>
+<DiskWin_251_open>false</DiskWin_251_open>
+<DiskWin_252_open>false</DiskWin_252_open>
+<DiskWin_253_open>false</DiskWin_253_open>
+<DiskWin_254_open>false</DiskWin_254_open>
+<DiskWin_255_open>false</DiskWin_255_open>
+<DiskWin_1_x>201</DiskWin_1_x>
+<DiskWin_1_y>274</DiskWin_1_y>
+<DiskWin_2_x>698</DiskWin_2_x>
+<DiskWin_2_y>543</DiskWin_2_y>
+<DiskWin_3_x>1025</DiskWin_3_x>
+<DiskWin_3_y>489</DiskWin_3_y>
+<MainWin_x>913</MainWin_x>
+<MainWin_y>116</MainWin_y>
+<_last_modified_ColWidth>103</_last_modified_ColWidth>
+<_maxsectors_ColWidth>83</_maxsectors_ColWidth>
+<DiskTable_Items>_format</DiskTable_Items>
+<DiskWin_255_x>897</DiskWin_255_x>
+<DiskWin_255_y>249</DiskWin_255_y>
+<Browser_Width>834</Browser_Width>
+<Browser_Height>691</Browser_Height>
+<Browser_x>161</Browser_x>
+<Browser_y>80</Browser_y>
+<Browser_homepage>http://cococoding.com/dw4</Browser_homepage>
+<Browser_helppage>http://cococoding.com/dw4/browserhelp</Browser_helppage>
+<Library>
+    <Local>
+    <Path title="cocomax.dsk">e:/cocodisks/COCOMAX.DSK</Path>
+    <Path title="donut.dsk">e:/cocodisks/games1/Donut.dsk</Path>
+    
+    
+    <Path title="Picture disks">e:/cocodisks/Pictures</Path>
+    <Path title="CoCo disks (a mess)">e:/cocodisks</Path>
+    
+    <Folder title="NitrOS9">
+       <URL title="NitrOS9 Nightly Builds">http://www.nitros9.org/latest/</URL>
+       <URL title="NitrOS9 Documentation Wiki">http://sourceforge.net/apps/mediawiki/nitros9/index.php?title=Main_Page</URL>
+       <dPath title="Current 6309/DW boot disk">http://www.nitros9.org/latest/nos96309l2v030209coco3_dw3.dsk</dPath>
+       <dPath title="Current 6309/DW/Headless boot disk">http://www.nitros9.org/latest/nos96309l2v030209coco3_dw3_headless.dsk</dPath>
+       <Path title="Backup 6809/DW from January">E:/cocodisks/nos96809l2v030209coco3_dw3.dsk</Path>
+       <Path title="Local NitrOS9 disks">e:/cocodisks/nitros9</Path>
+    </Folder>
+    <Folder title="Software Websites">
+      <URL title="Curtis Boyle's Games Site">http://www.lcurtisboyle.com/nitros9/coco_game_list.html</URL>
+       <URL title="Mike Snyder's COCO Quest">http://www.cocoquest.com/#DOWNLOAD</URL>
+       <URL title="Larry's CoCo Software">http://www.nausicaa.net/~lgreenf/cocopage.htm#Software</URL>
+       <URL title="Malted Media Archive">ftp://maltedmedia.com/coco/</URL>
+    </Folder>
+    
+  
+       <autocreated>1332582588431</autocreated>
+       <updated>0</updated>
+    </Local>
+    <Cloud> 
+        <autocreated>1332582700386</autocreated>
+        <updated>0</updated>
+    </Cloud>
+
+
+
+</Library>
+<DiskWin_56_x>854</DiskWin_56_x>
+<DiskWin_56_y>218</DiskWin_56_y>
+<DiskWin_30_x>854</DiskWin_30_x>
+<DiskWin_30_y>218</DiskWin_30_y>
+<DiskWin_251_x>854</DiskWin_251_x>
+<DiskWin_251_y>218</DiskWin_251_y>
+<DiskWin_225_x>854</DiskWin_225_x>
+<DiskWin_225_y>218</DiskWin_225_y>
+<DiskWin_193_x>854</DiskWin_193_x>
+<DiskWin_193_y>218</DiskWin_193_y>
+<DiskWin_237_x>854</DiskWin_237_x>
+<DiskWin_237_y>218</DiskWin_237_y>
+<DiskTable_Items>_filesystem</DiskTable_Items>
+<_filesystem_ColWidth>78</_filesystem_ColWidth>
+<UseRemoteFilebrowser>false</UseRemoteFilebrowser>
+<DiskTable_Items>writeprotect</DiskTable_Items>
+<offsetdrv_ColWidth>61</offsetdrv_ColWidth>
+<BasicViewer_antialias>true</BasicViewer_antialias>
+<BasicViewer_columns>80</BasicViewer_columns>
+<BasicViewer_rows>24</BasicViewer_rows>
+<MainWin_Tab>0</MainWin_Tab>
+<DiskTable_Items>syncfrom</DiskTable_Items>
+<DiskTable_Items>syncto</DiskTable_Items>
+<LibraryTabs>1</LibraryTabs>
+<NoBrowsers>false</NoBrowsers>
+<Bookmark title="Curtis Boyle's Games Site">http://www.lcurtisboyle.com/nitros9/coco_game_list.html</Bookmark>
+<Bookmark title="Mike Snyder's COCO Quest">http://www.cocoquest.com/#DOWNLOAD</Bookmark>
+<Bookmark title="Larry's CoCo Software">http://www.nausicaa.net/~lgreenf/cocopage.htm#Software</Bookmark>
+<Bookmark title="Malted Media Archive">ftp://maltedmedia.com/coco/</Bookmark>
+<Bookmark title="NitrOS9 Nightly Builds">http://www.nitros9.org/latest/</Bookmark>
+<Bookmark title="NitrOS9 Documentation Wiki">http://sourceforge.net/apps/mediawiki/nitros9/index.php?title=Main_Page</Bookmark>
+<CheckForUpdates>true</CheckForUpdates>
+<UpdateRestartRequired>false</UpdateRestartRequired>
+</configuration>

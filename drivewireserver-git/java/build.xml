@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="test" default="create_run_jar" basedir=".">
+  <!-- We need access to env. so we can find the env.GWT_HOME -->
+  <property environment="env"/>
+
+  <path id="project.class.path">
+    <fileset dir="lib" includes="*.jar"/>
+  </path>
+
+
+  <target name="javac" description="Compile java source">
+   <javac srcdir="src" includes="**" encoding="utf-8"
+        destdir="war/WEB-INF/classes"
+        source="1.6" target="1.6" nowarn="true"
+        debug="true" debuglevel="lines,vars,source">
+      <classpath refid="project.class.path"/>
+    </javac>
+    <copy todir="war/WEB-INF/classes">
+      <fileset dir="src" excludes="**/*.java"/>
+    </copy>
+  </target>
+
+  
+
+
+
+	<target name="build" depends="javac" description="Build this project" />
+
+	<target name="clean" description="Cleans this project">
+		<delete dir="war/WEB-INF/classes" failonerror="false" />
+		<delete dir="war/test" failonerror="false" />
+		<delete file="${basedir}/war/WEB-INF/lib/gwt-servlet.jar"></delete>
+	</target>
+	
+    <target name="create_run_jar" depends="build">
+        <jar destfile="DriveWire.jar" filesetmanifest="mergewithoutmain">
+            <manifest>
+                <attribute name="Main-Class" value="com.groupunix.drivewireserver.DriveWireServer"/>
+                <attribute name="Class-Path" value="."/>
+            </manifest>
+            <fileset dir="${basedir}/war/WEB-INF/classes"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-collections-3.2.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-configuration-1.6.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-lang-2.4.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-logging-1.1.1.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-net-2.0.jar"/>
+        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-codec-1.4.jar"/>
+        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-vfs-1.0.jar"/>
+        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-net-2.0.jar"/>
+        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-httpclient-3.1.jar"/>
+        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-cli-1.2.jar"/>
+        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/jsch-0.1.42.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/jasypt-1.6.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/log4j-1.2.15.jar"/>
+
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/ostermillerutils_1_07_00.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/RXTXcomm.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/slf4j-api-1.5.10.jar"/>
+            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/slf4j-log4j12-1.5.10.jar"/>
+<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/httpclient-4.0.1.jar"/>
+<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/httpmime-4.0.1.jar"/>
+<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/httpcore-4.0.1.jar"/>
+<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/apache-mime4j-0.6.jar"/>
+        
+        
+                        
+        </jar>
+    </target>
+</project>

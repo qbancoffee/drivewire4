@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<master xmlns="http://groupunix.org/DriveWireConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://groupunix.org/DriveWireConfig Master.xsd ">
+
+<drivewire-config>
+
+<UIEnabled category="advanced" type="boolean">true</UIEnabled>
+<UIPort category="advanced" max="65535" min="1" type="int">6800</UIPort>
+<UseRXTX category="advanced, device" type="boolean">true</UseRXTX>
+<LoadRXTX category="advanced, device" type="boolean">true</LoadRXTX>
+<LoadRXTXPath category="advanced, device" type="directory"/>
+<ConfigAutosave category="advanced" type="boolean">true</ConfigAutosave>
+<LogLevel category="server, logging" list="ALL,DEBUG,INFO,WARN,ERROR,FATAL" type="list">INFO</LogLevel>
+<LogToConsole category="logging" type="boolean">false</LogToConsole>
+<LogFormat category="advanced, logging" type="string"/>
+<LogToFile category="logging" type="boolean">false</LogToFile>
+<LogFile category="logging" type="file"/>
+<LogUIConnections category="logging,advanced" type="boolean">false</LogUIConnections>
+<DiskLazyWriteInterval category="advanced,disk" max="60000" min="1000" type="int">5000</DiskLazyWriteInterval>
+<LocalDiskDir category="advanced,disk" type="directory"/>
+<StatusInterval category="advanced, server" max="60000" min="1000" type="int">1000</StatusInterval>
+<instance category="instance">
+
+		<CurrentPrinter category="printing" section="instance.Printer" type="section">Text</CurrentPrinter>
+
+		<Printer category="printing">
+			<Driver list="TEXT,FX80" type="list">FX80</Driver>
+			<OutputDir type="directory"/>
+			<CharacterFile type="file">default.chars</CharacterFile>
+			<Columns max="132" min="1" type="int">80</Columns>
+			<Lines max="132" min="1" type="int">66</Lines>
+			<DPI max="1200" min="50" type="int">300</DPI>
+			<ImageFormat list="JPG,GIF,PNG,BMP" type="list">PNG</ImageFormat>
+			<FlushCommand type="string"/>
+			<OutputFile type="file"/>
+		</Printer>
+
+		
+
+		<UseMIDI category="midi" type="boolean">false</UseMIDI>
+		<MIDISynthDefaultSoundbank category="midi" type="file"/>
+		<MIDISynthDefaultProfile category="midi" section="midisynthprofile" type="section">gm</MIDISynthDefaultProfile>
+        <MIDIDefaultOutput category="midi"/>
+        
+		<HelpFile category="advanced">help.xml</HelpFile>
+
+		<LogOpCodePolls category="logging,advanced" type="boolean">false</LogOpCodePolls>
+		<LogOpCode category="logging,advanced" type="boolean">false</LogOpCode>
+		<LogDeviceBytes category="logging,advanced" type="boolean">false</LogDeviceBytes>
+		<LogMIDIBytes category="logging,advanced" type="boolean">false</LogMIDIBytes>
+		<LogVPortBytes category="logging,advanced" type="boolean">false</LogVPortBytes>
+        <LogTiming category="logging,advanced" type="boolean">false</LogTiming>
+
+		<DeviceType category="device" list="serial,tcp-server,tcp-client,dummy" type="list">dummy</DeviceType>
+		<TCPServerPort category="device" max="65535" min="1" type="int">65504</TCPServerPort>
+		<TCPClientPort category="device" max="65535" min="1" type="int"/>
+		<TCPClientHost category="device" type="string"/>
+		<SerialDevice category="device" type="serialdev"/>
+		<DetectDATurbo category="advanced, device" type="boolean">false</DetectDATurbo>
+		<SerialRate category="device" list="38400,57600,115200,230400,460800,921600" type="list">115200</SerialRate>
+		<SerialParity category="device, advanced" list="none,even,odd,mark,space" type="list">none</SerialParity>
+		<SerialStopbits category="device, advanced" list="1,1.5,2" type="list">1</SerialStopbits>
+		<DW3Only category="device,advanced" type="boolean">false</DW3Only>
+		<ProtocolFlipOutputBits category="advanced, device" type="boolean">false</ProtocolFlipOutputBits>
+		<ProtocolResponsePrefix category="advanced, device" type="boolean">false</ProtocolResponsePrefix>
+		<ProtocolDisableReadChecksum category="advanced, device" type="boolean">false</ProtocolDisableReadChecksum>
+		<ProtocolLieAboutCRC category="advanced, device" type="boolean">false</ProtocolLieAboutCRC>
+		<DeviceFailRetryTime category="advanced, device" max="60000" min="1000" type="int">6000</DeviceFailRetryTime>
+		<DiskSectorSize category="advanced, disk" max="16384" min="1" type="int">256</DiskSectorSize>
+		<ReadDelay category="advanced, disk" max="16384" min="1" type="int"/>
+		<OpTimeSendsDOW category="advanced, device" type="boolean">false</OpTimeSendsDOW>
+		<DWCommandOutputWidth category="advanced, device" max="240" min="1" type="int">80</DWCommandOutputWidth>
+
+		<ListenAddress category="networking,advanced" type="networkinterface"/>
+		<TermPort category="networking" max="65535" min="1" type="int"/>
+		<TelnetBannerFile category="networking" type="file"/>
+		<TelnetNoPortsBannerFile category="networking,advanced" type="file"/>
+
+
+		<HDBDOSMode category="disk,advanced" type="boolean">false</HDBDOSMode>
+	   <Drive0Path category="disk,advanced" type="file"/>
+<Drive1Path category="disk,advanced" type="file"/>
+<Drive2Path category="disk,advanced" type="file"/>
+<Drive3Path category="disk,advanced" type="file"/>
+<Drive4Path category="disk,advanced" type="file"/>
+<Drive5Path category="disk,advanced" type="file"/>
+<Drive6Path category="disk,advanced" type="file"/>
+<Drive7Path category="disk,advanced" type="file"/>
+<Drive8Path category="disk,advanced" type="file"/>
+<Drive9Path category="disk,advanced" type="file"/>
+<Drive10Path category="disk,advanced" type="file"/>
+<Drive11Path category="disk,advanced" type="file"/>
+<Drive12Path category="disk,advanced" type="file"/>
+<Drive13Path category="disk,advanced" type="file"/>
+<Drive14Path category="disk,advanced" type="file"/>
+<Drive15Path category="disk,advanced" type="file"/>
+<Drive16Path category="disk,advanced" type="file"/>
+<Drive17Path category="disk,advanced" type="file"/>
+<Drive18Path category="disk,advanced" type="file"/>
+<Drive19Path category="disk,advanced" type="file"/>
+<Drive20Path category="disk,advanced" type="file"/>
+<Drive21Path category="disk,advanced" type="file"/>
+<Drive22Path category="disk,advanced" type="file"/>
+<Drive23Path category="disk,advanced" type="file"/>
+<Drive24Path category="disk,advanced" type="file"/>
+<Drive25Path category="disk,advanced" type="file"/>
+<Drive26Path category="disk,advanced" type="file"/>
+<Drive27Path category="disk,advanced" type="file"/>
+<Drive28Path category="disk,advanced" type="file"/>
+<Drive29Path category="disk,advanced" type="file"/>
+<Drive30Path category="disk,advanced" type="file"/>
+<Drive31Path category="disk,advanced" type="file"/>
+<Drive32Path category="disk,advanced" type="file"/>
+<Drive33Path category="disk,advanced" type="file"/>
+<Drive34Path category="disk,advanced" type="file"/>
+<Drive35Path category="disk,advanced" type="file"/>
+<Drive36Path category="disk,advanced" type="file"/>
+<Drive37Path category="disk,advanced" type="file"/>
+<Drive38Path category="disk,advanced" type="file"/>
+<Drive39Path category="disk,advanced" type="file"/>
+<Drive40Path category="disk,advanced" type="file"/>
+<Drive41Path category="disk,advanced" type="file"/>
+<Drive42Path category="disk,advanced" type="file"/>
+<Drive43Path category="disk,advanced" type="file"/>
+<Drive44Path category="disk,advanced" type="file"/>
+<Drive45Path category="disk,advanced" type="file"/>
+<Drive46Path category="disk,advanced" type="file"/>
+<Drive47Path category="disk,advanced" type="file"/>
+<Drive48Path category="disk,advanced" type="file"/>
+<Drive49Path category="disk,advanced" type="file"/>
+<Drive50Path category="disk,advanced" type="file"/>
+<Drive51Path category="disk,advanced" type="file"/>
+<Drive52Path category="disk,advanced" type="file"/>
+<Drive53Path category="disk,advanced" type="file"/>
+<Drive54Path category="disk,advanced" type="file"/>
+<Drive55Path category="disk,advanced" type="file"/>
+<Drive56Path category="disk,advanced" type="file"/>
+<Drive57Path category="disk,advanced" type="file"/>
+<Drive58Path category="disk,advanced" type="file"/>
+<Drive59Path category="disk,advanced" type="file"/>
+<Drive60Path category="disk,advanced" type="file"/>
+<Drive61Path category="disk,advanced" type="file"/>
+<Drive62Path category="disk,advanced" type="file"/>
+<Drive63Path category="disk,advanced" type="file"/>
+<Drive64Path category="disk,advanced" type="file"/>
+<Drive65Path category="disk,advanced" type="file"/>
+<Drive66Path category="disk,advanced" type="file"/>
+<Drive67Path category="disk,advanced" type="file"/>
+<Drive68Path category="disk,advanced" type="file"/>
+<Drive69Path category="disk,advanced" type="file"/>
+<Drive70Path category="disk,advanced" type="file"/>
+<Drive71Path category="disk,advanced" type="file"/>
+<Drive72Path category="disk,advanced" type="file"/>
+<Drive73Path category="disk,advanced" type="file"/>
+<Drive74Path category="disk,advanced" type="file"/>
+<Drive75Path category="disk,advanced" type="file"/>
+<Drive76Path category="disk,advanced" type="file"/>
+<Drive77Path category="disk,advanced" type="file"/>
+<Drive78Path category="disk,advanced" type="file"/>
+<Drive79Path category="disk,advanced" type="file"/>
+<Drive80Path category="disk,advanced" type="file"/>
+<Drive81Path category="disk,advanced" type="file"/>
+<Drive82Path category="disk,advanced" type="file"/>
+<Drive83Path category="disk,advanced" type="file"/>
+<Drive84Path category="disk,advanced" type="file"/>
+<Drive85Path category="disk,advanced" type="file"/>
+<Drive86Path category="disk,advanced" type="file"/>
+<Drive87Path category="disk,advanced" type="file"/>
+<Drive88Path category="disk,advanced" type="file"/>
+<Drive89Path category="disk,advanced" type="file"/>
+<Drive90Path category="disk,advanced" type="file"/>
+<Drive91Path category="disk,advanced" type="file"/>
+<Drive92Path category="disk,advanced" type="file"/>
+<Drive93Path category="disk,advanced" type="file"/>
+<Drive94Path category="disk,advanced" type="file"/>
+<Drive95Path category="disk,advanced" type="file"/>
+<Drive96Path category="disk,advanced" type="file"/>
+<Drive97Path category="disk,advanced" type="file"/>
+<Drive98Path category="disk,advanced" type="file"/>
+<Drive99Path category="disk,advanced" type="file"/>
+<Drive100Path category="disk,advanced" type="file"/>
+<Drive101Path category="disk,advanced" type="file"/>
+<Drive102Path category="disk,advanced" type="file"/>
+<Drive103Path category="disk,advanced" type="file"/>
+<Drive104Path category="disk,advanced" type="file"/>
+<Drive105Path category="disk,advanced" type="file"/>
+<Drive106Path category="disk,advanced" type="file"/>
+<Drive107Path category="disk,advanced" type="file"/>
+<Drive108Path category="disk,advanced" type="file"/>
+<Drive109Path category="disk,advanced" type="file"/>
+<Drive110Path category="disk,advanced" type="file"/>
+<Drive111Path category="disk,advanced" type="file"/>
+<Drive112Path category="disk,advanced" type="file"/>
+<Drive113Path category="disk,advanced" type="file"/>
+<Drive114Path category="disk,advanced" type="file"/>
+<Drive115Path category="disk,advanced" type="file"/>
+<Drive116Path category="disk,advanced" type="file"/>
+<Drive117Path category="disk,advanced" type="file"/>
+<Drive118Path category="disk,advanced" type="file"/>
+<Drive119Path category="disk,advanced" type="file"/>
+<Drive120Path category="disk,advanced" type="file"/>
+<Drive121Path category="disk,advanced" type="file"/>
+<Drive122Path category="disk,advanced" type="file"/>
+<Drive123Path category="disk,advanced" type="file"/>
+<Drive124Path category="disk,advanced" type="file"/>
+<Drive125Path category="disk,advanced" type="file"/>
+<Drive126Path category="disk,advanced" type="file"/>
+<Drive127Path category="disk,advanced" type="file"/>
+<Drive128Path category="disk,advanced" type="file"/>
+<Drive129Path category="disk,advanced" type="file"/>
+<Drive130Path category="disk,advanced" type="file"/>
+<Drive131Path category="disk,advanced" type="file"/>
+<Drive132Path category="disk,advanced" type="file"/>
+<Drive133Path category="disk,advanced" type="file"/>
+<Drive134Path category="disk,advanced" type="file"/>
+<Drive135Path category="disk,advanced" type="file"/>
+<Drive136Path category="disk,advanced" type="file"/>
+<Drive137Path category="disk,advanced" type="file"/>
+<Drive138Path category="disk,advanced" type="file"/>
+<Drive139Path category="disk,advanced" type="file"/>
+<Drive140Path category="disk,advanced" type="file"/>
+<Drive141Path category="disk,advanced" type="file"/>
+<Drive142Path category="disk,advanced" type="file"/>
+<Drive143Path category="disk,advanced" type="file"/>
+<Drive144Path category="disk,advanced" type="file"/>
+<Drive145Path category="disk,advanced" type="file"/>
+<Drive146Path category="disk,advanced" type="file"/>
+<Drive147Path category="disk,advanced" type="file"/>
+<Drive148Path category="disk,advanced" type="file"/>
+<Drive149Path category="disk,advanced" type="file"/>
+<Drive150Path category="disk,advanced" type="file"/>
+<Drive151Path category="disk,advanced" type="file"/>
+<Drive152Path category="disk,advanced" type="file"/>
+<Drive153Path category="disk,advanced" type="file"/>
+<Drive154Path category="disk,advanced" type="file"/>
+<Drive155Path category="disk,advanced" type="file"/>
+<Drive156Path category="disk,advanced" type="file"/>
+<Drive157Path category="disk,advanced" type="file"/>
+<Drive158Path category="disk,advanced" type="file"/>
+<Drive159Path category="disk,advanced" type="file"/>
+<Drive160Path category="disk,advanced" type="file"/>
+<Drive161Path category="disk,advanced" type="file"/>
+<Drive162Path category="disk,advanced" type="file"/>
+<Drive163Path category="disk,advanced" type="file"/>
+<Drive164Path category="disk,advanced" type="file"/>
+<Drive165Path category="disk,advanced" type="file"/>
+<Drive166Path category="disk,advanced" type="file"/>
+<Drive167Path category="disk,advanced" type="file"/>
+<Drive168Path category="disk,advanced" type="file"/>
+<Drive169Path category="disk,advanced" type="file"/>
+<Drive170Path category="disk,advanced" type="file"/>
+<Drive171Path category="disk,advanced" type="file"/>
+<Drive172Path category="disk,advanced" type="file"/>
+<Drive173Path category="disk,advanced" type="file"/>
+<Drive174Path category="disk,advanced" type="file"/>
+<Drive175Path category="disk,advanced" type="file"/>
+<Drive176Path category="disk,advanced" type="file"/>
+<Drive177Path category="disk,advanced" type="file"/>
+<Drive178Path category="disk,advanced" type="file"/>
+<Drive179Path category="disk,advanced" type="file"/>
+<Drive180Path category="disk,advanced" type="file"/>
+<Drive181Path category="disk,advanced" type="file"/>
+<Drive182Path category="disk,advanced" type="file"/>
+<Drive183Path category="disk,advanced" type="file"/>
+<Drive184Path category="disk,advanced" type="file"/>
+<Drive185Path category="disk,advanced" type="file"/>
+<Drive186Path category="disk,advanced" type="file"/>
+<Drive187Path category="disk,advanced" type="file"/>
+<Drive188Path category="disk,advanced" type="file"/>
+<Drive189Path category="disk,advanced" type="file"/>
+<Drive190Path category="disk,advanced" type="file"/>
+<Drive191Path category="disk,advanced" type="file"/>
+<Drive192Path category="disk,advanced" type="file"/>
+<Drive193Path category="disk,advanced" type="file"/>
+<Drive194Path category="disk,advanced" type="file"/>
+<Drive195Path category="disk,advanced" type="file"/>
+<Drive196Path category="disk,advanced" type="file"/>
+<Drive197Path category="disk,advanced" type="file"/>
+<Drive198Path category="disk,advanced" type="file"/>
+<Drive199Path category="disk,advanced" type="file"/>
+<Drive200Path category="disk,advanced" type="file"/>
+<Drive201Path category="disk,advanced" type="file"/>
+<Drive202Path category="disk,advanced" type="file"/>
+<Drive203Path category="disk,advanced" type="file"/>
+<Drive204Path category="disk,advanced" type="file"/>
+<Drive205Path category="disk,advanced" type="file"/>
+<Drive206Path category="disk,advanced" type="file"/>
+<Drive207Path category="disk,advanced" type="file"/>
+<Drive208Path category="disk,advanced" type="file"/>
+<Drive209Path category="disk,advanced" type="file"/>
+<Drive210Path category="disk,advanced" type="file"/>
+<Drive211Path category="disk,advanced" type="file"/>
+<Drive212Path category="disk,advanced" type="file"/>
+<Drive213Path category="disk,advanced" type="file"/>
+<Drive214Path category="disk,advanced" type="file"/>
+<Drive215Path category="disk,advanced" type="file"/>
+<Drive216Path category="disk,advanced" type="file"/>
+<Drive217Path category="disk,advanced" type="file"/>
+<Drive218Path category="disk,advanced" type="file"/>
+<Drive219Path category="disk,advanced" type="file"/>
+<Drive220Path category="disk,advanced" type="file"/>
+<Drive221Path category="disk,advanced" type="file"/>
+<Drive222Path category="disk,advanced" type="file"/>
+<Drive223Path category="disk,advanced" type="file"/>
+<Drive224Path category="disk,advanced" type="file"/>
+<Drive225Path category="disk,advanced" type="file"/>
+<Drive226Path category="disk,advanced" type="file"/>
+<Drive227Path category="disk,advanced" type="file"/>
+<Drive228Path category="disk,advanced" type="file"/>
+<Drive229Path category="disk,advanced" type="file"/>
+<Drive230Path category="disk,advanced" type="file"/>
+<Drive231Path category="disk,advanced" type="file"/>
+<Drive232Path category="disk,advanced" type="file"/>
+<Drive233Path category="disk,advanced" type="file"/>
+<Drive234Path category="disk,advanced" type="file"/>
+<Drive235Path category="disk,advanced" type="file"/>
+<Drive236Path category="disk,advanced" type="file"/>
+<Drive237Path category="disk,advanced" type="file"/>
+<Drive238Path category="disk,advanced" type="file"/>
+<Drive239Path category="disk,advanced" type="file"/>
+<Drive240Path category="disk,advanced" type="file"/>
+<Drive241Path category="disk,advanced" type="file"/>
+<Drive242Path category="disk,advanced" type="file"/>
+<Drive243Path category="disk,advanced" type="file"/>
+<Drive244Path category="disk,advanced" type="file"/>
+<Drive245Path category="disk,advanced" type="file"/>
+<Drive246Path category="disk,advanced" type="file"/>
+<Drive247Path category="disk,advanced" type="file"/>
+<Drive248Path category="disk,advanced" type="file"/>
+<Drive249Path category="disk,advanced" type="file"/>
+<Drive250Path category="disk,advanced" type="file"/>
+<Drive251Path category="disk,advanced" type="file"/>
+<Drive252Path category="disk,advanced" type="file"/>
+<Drive253Path category="disk,advanced" type="file"/>
+<Drive254Path category="disk,advanced" type="file"/>
+<Drive255Path category="disk,advanced" type="file"/>
+<ZombieResurrection category="server,advanced" type="boolean">true</ZombieResurrection>
+<UIorBust category="server,advanced" type="boolean">true</UIorBust>
+<RestoreDrivePaths category="disk" type="boolean">true</RestoreDrivePaths>
+<DiskMaxDrives category="disk,advanced" type="int" min="1" max="256">256</DiskMaxDrives>
+<SaveDrivePaths category="disk" type="boolean">true</SaveDrivePaths>
+	</instance>
+
+<midisynthprofile category="midi"/>
+<DECBExtensionMapping category="advanced,disk" type="decbextmap"/>
+
+</drivewire-config>
+
+<diskparams>
+     
+<_format detail="The source image file format.  DriveWire can read raw\, DMK\, JVC\, CCB and VDK images but it will only write to raw sector images." type="system"/>
+<_sectors detail="The total number of sectors present in this image.  Raw format images can expand dynamically\, other formats are fixed in size." type="system"/>
+<_reads detail="The total number of sector read operations since this image was inserted." type="system"/>
+<_writes detail="The total number of sector write operations since this image was inserted." type="system"/>
+<_lsn detail="The Logical Sector Number of the last read or write operation performed on this image." type="system"/>
+<_last_modified detail="The time the source image was last modified, as reported by the operating system." type="system"/>
+<_maxsectors detail="The maximum size this image can expand to (other factors may limit the usable maximum size)." type="system"/>
+<_path detail="The source path for this image." type="system"/>
+<_sectorsize detail="The number of bytes per sector.  Note that a CoCo using the HDBDOS-DW ROM can only make use of 256 byte sectors." type="system"/>
+<_density detail="The density (single or double) of the source image." type="system"/>
+<_sides detail="The number of disk sides in the source image." type="system"/>
+<_tracks detail="The number of tracks in the source image." type="system"/>
+<_filesystem detail="If DriveWire can detect a known filesystem on this image\, it is displayed here.  Disks that cannot be detected may still contain valid filesystems." type="system"/>
+<_secpertrack detail="The number of sectors per track in the source image." type="system"/>
+
+<expand default="true" detail="Toggle on to allow this image to grow in size dynamically." toggletext="Allow image expansion" type="boolean" wikiurl="http://sourceforge.net/apps/mediawiki/drivewireserver/index.php?title=Using_DriveWire#Disk_Buffers"/>
+<writeprotect default="false" detail="Toggle on to prevent writes to the image buffer (CoCo will return an error on writes)." toggletext="Write protect image" type="boolean" wikiurl="http://sourceforge.net/apps/mediawiki/drivewireserver/index.php?title=Using_DriveWire#Disk_Buffers"/>
+<syncto default="true" detail="Toggle on to automatically write changes in the image buffer back to the source image (when possible)." toggletext="Sync changes to source image" type="boolean" wikiurl="http://sourceforge.net/apps/mediawiki/drivewireserver/index.php?title=Using_DriveWire#Disk_Buffers"/>
+<syncfrom default="false" detail="Toggle on to automatically pull any changes made to the source image into the image buffer." toggletext="Sync changes from source image" type="boolean" wikiurl="http://sourceforge.net/apps/mediawiki/drivewireserver/index.php?title=Using_DriveWire#Disk_Buffers"/>
+<offset default="0" detail="All operations are translated to the requested LSN + offset + (offsetdrv * 630).  This allows use of an image or partition that does not start at the beginning of the file." inputtext="Sector offset (0 to disable)" type="integer" wikiurl="http://sourceforge.net/apps/mediawiki/drivewireserver/index.php?title=Using_DriveWire#Disk_Buffers"/>
+<offsetdrv default="0" detail="All operations are translated to the requested LSN + offset + (offsetdrv * 630).  This allows use of an image or partition that does not start at the beginning of the file." inputtext="HDBDOS disk offset (0 to disable)" type="spinner" min="0" max="255" wikiurl="http://sourceforge.net/apps/mediawiki/drivewireserver/index.php?title=Using_DriveWire#Disk_Buffers"/>
+<sizelimit default="-1" detail="Requests for LSNs above this value will return an error even if they exist in the source image.  Used with offset\, allows safe access to only a specific portion of an image." inputtext="Maximum LSN limit (-1 to disable)" type="integer" wikiurl="http://sourceforge.net/apps/mediawiki/drivewireserver/index.php?title=Using_DriveWire#Disk_Buffers"/>
+
+</diskparams>
+
+
+</master>
+

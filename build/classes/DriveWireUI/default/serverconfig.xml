@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drivewire-config xmlns="http://groupunix.org/DriveWireConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://groupunix.org/DriveWireConfig Config.xsd ">
+<UIEnabled>true</UIEnabled>
+<UIPort>6800</UIPort>
+<ConfigAutosave>true</ConfigAutosave>
+<instance>
+    		<Name>Default</Name>
+			
+			<CurrentPrinter>text</CurrentPrinter>
+            
+			<Printer>
+			 <Name>FX80</Name>
+			 <Driver>FX80</Driver>
+			 <OutputDir>cocoprints</OutputDir>
+			 <CharacterFile>default.chars</CharacterFile>
+			 <Columns>80</Columns>
+			 <Lines>66</Lines>
+			 <DPI>300</DPI>
+			 <ImageFormat>PNG</ImageFormat>
+			</Printer>
+			<Printer>
+			 <Name>text</Name>
+			 <Driver>TEXT</Driver>
+			 <OutputDir>cocoprints</OutputDir>
+			</Printer>
+			
+			
+			<!-- MIDI options -->
+			
+			<MIDISynthDefaultSoundbank>soundbank-deluxe.gm</MIDISynthDefaultSoundbank>
+			<MIDISynthDefaultProfile>gm</MIDISynthDefaultProfile>
+			
+	</instance>
+
+		<midisynthprofile>
+			<name>gm</name>
+			<desc>General MIDI / Roland SoundCanvas</desc>
+		</midisynthprofile>
+		<midisynthprofile>
+			<name>pss480</name>
+			<desc>Yamaha PSS-480/680</desc>
+			<mapping dev="0" gm="38"/>
+			<mapping dev="1" gm="18"/>
+			<mapping dev="2" gm="19"/>					
+			<mapping dev="3" gm="0"/>
+			<mapping dev="4" gm="6"/>
+			<mapping dev="5" gm="4"/>
+			<mapping dev="6" gm="8"/>
+			<mapping dev="7" gm="11"/>
+			<mapping dev="8" gm="12"/>
+			<mapping dev="9" gm="114"/>
+			<mapping dev="10" gm="40"/>
+			<mapping dev="11" gm="42"/>
+			<mapping dev="12" gm="26"/>
+			<mapping dev="13" gm="29"/>
+			<mapping dev="14" gm="32"/>
+			<mapping dev="15" gm="56"/>
+			<mapping dev="16" gm="57"/>
+			<mapping dev="17" gm="60"/>
+			<mapping dev="18" gm="64"/>
+			<mapping dev="19" gm="71"/>
+			<mapping dev="20" gm="73"/>
+			<mapping dev="21" gm="68"/>
+			<mapping dev="22" gm="22"/>
+			<mapping dev="23" gm="78"/>
+			<mapping dev="24" gm="10"/>
+			<mapping dev="25" gm="3"/>
+			<mapping dev="26" gm="2"/>
+			<mapping dev="27" gm="17"/>
+			<mapping dev="28" gm="16"/>
+			<mapping dev="29" gm="19"/>
+			<mapping dev="30" gm="7"/>
+			<mapping dev="31" gm="21"/>
+			<mapping dev="32" gm="9"/>
+			<mapping dev="33" gm="25"/>
+			<mapping dev="34" gm="105"/>
+			<mapping dev="35" gm="43"/>
+			<mapping dev="36" gm="24"/>
+			<mapping dev="37" gm="46"/>
+			<mapping dev="38" gm="34"/>
+			<mapping dev="39" gm="36"/>
+			<mapping dev="40" gm="45"/>
+			<mapping dev="41" gm="48"/>
+			<mapping dev="42" gm="69"/>
+			<mapping dev="43" gm="109"/>
+			<mapping dev="44" gm="59"/>
+			<mapping dev="45" gm="66"/>
+			<mapping dev="46" gm="76"/>
+			<mapping dev="47" gm="75"/>
+			<mapping dev="48" gm="15"/>
+			<mapping dev="49" gm="20"/>
+			<mapping dev="50" gm="80"/>
+			<mapping dev="51" gm="16"/>
+			<mapping dev="52" gm="1"/>
+			<mapping dev="53" gm="6"/>
+			<mapping dev="54" gm="5"/>
+			<mapping dev="55" gm="9"/>
+			<mapping dev="56" gm="108"/>
+			<mapping dev="57" gm="18"/>
+			<mapping dev="58" gm="38"/>
+			<mapping dev="59" gm="12"/>
+			<mapping dev="60" gm="114"/>
+			<mapping dev="61" gm="15"/>
+			<mapping dev="62" gm="14"/>
+			<mapping dev="63" gm="9"/>
+			<mapping dev="64" gm="79"/>
+			<mapping dev="65" gm="118"/>
+			<mapping dev="66" gm="47"/>
+			<mapping dev="67" gm="41"/>
+			<mapping dev="68" gm="28"/>
+			<mapping dev="69" gm="26"/>
+			<mapping dev="70" gm="30"/>
+			<mapping dev="71" gm="25"/>
+			<mapping dev="72" gm="24"/>
+			<mapping dev="73" gm="26"/>
+			<mapping dev="74" gm="24"/>
+			<mapping dev="75" gm="104"/>
+			<mapping dev="76" gm="107"/>
+			<mapping dev="77" gm="106"/>
+			<mapping dev="78" gm="111"/>
+			<mapping dev="79" gm="32"/>
+			<mapping dev="80" gm="33"/>
+			<mapping dev="81" gm="32"/>
+			<mapping dev="82" gm="93"/>
+			<mapping dev="83" gm="89"/>
+			<mapping dev="84" gm="58"/>
+			<mapping dev="85" gm="65"/>
+			<mapping dev="86" gm="70"/>
+			<mapping dev="87" gm="70"/>
+			<mapping dev="88" gm="74"/>
+			<mapping dev="89" gm="79"/>
+			<mapping dev="90" gm="72"/>
+			<mapping dev="91" gm="78"/>
+			<mapping dev="92" gm="61"/>
+			<mapping dev="93" gm="68"/>
+			<mapping dev="94" gm="53"/>
+			<mapping dev="95" gm="54"/>
+			<mapping dev="96" gm="52"/>
+			<mapping dev="97" gm="109"/>
+			<mapping dev="98" gm="81"/>
+			<mapping dev="99" gm="88"/>
+		</midisynthprofile>
+		<midisynthprofile>
+			<name>mt540</name>
+			<desc>Casio MT-540</desc>
+			<mapping dev="0" gm="0"/>
+			<mapping dev="1" gm="6"/>
+			<mapping dev="2" gm="11"/>					
+			<mapping dev="3" gm="18"/>
+			<mapping dev="4" gm="19"/>
+			<mapping dev="5" gm="62"/>
+			<mapping dev="6" gm="48"/>
+			<mapping dev="7" gm="73"/>
+			<mapping dev="8" gm="54"/>
+			<mapping dev="9" gm="26"/>
+			<mapping dev="10" gm="14"/>
+			<mapping dev="11" gm="7"/>
+			<mapping dev="12" gm="50"/>
+			<mapping dev="13" gm="117"/>
+			<mapping dev="14" gm="4"/>
+			<mapping dev="15" gm="20"/>
+			<mapping dev="16" gm="21"/>
+			<mapping dev="17" gm="36"/>
+			<mapping dev="18" gm="119"/>
+			<mapping dev="19" gm="123"/>
+			<mapping dev="20" gm="3"/>
+			<mapping dev="21" gm="12"/>
+			<mapping dev="22" gm="68"/>
+			<mapping dev="23" gm="92"/>
+			<mapping dev="24" gm="46"/>
+			<mapping dev="25" gm="89"/>
+			<mapping dev="26" gm="94"/>
+			<mapping dev="27" gm="93"/>
+			<mapping dev="28" gm="88"/>
+			<mapping dev="29" gm="95"/>
+		</midisynthprofile>
+		<midisynthprofile>
+			<name>ct460</name>
+			<desc>Casio CT-460</desc>
+			<mapping dev="0" gm="0"/>
+			<mapping dev="1" gm="6"/>
+			<mapping dev="2" gm="11"/>					
+			<mapping dev="3" gm="18"/>
+			<mapping dev="4" gm="19"/>
+			<mapping dev="5" gm="62"/>
+			<mapping dev="6" gm="73"/>
+			<mapping dev="7" gm="54"/>
+			<mapping dev="8" gm="26"/>
+			<mapping dev="9" gm="14"/>
+			<mapping dev="10" gm="7"/>
+			<mapping dev="11" gm="93"/>
+			<mapping dev="12" gm="50"/>
+			<mapping dev="13" gm="117"/>
+			<mapping dev="14" gm="3"/>
+			<mapping dev="15" gm="4"/>
+			<mapping dev="16" gm="12"/>
+			<mapping dev="17" gm="16"/>
+			<mapping dev="18" gm="21"/>
+			<mapping dev="19" gm="48"/>
+			<mapping dev="20" gm="68"/>
+			<mapping dev="21" gm="84"/>
+			<mapping dev="22" gm="46"/>
+			<mapping dev="23" gm="89"/>
+			<mapping dev="24" gm="92"/>
+			<mapping dev="25" gm="88"/>
+			<mapping dev="26" gm="95"/>
+			<mapping dev="27" gm="36"/>
+			<mapping dev="28" gm="119"/>
+			<mapping dev="29" gm="123"/>
+		</midisynthprofile>
+
+<!-- NitrOS9 nightly builds via HTTP -->
+<diskset>
+   			<Name>fdd-6809l2</Name>
+   			<Description>Bootable NitrOS-9 L2 6809 fdd-80</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/nos96809l2v030209coco3_80d.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   			
+   		</diskset>
+<diskset>
+   			<Name>nos9-6309l2</Name>
+   			<Description>Bootable NitrOS-9 L2 boot disk for 6309</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/nos96309l2v030209coco3_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   			
+   		</diskset>
+<diskset>
+   			<Name>nos9-6309l2-headless</Name>
+   			<Description>Bootable NitrOS-9 L2 boot disk for 6309 (headless)</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/nos96309l2v030209coco3_dw3_headless.dsk</path>
+   				<bootable>true</bootable>
+   				<writeprotect>false</writeprotect>
+   			</disk>
+   			
+   		</diskset>
+<diskset>
+   			<Name>nos9-6809l2</Name>
+   			<Description>Bootable NitrOS-9 L2 boot disk for 6809</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/nos96809l2v030209coco3_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   			
+   		</diskset>
+<diskset>
+   			<Name>nos9-6809l2-headless</Name>
+   			<Description>Bootable NitrOS-9 L2 boot disk for 6809 (headless)</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/nos96809l2v030209coco3_dw3_headless.dsk</path>
+   				<bootable>true</bootable>
+   				<writeprotect>false</writeprotect>
+   			</disk>
+   			
+   		</diskset>
+<diskset>
+   			<Name>nos9-6809l1-coco1</Name>
+   			<Description>Bootable NitrOS-9 L1 boot disk for 6809/CoCo 1</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/nos96809l1v030209coco1_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   			
+   		</diskset>
+<diskset>
+   			<Name>nos9-6809l1-coco2</Name>
+   			<Description>Bootable NitrOS-9 L1 boot disk for 6809/CoCo 2</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/nos96809l1v030209coco2_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   			
+   		</diskset>
+<diskset>
+   			<Name>mv-6309</Name>
+   			<Description>Bootable MultiVue boot disk for 6309</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/multivue_6309_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   			
+   		</diskset>
+<diskset>
+   			<Name>mv-6809</Name>
+   			<Description>Bootable MultiVue boot disk for 6809</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/multivue_6809_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   			
+   		</diskset>
+<!-- Games from the NitrOS-9 nightly builds -->
+<diskset>
+   			<Name>blackcauldron</Name>
+   			<Description>Sierra Black Cauldron</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/blackcauldron_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>xmas86</Name>
+   			<Description>Sierra Christmas 86 demo</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/christmas86_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>flightsim2</Name>
+   			<Description>Flight Simulator 2</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/fsim2_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>goldrush</Name>
+   			<Description>Sierra Goldrush</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/goldrush_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>kingq1</Name>
+   			<Description>Sierra Kings Quest 1</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/kingsquest1_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>kingq2</Name>
+   			<Description>Sierra Kings Quest 2</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/kingsquest2_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>kingq3</Name>
+   			<Description>Sierra Kings Quest 3</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/kingsquest3_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>kingq4</Name>
+   			<Description>Sierra Kings Quest 4</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/kingsquest3_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>koronis</Name>
+   			<Description>Koronis Rift</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/koronis_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>kyumgai</Name>
+   			<Description>Kyum-Gai: To Be Ninja</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/kyumgai_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>lslarry</Name>
+   			<Description>Leisure Suit Larry</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/leisuresuitlarry_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>manhunt1</Name>
+   			<Description>Manhunter 1</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/manhunter1_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>manhunt2</Name>
+   			<Description>Manhunter 2</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/manhunter2_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>microm</Name>
+   			<Description>Microscopic Mission</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/mm_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>policeq</Name>
+   			<Description>Sierra Police Quest 1</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/policequest1_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>rof</Name>
+   			<Description>Rescue on Fractalus</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/rof_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>spaceq0</Name>
+   			<Description>Sierra Space Quest 0</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/spacequest0_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>spaceq1</Name>
+   			<Description>Sierra Space Quest 1</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>http://www.nitros9.org/latest/spacequest1_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>spaceq2</Name>
+   			<Description>Sierra Space Quest 2</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<note>why is this disk labeled as sq 3?</note>
+   				<path>http://www.nitros9.org/latest/spacequest3_dw3.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+<diskset>
+   			<Name>thelda</Name>
+   			<Description>Thelda from lorddragon</Description> 
+
+			<disk>
+   				<drive>0</drive>
+   				<path>E:\cocodisks/thelda1.dsk</path>
+   				<writeprotect>false</writeprotect>
+   				<bootable>true</bootable>
+   			</disk>
+   		</diskset>
+		
+</drivewire-config>

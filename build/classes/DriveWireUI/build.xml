@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project name="test" default="create_run_jar" basedir=".">
+
+	<taskdef name="swtjar" classname="org.swtjar.ant.SWTJarTask"
+	                       classpath="./lib/swtjar.jar"/>
+	
+	 <path id="project.class.path">
+	    <fileset dir="lib" includes="*.jar"/>
+	 	<fileset dir="../java/lib" includes="*.jar"/>
+	  </path>
+
+	  <target name="javac" description="Compile java source">
+	    <mkdir dir="classes"/>
+	  	
+
+	    
+	  	<javac srcdir="../java/src" includes="**" encoding="utf-8"
+            destdir="classes"
+            source="17" target="17" nowarn="true"
+            debug="true" debuglevel="lines,vars,source">
+          <classpath refid="project.class.path"/>
+        </javac>
+        
+        <javac srcdir="src" includes="**" encoding="utf-8"
+            destdir="classes"
+            source="17" target="17" nowarn="true"
+            debug="true" debuglevel="lines,vars,source">
+          <classpath refid="project.class.path"/>
+        </javac>
+	    
+	   
+	  </target>
+	
+	 <target name="create_run_jar" depends="javac">
+	        <jar destfile="./DriveWireUI.jar" filesetmanifest="mergewithoutmain">
+	            <manifest>
+	            	<attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+	            	<attribute name="Rsrc-Main-Class" value="com.groupunix.drivewireui.MainWin"/>
+	                <attribute name="Class-Path" value="."/>
+	            	<attribute name="Rsrc-Class-Path" value=" ./ commons-configuration-1.6.jar swing2swt.jar commons-lang-2.4.jar swt.jar commons-collections-3.2.1.jar commons-logging-1.1.1.jar dwimages.jar"/>
+	            </manifest>
+	        	<fileset dir="${basedir}/classes"/>
+	        	
+	            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-collections-3.2.1.jar"/>
+	            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-configuration-1.6.jar"/>
+	            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-lang-2.4.jar"/>
+	            <zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-logging-1.1.1.jar"/>
+	        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/swtjar.jar"/>
+	        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/dwimages.jar"/>
+	        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/swing2swt.jar"/>
+	        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/swt.jar"/>
+	        	
+	        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/org.eclipse.equinox.common_3.6.0.v20100503.jar"/>
+	        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/org.eclipse.core.commands_3.6.0.I20100512-1500.jar"/>
+	        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/org.eclipse.core.runtime_3.6.0.v20100505.jar"/>
+	        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/org.eclipse.jface_3.6.2.M20110210-1200.jar"/>
+	        	<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/org.osgi.core-4.3.0.jar"/>
+	        		                
+	        	
+	        		            <zipfileset excludes="META-INF/*.SF" src="../java/lib/commons-net-2.0.jar"/>
+	        		            <zipfileset excludes="META-INF/*.SF" src="../java/lib/commons-codec-1.4.jar"/>
+	        		            <zipfileset excludes="META-INF/*.SF" src="../java/lib/commons-vfs-1.0.jar"/>
+	        		            <zipfileset excludes="META-INF/*.SF" src="../java/lib/commons-net-2.0.jar"/>
+	        		            <zipfileset excludes="META-INF/*.SF" src="../java/lib/commons-httpclient-3.1.jar"/>
+	        		            <zipfileset excludes="META-INF/*.SF" src="../java/lib/commons-cli-1.2.jar"/>
+	        		            <zipfileset excludes="META-INF/*.SF" src="../java/lib/jsch-0.1.42.jar"/>
+	        		            <zipfileset excludes="META-INF/*.SF" src="../java/lib/jasypt-1.6.jar"/>
+	        		            <zipfileset excludes="META-INF/*.SF" src="../java/lib/log4j-1.2.15.jar"/>
+
+	        		            <zipfileset excludes="META-INF/*.SF" src="../java/lib/ostermillerutils_1_07_00.jar"/>
+	        		            <zipfileset excludes="META-INF/*.SF" src="../java/lib/RXTXcomm.jar"/>
+	        		            <zipfileset excludes="META-INF/*.SF" src="../java/lib/slf4j-api-1.5.10.jar"/>
+	        		            <zipfileset excludes="META-INF/*.SF" src="../java/lib/slf4j-log4j12-1.5.10.jar"/>
+	        		<zipfileset excludes="META-INF/*.SF" src="../java/lib/httpclient-4.0.1.jar"/>
+	        		<zipfileset excludes="META-INF/*.SF" src="../java/lib/httpmime-4.0.1.jar"/>
+	        		<zipfileset excludes="META-INF/*.SF" src="../java/lib/httpcore-4.0.1.jar"/>
+	        		<zipfileset excludes="META-INF/*.SF" src="../java/lib/apache-mime4j-0.6.jar"/>
+	        	
+	        	
+	        	
+	        	   
+	        	
+	        	
+	        </jar>
+	    </target>
+	
+	
+	<!-- Package cross platform SWT Jar -->
+	<swtjar jarfile="./DW4UI.jar"
+			targetmainclass="com.groupunix.drivewireui.MainWin"
+			swtversion="4.2.1">
+		
+		
+		
+	
+		
+		
+	  <!-- Application Classes -->
+	  <fileset dir="${basedir}/classes/" includes="**/*.class" />
+	  
+	  <!-- Library Classes
+	  <zipfileset excludes="META-INF/*.MF" src="lib/miglayout-3.7.3.1-swt.jar"/>
+	   -->
+		<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-collections-3.2.1.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-configuration-1.6.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-lang-2.4.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/commons-logging-1.1.1.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/swtjar.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/dwimages.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/swing2swt.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/org.eclipse.equinox.common_3.6.0.v20100503.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/org.eclipse.core.commands_3.6.0.I20100512-1500.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/org.eclipse.core.runtime_3.6.0.v20100505.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/org.eclipse.jface_3.6.2.M20110210-1200.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/org.osgi.core-4.3.0.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/miglayout-4.0.jar"/>
+		<zipfileset excludes="META-INF/*.SF" src="${basedir}/lib/miglayout-4.0-swing.jar"/>
+		
+        <zipfileset excludes="META-INF/*.SF" src="../java/lib/commons-net-2.0.jar"/>
+          <zipfileset excludes="META-INF/*.SF" src="../java/lib/commons-codec-1.4.jar"/>
+          <zipfileset excludes="META-INF/*.SF" src="../java/lib/commons-vfs-1.0.jar"/>
+          <zipfileset excludes="META-INF/*.SF" src="../java/lib/commons-net-2.0.jar"/>
+          <zipfileset excludes="META-INF/*.SF" src="../java/lib/commons-httpclient-3.1.jar"/>
+          <zipfileset excludes="META-INF/*.SF" src="../java/lib/commons-cli-1.2.jar"/>
+          <zipfileset excludes="META-INF/*.SF" src="../java/lib/jsch-0.1.42.jar"/>
+          <zipfileset excludes="META-INF/*.SF" src="../java/lib/jasypt-1.6.jar"/>
+          <zipfileset excludes="META-INF/*.SF" src="../java/lib/log4j-1.2.15.jar"/>
+
+          <zipfileset excludes="META-INF/*.SF" src="../java/lib/ostermillerutils_1_07_00.jar"/>
+          <zipfileset excludes="META-INF/*.SF" src="../java/lib/RXTXcomm.jar"/>
+          <zipfileset excludes="META-INF/*.SF" src="../java/lib/slf4j-api-1.5.10.jar"/>
+          <zipfileset excludes="META-INF/*.SF" src="../java/lib/slf4j-log4j12-1.5.10.jar"/>
+<zipfileset excludes="META-INF/*.SF" src="../java/lib/httpclient-4.0.1.jar"/>
+<zipfileset excludes="META-INF/*.SF" src="../java/lib/httpmime-4.0.1.jar"/>
+<zipfileset excludes="META-INF/*.SF" src="../java/lib/httpcore-4.0.1.jar"/>
+<zipfileset excludes="META-INF/*.SF" src="../java/lib/apache-mime4j-0.6.jar"/>
+		
+		
+	  <!-- SWT Jars -->
+	  <fileset dir="./lib" includes="swt-*.jar" />
+	</swtjar>
+
+	
+</project>
