@@ -30,3 +30,21 @@ Caused by: java.lang.NoClassDefFoundError: org/apache/log4j/Layout
 This is because the lib folder with all of the required libraries was not created in the dist folder. Ant uses "nbproject/private/private.properties" to get the path to the JDK from NetBeans. In my case "user.properties.file=/home/rockyhill/snap/netbeans/74/build.properties".
 
 This is quickly solved by either updating that path manually or opening the project in NetBeans and building once. This is a minor annoyance but it's solvable.
+
+After running it, you'll notice that the UI is very differnt from the UI that one sees when running the latest version of DriveWire 4.
+I suspect this might be a version isssue so hopefully someone will have the source for that and one day this repo can be updated.
+See screenshots of the UI below.
+## Screenshots
+
+### Main UI
+<img src="https://github.com/qbancoffee/drivewire4/blob/main/images/dw4_mainwin.png" width="300">
+
+### Lite UI
+
+<img src="https://github.com/qbancoffee/drivewire4/blob/main/images/dw4_liteui.png" width="300">
+
+
+<br>
+
+
+
