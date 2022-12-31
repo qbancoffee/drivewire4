@@ -20,7 +20,7 @@ To run the program type the following:
 ant run
 ```
 
-Unfortunately this NetBeans project and ant are closely tied together and I can't figure out how to decouple them enough to where ant works correctly without firsr having to open the project and compile build at least once with NetBeans. The following should work but it doesn't at first:
+Unfortunately this NetBeans project and ant are closely tied together and I can't figure out how to decouple them enough to where ant works correctly without first having to open the project and building at least once with NetBeans. The following should work but it doesn't at first:
 ```bash
 java -jar dist/dw4nb.jar
 Error: Unable to initialize main class com.groupunix.drivewireui.MainWin
