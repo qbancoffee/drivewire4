@@ -7,12 +7,13 @@ This repo holds two netbeans projects for two versions of drivewire 4 that have 
 - drivewire4_from_source is version of DriveWire 4 java assembled from the source files available on sourceforge.<br>
 Get the original source files from sourceforge.
 https://sourceforge.net/projects/drivewireserver/<br>
-<br>
+
 - drivewire4_decompiled is a version of the sources obtained from the decompilation of DW4UI.jar.
 <br>
-Watch this video to see how the sourceforge version was modified to compile and run with Java 17.<br>
+Watch this video to see how the sourceforge version was modified to compile and run with Java 17.
+
 - [Compiling and running DriveWire 4 with OpenJDK 17](https://youtu.be/7fjNQZ2uRJI)
-<br>
+
 
 To compile an run, make sure you have:
 - A JDK installed, I used OpenJDK 17 but any other JDK should work as well.
