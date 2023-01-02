@@ -34,6 +34,7 @@ ant run
 ```
 <br>
 Unfortunately this NetBeans project and ant are closely tied together and I can't figure out how to decouple them enough to where ant works correctly without first having to open the project and building at least once with NetBeans. The following should work but it doesn't at first:
+
 For the drivewire4_from_source project.
 ```bash
 java -jar dist/dw4nb.jar
