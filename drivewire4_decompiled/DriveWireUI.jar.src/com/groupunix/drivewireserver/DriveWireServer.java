@@ -137,7 +137,7 @@
 /*      */   private static void checkHandlerHealth() {
 /*  138 */     for (int i = 0; i < dwProtoHandlers.size(); i++) {
 /*      */       
-/*  140 */       if (dwProtoHandlers.get(i) != null && ((DWProtocol)dwProtoHandlers.get(i)).isReady() && !((DWProtocol)dwProtoHandlers.get(i)).isDying())
+/*  140 */       if (dwProtoHandlers.get(i) != null && ((DWProtocol)dwProtoHandlers.get(i)).isReady() && !((DWProtocol)dwProtoHandlers.get(i)).isDying()  && dwProtoHandlerThreads.size() > i)
 /*      */       {
 /*      */ 
 /*      */         
@@ -895,7 +895,7 @@
 /*      */ 
 /*      */   
 /*      */   public static boolean handlerIsAlive(int h) {
-/*  898 */     if (dwProtoHandlers.get(h) != null)
+/*  898 */     if (dwProtoHandlers.get(h) != null && dwProtoHandlers.size() > h)
 /*      */     {
 /*  900 */       if (!((DWProtocol)dwProtoHandlers.get(h)).isDying() && dwProtoHandlerThreads.get(h) != null && ((Thread)dwProtoHandlerThreads.get(h)).isAlive())
 /*      */       {

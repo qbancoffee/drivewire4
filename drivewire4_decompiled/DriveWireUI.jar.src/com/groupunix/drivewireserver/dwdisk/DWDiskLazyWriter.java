@@ -43,7 +43,7 @@
 /*    */   
 /*    */   private void syncDisks() {
 /* 45 */     this.inSync = true;
-/* 46 */     for (int h = 0; h < DriveWireServer.getNumHandlers(); h++) {
+/* 46 */     for (int h = 0; h < DriveWireServer.getNumHandlers() - 1; h++) {
 /*    */ 
 /*    */       
 /* 49 */       if (DriveWireServer.handlerIsAlive(h))
