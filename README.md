@@ -62,7 +62,7 @@ See screenshots of the UI below.
 <img src="https://github.com/qbancoffee/drivewire4/blob/main/images/dw4_decompiled_win64.png" width="300">
 <br>
 ### Main UI on Linux 64 bit decompled version.
-<img src="https://github.com/qbancoffee/drivewire4/blob/main/images/dw4_decompiled_win64.png" width="300">
+<img src="https://github.com/qbancoffee/drivewire4/blob/main/images/dw4_decompiled_linux64.png" width="300">
 <br>
 ### Main UI on 64 bit linux sourceforge version.
 <img src="https://github.com/qbancoffee/drivewire4/blob/main/images/dw4_mainwin.png" width="300">
