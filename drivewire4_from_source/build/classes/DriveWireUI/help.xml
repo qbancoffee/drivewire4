@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+<topics>
+<dw>
+<text>dw [command]</text>
+<text/>
+<text>Manage all aspects of the server</text>
+<disk>
+<text>dw disk [command]</text>
+<text/>
+<text>Manage disks and disksets</text>
+<show>
+<text>dw disk show [#]</text>
+<text/>
+<text>Show current disk details</text>
+</show>
+<eject>
+<text>dw disk eject {# | all}</text>
+<text/>
+<text>Eject disk from drive #</text>
+</eject>
+<insert>
+<text>dw disk insert # path</text>
+<text/>
+<text>Load disk into drive #</text>
+</insert>
+<reload>
+<text>dw disk reload {# | all}</text>
+<text/>
+<text>Reload disk in drive #</text>
+</reload>
+<write>
+<text>dw disk write # [path]</text>
+<text/>
+<text>Write disk image in drive #</text>
+</write>
+<create>
+<text>dw disk create # path</text>
+<text/>
+<text>Create new disk image</text>
+</create>
+<set>
+<text>dw disk set # param val</text>
+<text/>
+<text>Set disk parameters</text>
+</set>
+</disk>
+<server>
+<text>dw server [command]</text>
+<text/>
+<text>Various server based tools</text>
+<status>
+<text>dw server status</text>
+<text/>
+<text>Show server status information</text>
+</status>
+<show>
+<text>dw server show [option]</text>
+<text/>
+<text>Show various server information</text>
+<threads>
+<text>dw server show threads</text>
+<text/>
+<text>Show server threads</text>
+</threads>
+<handlers>
+<text>dw server show handlers</text>
+<text/>
+<text>Show handler instances</text>
+</handlers>
+</show>
+<list>
+<text>dw server list URI/path</text>
+<text/>
+<text>List contents of file on server</text>
+</list>
+<dir>
+<text>dw server dir URI/path</text>
+<text/>
+<text>Show directory of URI or local path</text>
+</dir>
+<turbo>
+<text>dw server turbo</text>
+<text/>
+<text>Turn on DATurbo mode (testing only)</text>
+</turbo>
+<print>
+<text>dw server print URI/path</text>
+<text/>
+<text>Print contents of file on server</text>
+</print>
+<help>
+<text>dw help [command]</text>
+<text/>
+<text>Manage the help system</text>
+<show>
+<text>dw help show [topic]</text>
+<text/>
+<text>Show help topic</text>
+</show>
+<reload>
+<text>dw help reload</text>
+<text/>
+<text>Reload help topics</text>
+</reload>
+<gentopics>
+<text>dw server help gentopics</text>
+<text/>
+<text>Generate help topics from internal commands</text>
+</gentopics>
+</help>
+</server>
+<config>
+<text>dw config [command]</text>
+<text/>
+<text>Commands to manipulate the config</text>
+<show>
+<text>dw config show [item]</text>
+<text/>
+<text>Show current instance config (or item)</text>
+</show>
+<set>
+<text>dw config set item [value]</text>
+<text/>
+<text>Set config item</text>
+<text>omit value to remove item</text>
+</set>
+<save>
+<text>dw config save</text>
+<text/>
+<text>Save configuration)</text>
+</save>
+</config>
+<port>
+<text>dw port [command]</text>
+<text/>
+<text>Manage virtual serial ports</text>
+<show>
+<text>dw port show</text>
+<text/>
+<text>Show port status</text>
+</show>
+<close>
+<text>dw port close #</text>
+<text/>
+<text>Close port #</text>
+</close>
+<open>
+<text>dw port open port# host:port</text>
+<text/>
+<text>Connect port # to tcp host:port</text>
+</open>
+</port>
+<log>
+<text>dw log [command]</text>
+<text/>
+<text>View the server log</text>
+<show>
+<text>dw log show [#]</text>
+<text/>
+<text>Show last 20 (or #) log entries</text>
+</show>
+</log>
+<net>
+<text>dw net [command]</text>
+<text/>
+<text>Manage network connections</text>
+<show>
+<text>dw net show</text>
+<text/>
+<text>Show networking status</text>
+</show>
+</net>
+<midi>
+<text>dw midi [command]</text>
+<text/>
+<text>Manage the MIDI subsystem</text>
+<status>
+<text>dw midi status</text>
+<text/>
+<text>Show MIDI status</text>
+</status>
+<output>
+<text>dw midi output #</text>
+<text/>
+<text>Set midi output to device #</text>
+</output>
+<synth>
+<text>dw midi synth [command]</text>
+<text/>
+<text>Manage the MIDI synth</text>
+<status>
+<text>dw midi synth status</text>
+<text/>
+<text>Show internal synth status</text>
+</status>
+<show>
+<text>dw midi synth show [item]</text>
+<text/>
+<text>View details about the synth</text>
+<channels>
+<text>dw midi synth show channels</text>
+<text/>
+<text>Show internal synth channel status</text>
+</channels>
+<instr>
+<text>dw midi synth show instr</text>
+<text/>
+<text>Show internal synth instruments</text>
+</instr>
+<profiles>
+<text>dw midi synth show profiles</text>
+<text/>
+<text>Show internal synth profiles</text>
+</profiles>
+</show>
+<bank>
+<text>dw midi synth bank filepath</text>
+<text/>
+<text>Load soundbank file</text>
+</bank>
+<profile>
+<text>dw midi synth profile name</text>
+<text/>
+<text>Load synth translation profile</text>
+</profile>
+<lock>
+<text>dw midi synth lock</text>
+<text/>
+<text>Toggle instrument lock</text>
+</lock>
+<instr>
+<text>dw midi synth instr #X #Y</text>
+<text/>
+<text>Manually set chan X to instrument Y</text>
+</instr>
+</synth>
+</midi>
+</dw>
+
+<drivewire-config>
+<ConfigAutosave>
+<text>When this setting is enabled\, the server commits any changes made in the configuration automatically to the persistent configuration.  The DW User Interface requires this setting to be enabled.  Unpredictable behavior may result if the UI is used with a server that does not have this option turned on.</text>
+</ConfigAutosave>
+</drivewire-config>
+
+<resultcode>
+<b0><text>The operation was a success</text></b0>
+
+<b10><text>?SN</text></b10>
+
+<b100><text>General drive error</text></b100>
+<b101><text>Invalid drive number</text></b101>
+<b102><text>Drive is not loaded</text></b102>
+<b103><text>Drive is already loaded</text></b103>
+<b104><text>Image format error</text></b104>
+    
+<b110><text>No such diskset (deprecated)</text></b110>
+<b111><text>Invalid disk definition (deprecated)</text></b111>
+ 
+    
+<b120><text>General network error</text></b120>
+<b121><text>Network I/O error</text></b121>
+<b122><text>DNS lookup failed</text></b122>
+<b123><text>Invalid connection ID</text></b123>
+
+<b140><text>Invalid port number</text></b140>
+<b141><text>Invalid handler ID</text></b141>
+<b142><text>Config key not set</text></b142>
+    
+<b150><text>General MIDI error</text></b150>
+<b151><text>MIDI is not available</text></b151>
+<b152><text>Invalid MIDI device ID</text></b152>
+<b153><text>Invalid MIDI data</text></b153>
+<b154><text>MIDI soundbank failure</text></b154>
+<b155><text>MIDI soundbank not supported</text></b155>
+<b156><text>Invalid MIDI profile</text></b156>
+
+<b200><text>General server error</text></b200>
+<b201><text>Server filesystem error</text></b201>
+<b202><text>Server I/O error</text></b202>
+<b203><text>File not found</text></b203>
+<b204><text>Not implemented (yet?)</text></b204>
+<b205><text>Server is not ready</text></b205>
+<b206><text>Instance is not ready</text></b206>
+
+<b220><text>General UI error</text></b220>
+<b221><text>Malformed UI request</text></b221>
+<b222><text>Malformed UI response</text></b222>
+<b230><text>Help topic not found</text></b230>
+<b255><text>Failure.  You lose.  Good day\, sir.</text></b255>
+
+</resultcode>
+
+</topics>
+
+
+
+</configuration>

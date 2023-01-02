@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<drivewire-disksets xmlns="http://groupunix.org/DriveWireDisksets" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://groupunix.org/DriveWireDisksets Config.xsd ">
+
+<source>
+    <uri>http://aaronwolfe.com/coco/disksets/nitros9_sets.xml</uri>
+    <name>NitrOS9.org</name>
+</source>
+
+
+<diskset>
+	<Name>thelda</Name>
+	<Description>Thelda from lorddragon</Description>
+
+	<disk>
+		<drive>0</drive>
+		<path>E:\cocodisks/thelda1.dsk</path>
+		<writeprotect>false</writeprotect>
+		<bootable>true</bootable>
+	</disk>
+</diskset>
+
+
+
+<diskset>
+	<Name>test1</Name>
+
+	<disk>
+		<drive>0</drive>
+		<path>file:///E:/cocodisks/messnos9.os9</path>
+	</disk>
+	<disk>
+		<drive>1</drive>
+		<path>file:///E:/cocodisks/ume.dsk</path>
+	</disk>
+	<disk>
+		<drive>2</drive>
+		<path>file:///E:/cocodisks/cc.dsk</path>
+	</disk>
+</diskset>
+</drivewire-disksets>

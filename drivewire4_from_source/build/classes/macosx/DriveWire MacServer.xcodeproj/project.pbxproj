@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6805D7851AD583E800EA3B5F /* TeeBoy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6805D7841AD583E800EA3B5F /* TeeBoy.framework */; };
+		6805D7891AD583F900EA3B5F /* TeeBoy.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6805D7841AD583E800EA3B5F /* TeeBoy.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		6809AD840F6C08A6000BB954 /* TBVirtualDriveController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6809AD7F0F6C08A6000BB954 /* TBVirtualDriveController.m */; };
+		6809AD850F6C08A6000BB954 /* TBVirtualDriveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6809AD810F6C08A6000BB954 /* TBVirtualDriveModel.m */; };
+		6809AD860F6C08A6000BB954 /* TBVirtualDriveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6809AD830F6C08A6000BB954 /* TBVirtualDriveView.m */; };
+		6809AD940F6C0974000BB954 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6809AD930F6C0974000BB954 /* IOKit.framework */; };
+		6809AE020F6C0C30000BB954 /* TBVirtualDriveView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6809AE010F6C0C30000BB954 /* TBVirtualDriveView.xib */; };
+		6809AE070F6C0C4C000BB954 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6809AE050F6C0C4C000BB954 /* MainMenu.xib */; };
+		6809AEF80F6C0DB6000BB954 /* CoCo1.psd in Resources */ = {isa = PBXBuildFile; fileRef = 6809AEEA0F6C0DB6000BB954 /* CoCo1.psd */; };
+		6809AEF90F6C0DB6000BB954 /* CoCo2.psd in Resources */ = {isa = PBXBuildFile; fileRef = 6809AEEB0F6C0DB6000BB954 /* CoCo2.psd */; };
+		6809AEFA0F6C0DB6000BB954 /* CoCo3.psd in Resources */ = {isa = PBXBuildFile; fileRef = 6809AEEC0F6C0DB6000BB954 /* CoCo3.psd */; };
+		6809AEFB0F6C0DB6000BB954 /* drive.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6809AEED0F6C0DB6000BB954 /* drive.jpg */; };
+		6809AEFC0F6C0DB6000BB954 /* driveface.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6809AEEE0F6C0DB6000BB954 /* driveface.jpg */; };
+		6809AEFD0F6C0DB6000BB954 /* DriveWire 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 6809AEEF0F6C0DB6000BB954 /* DriveWire 3.png */; };
+		6809AF030F6C0DB6000BB954 /* eject.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6809AEF50F6C0DB6000BB954 /* eject.wav */; };
+		6809AF040F6C0DB6000BB954 /* insert.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6809AEF60F6C0DB6000BB954 /* insert.wav */; };
+		6809AF050F6C0DB6000BB954 /* redled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6809AEF70F6C0DB6000BB954 /* redled.jpg */; };
+		6809AF3E0F6C0F81000BB954 /* greenled.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6809AF3D0F6C0F81000BB954 /* greenled.jpg */; };
+		68190D2E0F47011400C4CDDD /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68190D2C0F47011400C4CDDD /* RegisterView.m */; };
+		68190D310F47011F00C4CDDD /* MemoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68190D300F47011F00C4CDDD /* MemoryView.m */; };
+		68363D450F63182400CD8A1B /* PrinterWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68363D440F63182400CD8A1B /* PrinterWindowController.m */; };
+		68742C370F41A78E0049FEF6 /* DriveWireServerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 68742C360F41A78E0049FEF6 /* DriveWireServerModel.m */; };
+		68742E870F41B9EA0049FEF6 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68742E850F41B9EA0049FEF6 /* AppKit.framework */; };
+		68742E880F41B9EA0049FEF6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68742E860F41B9EA0049FEF6 /* Cocoa.framework */; };
+		68A1F6AA1ADF59DF00A5B030 /* VSerialChannel.m in Sources */ = {isa = PBXBuildFile; fileRef = 68A1F6A91ADF59DF00A5B030 /* VSerialChannel.m */; };
+		68ABF6F309806CD600838EB9 /* DriveWire MacServer Help in Resources */ = {isa = PBXBuildFile; fileRef = 68ABF6CE09806CD600838EB9 /* DriveWire MacServer Help */; };
+		68ADDF87096B7347002324CE /* DWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DBD1DE0964F1A900B011C5 /* DWAppDelegate.m */; };
+		68ADDF8B096B7347002324CE /* LogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6812B39008AD13CE002B533A /* LogView.m */; };
+		68ADDF8D096B7347002324CE /* DriveWireDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4ACFDCFA73011CA2CEA /* DriveWireDocument.m */; };
+		68ADDF8F096B7347002324CE /* PreferenceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682F9F2A077BDB200003FDA4 /* PreferenceController.m */; };
+		68ADDF91096B7347002324CE /* StatsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 682AA47308A7E08500278E01 /* StatsView.m */; };
+		68ADDF93096B7347002324CE /* VirtualDriveJukeBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 685105F80966DA1C00AAEA3F /* VirtualDriveJukeBoxView.m */; };
+		68ADE055096B7686002324CE /* DriveWire Document.icns in Resources */ = {isa = PBXBuildFile; fileRef = 68C494E20965F01800F9E265 /* DriveWire Document.icns */; };
+		68ADE056096B7686002324CE /* DriveWire Disk Image.icns in Resources */ = {isa = PBXBuildFile; fileRef = 68C494E00965F00500F9E265 /* DriveWire Disk Image.icns */; };
+		68ADE057096B7686002324CE /* DriveWire Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 6872687908A97EDD00ADD1F0 /* DriveWire Icon.icns */; };
+		68ADE05D096B7686002324CE /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */; };
+		68ADE05F096B7686002324CE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165FFE840EACC02AAC07 /* InfoPlist.strings */; };
+		68C535D50F68971B00F39926 /* DriveWireDocument.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68C535D30F68971B00F39926 /* DriveWireDocument.xib */; };
+		68C5367B0F6B4E2400F39926 /* DebuggerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C5367A0F6B4E2400F39926 /* DebuggerWindowController.m */; };
+		68C536B90F6B502200F39926 /* DisassemblerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68C536B80F6B502200F39926 /* DisassemblerView.m */; };
+		68CCE686096B802100DD90D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A37F4B0FDCFA73011CA2CEA /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6805D7BD1AD5842B00EA3B5F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6805D7891AD583F900EA3B5F /* TeeBoy.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C1660FE840EACC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2A37F4ACFDCFA73011CA2CEA /* DriveWireDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriveWireDocument.m; sourceTree = "<group>"; };
+		2A37F4AEFDCFA73011CA2CEA /* DriveWireDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriveWireDocument.h; sourceTree = "<group>"; };
+		2A37F4B0FDCFA73011CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2A37F4BAFDCFA73011CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = English; path = English.lproj/Credits.rtf; sourceTree = "<group>"; };
+		32DBCF750370BD2300C91783 /* DriveWire_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriveWire_Prefix.pch; sourceTree = "<group>"; };
+		6805D7841AD583E800EA3B5F /* TeeBoy.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TeeBoy.framework; sourceTree = "<group>"; };
+		6809AD7E0F6C08A6000BB954 /* TBVirtualDriveController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBVirtualDriveController.h; sourceTree = "<group>"; };
+		6809AD7F0F6C08A6000BB954 /* TBVirtualDriveController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBVirtualDriveController.m; sourceTree = "<group>"; };
+		6809AD800F6C08A6000BB954 /* TBVirtualDriveModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBVirtualDriveModel.h; sourceTree = "<group>"; };
+		6809AD810F6C08A6000BB954 /* TBVirtualDriveModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBVirtualDriveModel.m; sourceTree = "<group>"; };
+		6809AD820F6C08A6000BB954 /* TBVirtualDriveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBVirtualDriveView.h; sourceTree = "<group>"; };
+		6809AD830F6C08A6000BB954 /* TBVirtualDriveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBVirtualDriveView.m; sourceTree = "<group>"; };
+		6809AD930F6C0974000BB954 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		6809AE010F6C0C30000BB954 /* TBVirtualDriveView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TBVirtualDriveView.xib; sourceTree = "<group>"; };
+		6809AE060F6C0C4C000BB954 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		6809AEEA0F6C0DB6000BB954 /* CoCo1.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = CoCo1.psd; sourceTree = "<group>"; };
+		6809AEEB0F6C0DB6000BB954 /* CoCo2.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = CoCo2.psd; sourceTree = "<group>"; };
+		6809AEEC0F6C0DB6000BB954 /* CoCo3.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = CoCo3.psd; sourceTree = "<group>"; };
+		6809AEED0F6C0DB6000BB954 /* drive.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = drive.jpg; sourceTree = "<group>"; };
+		6809AEEE0F6C0DB6000BB954 /* driveface.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = driveface.jpg; sourceTree = "<group>"; };
+		6809AEEF0F6C0DB6000BB954 /* DriveWire 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DriveWire 3.png"; sourceTree = "<group>"; };
+		6809AEF00F6C0DB6000BB954 /* DriveWire Disk Image.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DriveWire Disk Image.psd"; sourceTree = "<group>"; };
+		6809AEF10F6C0DB6000BB954 /* DriveWire Document.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DriveWire Document.psd"; sourceTree = "<group>"; };
+		6809AEF20F6C0DB6000BB954 /* DriveWire Icon 512x512.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DriveWire Icon 512x512.psd"; sourceTree = "<group>"; };
+		6809AEF30F6C0DB6000BB954 /* DriveWire Icon.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DriveWire Icon.psd"; sourceTree = "<group>"; };
+		6809AEF40F6C0DB6000BB954 /* DriveWire Logo.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DriveWire Logo.psd"; sourceTree = "<group>"; };
+		6809AEF50F6C0DB6000BB954 /* eject.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = eject.wav; sourceTree = "<group>"; };
+		6809AEF60F6C0DB6000BB954 /* insert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = insert.wav; sourceTree = "<group>"; };
+		6809AEF70F6C0DB6000BB954 /* redled.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = redled.jpg; sourceTree = "<group>"; };
+		6809AF3D0F6C0F81000BB954 /* greenled.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = greenled.jpg; sourceTree = "<group>"; };
+		6812B39008AD13CE002B533A /* LogView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = LogView.m; sourceTree = "<group>"; };
+		6812B39108AD13CE002B533A /* LogView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = LogView.h; sourceTree = "<group>"; };
+		68190D2C0F47011400C4CDDD /* RegisterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterView.m; sourceTree = "<group>"; };
+		68190D2D0F47011400C4CDDD /* RegisterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterView.h; sourceTree = "<group>"; };
+		68190D2F0F47011F00C4CDDD /* MemoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryView.h; sourceTree = "<group>"; };
+		68190D300F47011F00C4CDDD /* MemoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryView.m; sourceTree = "<group>"; };
+		6820991D0F6AC52200341542 /* 6309dasm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 6309dasm.c; sourceTree = "<group>"; };
+		6820991E0F6AC52200341542 /* hd6309.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hd6309.h; sourceTree = "<group>"; };
+		682AA47208A7E08500278E01 /* StatsView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = StatsView.h; sourceTree = "<group>"; };
+		682AA47308A7E08500278E01 /* StatsView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = StatsView.m; sourceTree = "<group>"; };
+		682F9F29077BDB200003FDA4 /* PreferenceController.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = PreferenceController.h; sourceTree = "<group>"; };
+		682F9F2A077BDB200003FDA4 /* PreferenceController.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = PreferenceController.m; sourceTree = "<group>"; };
+		68363D430F63182400CD8A1B /* PrinterWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrinterWindowController.h; sourceTree = "<group>"; };
+		68363D440F63182400CD8A1B /* PrinterWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrinterWindowController.m; sourceTree = "<group>"; };
+		685105F70966DA1C00AAEA3F /* VirtualDriveJukeBoxView.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = VirtualDriveJukeBoxView.h; sourceTree = "<group>"; };
+		685105F80966DA1C00AAEA3F /* VirtualDriveJukeBoxView.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = VirtualDriveJukeBoxView.m; sourceTree = "<group>"; };
+		6872687908A97EDD00ADD1F0 /* DriveWire Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "DriveWire Icon.icns"; sourceTree = "<group>"; };
+		68742C360F41A78E0049FEF6 /* DriveWireServerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DriveWireServerModel.m; sourceTree = "<group>"; };
+		68742E850F41B9EA0049FEF6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		68742E860F41B9EA0049FEF6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		68A1F6A81ADF59DF00A5B030 /* VSerialChannel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSerialChannel.h; sourceTree = "<group>"; };
+		68A1F6A91ADF59DF00A5B030 /* VSerialChannel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSerialChannel.m; sourceTree = "<group>"; };
+		68ABF6CF09806CD600838EB9 /* English */ = {isa = PBXFileReference; lastKnownFileType = folder; name = English; path = "English.lproj/DriveWire MacServer Help"; sourceTree = "<group>"; };
+		68ADDE99096B723F002324CE /* DriveWire MacServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DriveWire MacServer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		68C494E00965F00500F9E265 /* DriveWire Disk Image.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "DriveWire Disk Image.icns"; sourceTree = "<group>"; };
+		68C494E20965F01800F9E265 /* DriveWire Document.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "DriveWire Document.icns"; sourceTree = "<group>"; };
+		68C535C80F6895A500F39926 /* DriveWireServerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DriveWireServerModel.h; sourceTree = "<group>"; };
+		68C535D40F68971B00F39926 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/DriveWireDocument.xib; sourceTree = "<group>"; };
+		68C536790F6B4E2400F39926 /* DebuggerWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebuggerWindowController.h; sourceTree = "<group>"; };
+		68C5367A0F6B4E2400F39926 /* DebuggerWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebuggerWindowController.m; sourceTree = "<group>"; };
+		68C536B70F6B502200F39926 /* DisassemblerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisassemblerView.h; sourceTree = "<group>"; };
+		68C536B80F6B502200F39926 /* DisassemblerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisassemblerView.m; sourceTree = "<group>"; };
+		68DBD1DE0964F1A900B011C5 /* DWAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = DWAppDelegate.m; sourceTree = "<group>"; };
+		68DBD1DF0964F1A900B011C5 /* DWAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DWAppDelegate.h; sourceTree = "<group>"; };
+		8D15AC360486D014006FF6A4 /* DriveWire MacServer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DriveWire MacServer-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		68ADDE97096B723F002324CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68742E870F41B9EA0049FEF6 /* AppKit.framework in Frameworks */,
+				68742E880F41B9EA0049FEF6 /* Cocoa.framework in Frameworks */,
+				6809AD940F6C0974000BB954 /* IOKit.framework in Frameworks */,
+				6805D7851AD583E800EA3B5F /* TeeBoy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19C28FB0FE9D524F11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68ADDE99096B723F002324CE /* DriveWire MacServer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A37F4AAFDCFA73011CA2CEA /* DriveWire */ = {
+			isa = PBXGroup;
+			children = (
+				6882CDB2096B57760065973D /* Supporting Files */,
+				68DB155809683356005D9079 /* Frameworks */,
+				2A37F4ABFDCFA73011CA2CEA /* Classes */,
+				2A37F4AFFDCFA73011CA2CEA /* Other Sources */,
+				6882CEA5096B5BAF0065973D /* Resources */,
+				19C28FB0FE9D524F11CA2CBB /* Products */,
+			);
+			name = DriveWire;
+			sourceTree = "<group>";
+		};
+		2A37F4ABFDCFA73011CA2CEA /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6809AD790F6C086D000BB954 /* VirtualDrive */,
+				68C537050F6B509A00F39926 /* Printer */,
+				68E20D4C098D173B00FF0CF2 /* Debugger */,
+				68CED8D2095B30930055679A /* DriveWire */,
+				68CED8D1095B305F0055679A /* Application Management */,
+				68CED8C4095B302F0055679A /* Document Management */,
+				6872657F08A8163700ADD1F0 /* Statistics */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		2A37F4AFFDCFA73011CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF750370BD2300C91783 /* DriveWire_Prefix.pch */,
+				2A37F4B0FDCFA73011CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		6809AD790F6C086D000BB954 /* VirtualDrive */ = {
+			isa = PBXGroup;
+			children = (
+				6809AE010F6C0C30000BB954 /* TBVirtualDriveView.xib */,
+				6809AD7E0F6C08A6000BB954 /* TBVirtualDriveController.h */,
+				6809AD7F0F6C08A6000BB954 /* TBVirtualDriveController.m */,
+				6809AD800F6C08A6000BB954 /* TBVirtualDriveModel.h */,
+				6809AD810F6C08A6000BB954 /* TBVirtualDriveModel.m */,
+				6809AD820F6C08A6000BB954 /* TBVirtualDriveView.h */,
+				6809AD830F6C08A6000BB954 /* TBVirtualDriveView.m */,
+				685105F70966DA1C00AAEA3F /* VirtualDriveJukeBoxView.h */,
+				685105F80966DA1C00AAEA3F /* VirtualDriveJukeBoxView.m */,
+			);
+			name = VirtualDrive;
+			sourceTree = "<group>";
+		};
+		6872657F08A8163700ADD1F0 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				682AA47208A7E08500278E01 /* StatsView.h */,
+				682AA47308A7E08500278E01 /* StatsView.m */,
+				6812B39108AD13CE002B533A /* LogView.h */,
+				6812B39008AD13CE002B533A /* LogView.m */,
+			);
+			name = Statistics;
+			sourceTree = "<group>";
+		};
+		6882CDB2096B57760065973D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6805D7841AD583E800EA3B5F /* TeeBoy.framework */,
+				6882CDB3096B57760065973D /* website */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6882CDB3096B57760065973D /* website */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = website;
+			sourceTree = "<group>";
+		};
+		6882CEA5096B5BAF0065973D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6809AE050F6C0C4C000BB954 /* MainMenu.xib */,
+				6809AEEA0F6C0DB6000BB954 /* CoCo1.psd */,
+				6809AEEB0F6C0DB6000BB954 /* CoCo2.psd */,
+				6809AEEC0F6C0DB6000BB954 /* CoCo3.psd */,
+				6809AF3D0F6C0F81000BB954 /* greenled.jpg */,
+				6809AEF70F6C0DB6000BB954 /* redled.jpg */,
+				6809AEED0F6C0DB6000BB954 /* drive.jpg */,
+				6809AEEE0F6C0DB6000BB954 /* driveface.jpg */,
+				6809AEEF0F6C0DB6000BB954 /* DriveWire 3.png */,
+				6809AEF50F6C0DB6000BB954 /* eject.wav */,
+				6809AEF60F6C0DB6000BB954 /* insert.wav */,
+				6809AEF00F6C0DB6000BB954 /* DriveWire Disk Image.psd */,
+				6809AEF10F6C0DB6000BB954 /* DriveWire Document.psd */,
+				6809AEF20F6C0DB6000BB954 /* DriveWire Icon 512x512.psd */,
+				6809AEF30F6C0DB6000BB954 /* DriveWire Icon.psd */,
+				6809AEF40F6C0DB6000BB954 /* DriveWire Logo.psd */,
+				68ABF6CE09806CD600838EB9 /* DriveWire MacServer Help */,
+				68C494E20965F01800F9E265 /* DriveWire Document.icns */,
+				68C494E00965F00500F9E265 /* DriveWire Disk Image.icns */,
+				6872687908A97EDD00ADD1F0 /* DriveWire Icon.icns */,
+				2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */,
+				8D15AC360486D014006FF6A4 /* DriveWire MacServer-Info.plist */,
+				089C165FFE840EACC02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		68C537050F6B509A00F39926 /* Printer */ = {
+			isa = PBXGroup;
+			children = (
+				68363D430F63182400CD8A1B /* PrinterWindowController.h */,
+				68363D440F63182400CD8A1B /* PrinterWindowController.m */,
+			);
+			name = Printer;
+			sourceTree = "<group>";
+		};
+		68CED8C4095B302F0055679A /* Document Management */ = {
+			isa = PBXGroup;
+			children = (
+				68C535D30F68971B00F39926 /* DriveWireDocument.xib */,
+				2A37F4AEFDCFA73011CA2CEA /* DriveWireDocument.h */,
+				2A37F4ACFDCFA73011CA2CEA /* DriveWireDocument.m */,
+			);
+			name = "Document Management";
+			sourceTree = "<group>";
+		};
+		68CED8D1095B305F0055679A /* Application Management */ = {
+			isa = PBXGroup;
+			children = (
+				682F9F29077BDB200003FDA4 /* PreferenceController.h */,
+				682F9F2A077BDB200003FDA4 /* PreferenceController.m */,
+				68DBD1DF0964F1A900B011C5 /* DWAppDelegate.h */,
+				68DBD1DE0964F1A900B011C5 /* DWAppDelegate.m */,
+			);
+			name = "Application Management";
+			sourceTree = "<group>";
+		};
+		68CED8D2095B30930055679A /* DriveWire */ = {
+			isa = PBXGroup;
+			children = (
+				68C535C80F6895A500F39926 /* DriveWireServerModel.h */,
+				68742C360F41A78E0049FEF6 /* DriveWireServerModel.m */,
+				68A1F6A81ADF59DF00A5B030 /* VSerialChannel.h */,
+				68A1F6A91ADF59DF00A5B030 /* VSerialChannel.m */,
+			);
+			name = DriveWire;
+			sourceTree = "<group>";
+		};
+		68DB155809683356005D9079 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68742E850F41B9EA0049FEF6 /* AppKit.framework */,
+				68742E860F41B9EA0049FEF6 /* Cocoa.framework */,
+				6809AD930F6C0974000BB954 /* IOKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		68E20D4C098D173B00FF0CF2 /* Debugger */ = {
+			isa = PBXGroup;
+			children = (
+				68C536790F6B4E2400F39926 /* DebuggerWindowController.h */,
+				68C5367A0F6B4E2400F39926 /* DebuggerWindowController.m */,
+				6820991D0F6AC52200341542 /* 6309dasm.c */,
+				6820991E0F6AC52200341542 /* hd6309.h */,
+				68190D2C0F47011400C4CDDD /* RegisterView.m */,
+				68190D2D0F47011400C4CDDD /* RegisterView.h */,
+				68190D2F0F47011F00C4CDDD /* MemoryView.h */,
+				68190D300F47011F00C4CDDD /* MemoryView.m */,
+				68C536B70F6B502200F39926 /* DisassemblerView.h */,
+				68C536B80F6B502200F39926 /* DisassemblerView.m */,
+			);
+			name = Debugger;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		68ADDE98096B723F002324CE /* DriveWire MacServer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68ADDE9C096B723F002324CE /* Build configuration list for PBXNativeTarget "DriveWire MacServer" */;
+			buildPhases = (
+				68ADDE95096B723F002324CE /* Resources */,
+				68ADDE96096B723F002324CE /* Sources */,
+				68ADDE97096B723F002324CE /* Frameworks */,
+				6805D7BD1AD5842B00EA3B5F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DriveWire MacServer";
+			productName = "DriveWire MacServer";
+			productReference = 68ADDE99096B723F002324CE /* DriveWire MacServer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A37F4A9FDCFA73011CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+			};
+			buildConfigurationList = 68A78B4008A1452000865FD4 /* Build configuration list for PBXProject "DriveWire MacServer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* DriveWire */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68ADDE98096B723F002324CE /* DriveWire MacServer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		68ADDE95096B723F002324CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68ADE055096B7686002324CE /* DriveWire Document.icns in Resources */,
+				68ADE056096B7686002324CE /* DriveWire Disk Image.icns in Resources */,
+				68ADE057096B7686002324CE /* DriveWire Icon.icns in Resources */,
+				68ADE05D096B7686002324CE /* Credits.rtf in Resources */,
+				68ADE05F096B7686002324CE /* InfoPlist.strings in Resources */,
+				68ABF6F309806CD600838EB9 /* DriveWire MacServer Help in Resources */,
+				68C535D50F68971B00F39926 /* DriveWireDocument.xib in Resources */,
+				6809AE020F6C0C30000BB954 /* TBVirtualDriveView.xib in Resources */,
+				6809AE070F6C0C4C000BB954 /* MainMenu.xib in Resources */,
+				6809AEF80F6C0DB6000BB954 /* CoCo1.psd in Resources */,
+				6809AEF90F6C0DB6000BB954 /* CoCo2.psd in Resources */,
+				6809AEFA0F6C0DB6000BB954 /* CoCo3.psd in Resources */,
+				6809AEFB0F6C0DB6000BB954 /* drive.jpg in Resources */,
+				6809AEFC0F6C0DB6000BB954 /* driveface.jpg in Resources */,
+				6809AEFD0F6C0DB6000BB954 /* DriveWire 3.png in Resources */,
+				6809AF030F6C0DB6000BB954 /* eject.wav in Resources */,
+				6809AF040F6C0DB6000BB954 /* insert.wav in Resources */,
+				6809AF050F6C0DB6000BB954 /* redled.jpg in Resources */,
+				6809AF3E0F6C0F81000BB954 /* greenled.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68ADDE96096B723F002324CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68CCE686096B802100DD90D9 /* main.m in Sources */,
+				68ADDF87096B7347002324CE /* DWAppDelegate.m in Sources */,
+				68ADDF8B096B7347002324CE /* LogView.m in Sources */,
+				68ADDF8D096B7347002324CE /* DriveWireDocument.m in Sources */,
+				68ADDF8F096B7347002324CE /* PreferenceController.m in Sources */,
+				68ADDF91096B7347002324CE /* StatsView.m in Sources */,
+				68ADDF93096B7347002324CE /* VirtualDriveJukeBoxView.m in Sources */,
+				68742C370F41A78E0049FEF6 /* DriveWireServerModel.m in Sources */,
+				68190D2E0F47011400C4CDDD /* RegisterView.m in Sources */,
+				68190D310F47011F00C4CDDD /* MemoryView.m in Sources */,
+				68A1F6AA1ADF59DF00A5B030 /* VSerialChannel.m in Sources */,
+				68363D450F63182400CD8A1B /* PrinterWindowController.m in Sources */,
+				68C5367B0F6B4E2400F39926 /* DebuggerWindowController.m in Sources */,
+				68C536B90F6B502200F39926 /* DisassemblerView.m in Sources */,
+				6809AD840F6C08A6000BB954 /* TBVirtualDriveController.m in Sources */,
+				6809AD850F6C08A6000BB954 /* TBVirtualDriveModel.m in Sources */,
+				6809AD860F6C08A6000BB954 /* TBVirtualDriveView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165FFE840EACC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1660FE840EACC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2A37F4B9FDCFA73011CA2CEA /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A37F4BAFDCFA73011CA2CEA /* English */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		6809AE050F6C0C4C000BB954 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6809AE060F6C0C4C000BB954 /* English */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		68ABF6CE09806CD600838EB9 /* DriveWire MacServer Help */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68ABF6CF09806CD600838EB9 /* English */,
+			);
+			name = "DriveWire MacServer Help";
+			sourceTree = "<group>";
+		};
+		68C535D30F68971B00F39926 /* DriveWireDocument.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68C535D40F68971B00F39926 /* English */,
+			);
+			name = DriveWireDocument.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		68A78B4108A1452000865FD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		68A78B4208A1452000865FD4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = DWX;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		68ADDE9D096B723F002324CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DriveWire_Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "DriveWire MacServer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = YES;
+				PRODUCT_NAME = "DriveWire MacServer";
+				SDKROOT = macosx;
+				SHARED_PRECOMPS_DIR = "";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wmost",
+				);
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		68ADDE9E096B723F002324CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DriveWire_Prefix.pch";
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_MISSING_PARENTHESES = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_TYPECHECK_CALLS_TO_PRINTF = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_VALUE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "DriveWire MacServer-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = YES;
+				PRODUCT_NAME = "DriveWire MacServer";
+				SDKROOT = macosx;
+				SHARED_PRECOMPS_DIR = "";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wmost",
+				);
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		68A78B4008A1452000865FD4 /* Build configuration list for PBXProject "DriveWire MacServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68A78B4108A1452000865FD4 /* Debug */,
+				68A78B4208A1452000865FD4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		68ADDE9C096B723F002324CE /* Build configuration list for PBXNativeTarget "DriveWire MacServer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68ADDE9D096B723F002324CE /* Debug */,
+				68ADDE9E096B723F002324CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A37F4A9FDCFA73011CA2CEA /* Project object */;
+}

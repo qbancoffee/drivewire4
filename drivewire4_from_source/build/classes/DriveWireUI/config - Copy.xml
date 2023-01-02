@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drivewire-config xmlns="http://groupunix.org/DriveWireConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://groupunix.org/DriveWireConfig Config.xsd ">
+<UIEnabled category="advanced" type="boolean">true</UIEnabled>
+<UIPort category="advanced" max="65535" min="1" type="int">6800
+	</UIPort>
+<UseRXTX category="advanced, device" type="boolean">true</UseRXTX>
+<LoadRXTX category="advanced, device" type="boolean">true</LoadRXTX>
+<LoadRXTXPath category="advanced, device" type="directory"/>
+<ConfigAutosave category="advanced" type="boolean">true
+	</ConfigAutosave>
+<LogLevel category="server, logging" list="ALL,DEBUG,INFO,WARN,ERROR,FATAL" type="list">DEBUG</LogLevel>
+<LogToConsole category="logging" type="boolean">false</LogToConsole>
+<LogFormat category="advanced, logging" type="string"/>
+<LogToFile category="logging" type="boolean">false</LogToFile>
+<LogFile category="logging" type="file"/>
+<LogUIConnections category="logging,advanced" type="boolean">true
+	</LogUIConnections>
+<DiskLazyWriteInterval category="advanced" max="60000" min="1000" type="int">5000</DiskLazyWriteInterval>
+<LocalDiskDir category="advanced" type="directory"/>
+<StatusInterval category="advanced, server" max="60000" min="1000" type="int">1000</StatusInterval>
+<instance category="instance" desc="Autocreated 2012-01-06 16:39:17.575" name="CoCo 3 on COM10">
+
+		<CurrentPrinter category="printing" section="instance.Printer" type="section">Text</CurrentPrinter>
+
+		<Printer category="printing" desc="Outputs images of emulated FX80 output" name="FX80">
+			<Driver list="TEXT,FX80" type="list">FX80</Driver>
+			<OutputDir type="directory">cocoprints</OutputDir>
+			<CharacterFile type="file">default.chars</CharacterFile>
+			<Columns max="132" min="1" type="int">80</Columns>
+			<Lines max="132" min="1" type="int">66</Lines>
+			<DPI max="1200" min="50" type="int">300</DPI>
+			<ImageFormat list="JPG,GIF,PNG,BMP" type="list">PNG</ImageFormat>
+			<FlushCommand type="string"/>
+			<OutputFile type="file"/>
+		</Printer>
+
+		<Printer category="printing" desc="Outputs plain text files" name="Text">
+			<Driver category="printing" list="TEXT,FX80" type="list">TEXT</Driver>
+			<OutputDir category="printing" type="directory">cocoprints</OutputDir>
+<test>test</test>
+		</Printer>
+
+		<UseMIDI category="midi" type="boolean">true</UseMIDI>
+		<MIDISynthDefaultSoundbank category="midi" type="file">soundbank-deluxe.gm</MIDISynthDefaultSoundbank>
+		<MIDISynthDefaultProfile category="midi" section="midisynthprofile" type="section">gm</MIDISynthDefaultProfile>
+
+		<HelpFile category="advanced">help.xml</HelpFile>
+
+		<LogOpCodePolls category="logging,advanced" type="boolean">false
+		</LogOpCodePolls>
+		<LogOpCode category="logging,advanced" type="boolean">true</LogOpCode>
+		<LogDeviceBytes category="logging,advanced" type="boolean">false
+		</LogDeviceBytes>
+		<LogMIDIBytes category="logging,advanced" type="boolean">false
+		</LogMIDIBytes>
+		<LogVPortBytes category="logging,advanced" type="boolean">false
+		</LogVPortBytes>
+
+
+		<DeviceType category="device" list="serial,tcp-server,tcp-client,dummy" type="list">serial</DeviceType>
+		<TCPServerPort category="device" max="65535" min="1" type="int">65504</TCPServerPort>
+		<TCPClientPort category="device" max="65535" min="1" type="int"/>
+		<TCPClientHost category="device" type="string"/>
+		<SerialDevice category="device" type="serialdev">COM10</SerialDevice>
+		<DetectDATurbo category="advanced, device" type="boolean">false
+		</DetectDATurbo>
+		<SerialRate category="device" list="38400,57600,115200,230400,460800,921600" type="list">115200</SerialRate>
+		<SerialParity category="device, advanced" list="none,even,odd,mark,space" type="list"/>
+		<SerialStopbits category="device, advanced" list="1,1.5,2" type="list"/>
+		<DW3Only category="device,advanced" type="boolean">false</DW3Only>
+		<ProtocolFlipOutputBits category="advanced, device" type="boolean">false</ProtocolFlipOutputBits>
+		<ProtocolResponsePrefix category="advanced, device" type="boolean">false</ProtocolResponsePrefix>
+		<ProtocolDisableReadChecksum category="advanced, device" type="boolean">false</ProtocolDisableReadChecksum>
+		<ProtocolLieAboutCRC category="advanced, device" type="boolean">false</ProtocolLieAboutCRC>
+		<DeviceFailRetryTime category="advanced, device" max="60000" min="1000" type="int"/>
+		<DiskSectorSize category="advanced, device" max="16384" min="1" type="int"/>
+		<ReadDelay category="advanced, device" max="16384" min="1" type="int"/>
+		<OpTimeSendsDOW category="advanced, device" type="boolean">false
+		</OpTimeSendsDOW>
+		<DWCommandOutputWidth category="advanced, device" max="240" min="1" type="int"/>
+
+		<ListenAddress category="networking,advanced" type="networkinterface"/>
+		<TermPort category="networking" max="65535" min="1" type="int"/>
+		<TelnetBannerFile category="networking" type="file"/>
+		<TelnetNoPortsBannerFile category="networking,advanced" type="file"/>
+
+
+		<HDBDOSMode category="device" type="boolean">false</HDBDOSMode>
+
+
+
+
+
+
+
+
+
+<Drive0Path>file:///C:/Users/Aaron/Desktop/disk3.dsk</Drive0Path>
+<Drive1Path>file:///E:/cocodisks/CCMAX512.DSK</Drive1Path>
+<Drive2Path>file:///E:/cocodisks/80t_18spt_1024bps_2s.dsk</Drive2Path>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</instance>
+<midisynthprofile desc="General MIDI / Roland SoundCanvas" name="gm"/>
+<midisynthprofile desc="Yamaha PSS-480/680" name="pss480">
+		<mapping dev="0" gm="38"/>
+		<mapping dev="1" gm="18"/>
+		<mapping dev="2" gm="19"/>
+		<mapping dev="3" gm="0"/>
+		<mapping dev="4" gm="6"/>
+		<mapping dev="5" gm="4"/>
+		<mapping dev="6" gm="8"/>
+		<mapping dev="7" gm="11"/>
+		<mapping dev="8" gm="12"/>
+		<mapping dev="9" gm="114"/>
+		<mapping dev="10" gm="40"/>
+		<mapping dev="11" gm="42"/>
+		<mapping dev="12" gm="26"/>
+		<mapping dev="13" gm="29"/>
+		<mapping dev="14" gm="32"/>
+		<mapping dev="15" gm="56"/>
+		<mapping dev="16" gm="57"/>
+		<mapping dev="17" gm="60"/>
+		<mapping dev="18" gm="64"/>
+		<mapping dev="19" gm="71"/>
+		<mapping dev="20" gm="73"/>
+		<mapping dev="21" gm="68"/>
+		<mapping dev="22" gm="22"/>
+		<mapping dev="23" gm="78"/>
+		<mapping dev="24" gm="10"/>
+		<mapping dev="25" gm="3"/>
+		<mapping dev="26" gm="2"/>
+		<mapping dev="27" gm="17"/>
+		<mapping dev="28" gm="16"/>
+		<mapping dev="29" gm="19"/>
+		<mapping dev="30" gm="7"/>
+		<mapping dev="31" gm="21"/>
+		<mapping dev="32" gm="9"/>
+		<mapping dev="33" gm="25"/>
+		<mapping dev="34" gm="105"/>
+		<mapping dev="35" gm="43"/>
+		<mapping dev="36" gm="24"/>
+		<mapping dev="37" gm="46"/>
+		<mapping dev="38" gm="34"/>
+		<mapping dev="39" gm="36"/>
+		<mapping dev="40" gm="45"/>
+		<mapping dev="41" gm="48"/>
+		<mapping dev="42" gm="69"/>
+		<mapping dev="43" gm="109"/>
+		<mapping dev="44" gm="59"/>
+		<mapping dev="45" gm="66"/>
+		<mapping dev="46" gm="76"/>
+		<mapping dev="47" gm="75"/>
+		<mapping dev="48" gm="15"/>
+		<mapping dev="49" gm="20"/>
+		<mapping dev="50" gm="80"/>
+		<mapping dev="51" gm="16"/>
+		<mapping dev="52" gm="1"/>
+		<mapping dev="53" gm="6"/>
+		<mapping dev="54" gm="5"/>
+		<mapping dev="55" gm="9"/>
+		<mapping dev="56" gm="108"/>
+		<mapping dev="57" gm="18"/>
+		<mapping dev="58" gm="38"/>
+		<mapping dev="59" gm="12"/>
+		<mapping dev="60" gm="114"/>
+		<mapping dev="61" gm="15"/>
+		<mapping dev="62" gm="14"/>
+		<mapping dev="63" gm="9"/>
+		<mapping dev="64" gm="79"/>
+		<mapping dev="65" gm="118"/>
+		<mapping dev="66" gm="47"/>
+		<mapping dev="67" gm="41"/>
+		<mapping dev="68" gm="28"/>
+		<mapping dev="69" gm="26"/>
+		<mapping dev="70" gm="30"/>
+		<mapping dev="71" gm="25"/>
+		<mapping dev="72" gm="24"/>
+		<mapping dev="73" gm="26"/>
+		<mapping dev="74" gm="24"/>
+		<mapping dev="75" gm="104"/>
+		<mapping dev="76" gm="107"/>
+		<mapping dev="77" gm="106"/>
+		<mapping dev="78" gm="111"/>
+		<mapping dev="79" gm="32"/>
+		<mapping dev="80" gm="33"/>
+		<mapping dev="81" gm="32"/>
+		<mapping dev="82" gm="93"/>
+		<mapping dev="83" gm="89"/>
+		<mapping dev="84" gm="58"/>
+		<mapping dev="85" gm="65"/>
+		<mapping dev="86" gm="70"/>
+		<mapping dev="87" gm="70"/>
+		<mapping dev="88" gm="74"/>
+		<mapping dev="89" gm="79"/>
+		<mapping dev="90" gm="72"/>
+		<mapping dev="91" gm="78"/>
+		<mapping dev="92" gm="61"/>
+		<mapping dev="93" gm="68"/>
+		<mapping dev="94" gm="53"/>
+		<mapping dev="95" gm="54"/>
+		<mapping dev="96" gm="52"/>
+		<mapping dev="97" gm="109"/>
+		<mapping dev="98" gm="81"/>
+		<mapping dev="99" gm="88"/>
+	</midisynthprofile>
+<midisynthprofile desc="Casio MT-540" name="mt540">
+		<mapping dev="0" gm="0"/>
+		<mapping dev="1" gm="6"/>
+		<mapping dev="2" gm="11"/>
+		<mapping dev="3" gm="18"/>
+		<mapping dev="4" gm="19"/>
+		<mapping dev="5" gm="62"/>
+		<mapping dev="6" gm="48"/>
+		<mapping dev="7" gm="73"/>
+		<mapping dev="8" gm="54"/>
+		<mapping dev="9" gm="26"/>
+		<mapping dev="10" gm="14"/>
+		<mapping dev="11" gm="7"/>
+		<mapping dev="12" gm="50"/>
+		<mapping dev="13" gm="117"/>
+		<mapping dev="14" gm="4"/>
+		<mapping dev="15" gm="20"/>
+		<mapping dev="16" gm="21"/>
+		<mapping dev="17" gm="36"/>
+		<mapping dev="18" gm="119"/>
+		<mapping dev="19" gm="123"/>
+		<mapping dev="20" gm="3"/>
+		<mapping dev="21" gm="12"/>
+		<mapping dev="22" gm="68"/>
+		<mapping dev="23" gm="92"/>
+		<mapping dev="24" gm="46"/>
+		<mapping dev="25" gm="89"/>
+		<mapping dev="26" gm="94"/>
+		<mapping dev="27" gm="93"/>
+		<mapping dev="28" gm="88"/>
+		<mapping dev="29" gm="95"/>
+	</midisynthprofile>
+<midisynthprofile desc="Casio CT-460" name="ct460">
+		<mapping dev="0" gm="0"/>
+		<mapping dev="1" gm="6"/>
+		<mapping dev="2" gm="11"/>
+		<mapping dev="3" gm="18"/>
+		<mapping dev="4" gm="19"/>
+		<mapping dev="5" gm="62"/>
+		<mapping dev="6" gm="73"/>
+		<mapping dev="7" gm="54"/>
+		<mapping dev="8" gm="26"/>
+		<mapping dev="9" gm="14"/>
+		<mapping dev="10" gm="7"/>
+		<mapping dev="11" gm="93"/>
+		<mapping dev="12" gm="50"/>
+		<mapping dev="13" gm="117"/>
+		<mapping dev="14" gm="3"/>
+		<mapping dev="15" gm="4"/>
+		<mapping dev="16" gm="12"/>
+		<mapping dev="17" gm="16"/>
+		<mapping dev="18" gm="21"/>
+		<mapping dev="19" gm="48"/>
+		<mapping dev="20" gm="68"/>
+		<mapping dev="21" gm="84"/>
+		<mapping dev="22" gm="46"/>
+		<mapping dev="23" gm="89"/>
+		<mapping dev="24" gm="92"/>
+		<mapping dev="25" gm="88"/>
+		<mapping dev="26" gm="95"/>
+		<mapping dev="27" gm="36"/>
+		<mapping dev="28" gm="119"/>
+		<mapping dev="29" gm="123"/>
+	</midisynthprofile>
+<DECBExtensionMapping ascii="false" extension="BAS" type="0"/>
+<DECBExtensionMapping ascii="false" extension="DAT" type="1"/>
+<DECBExtensionMapping ascii="false" extension="BIN" type="2"/>
+<DECBExtensionMapping ascii="true" extension="TXT" type="3"/>
+<DECBExtensionMapping ascii="true" extension="ASC" type="3"/>
+</drivewire-config>
