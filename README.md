@@ -60,11 +60,11 @@ See screenshots of the UI below.
 ## Screenshots
 <br>
 
-### Main UI on Windows 10 64 bit decompled version.
+### Main UI on Windows 10 64 bit de-compiled version.
 <img src="https://github.com/qbancoffee/drivewire4/blob/main/images/dw4_decompiled_win64.png" width="300">
 <br>
 
-### Main UI on Linux 64 bit decompled version.
+### Main UI on Linux 64 bit de-compiled version.
 <img src="https://github.com/qbancoffee/drivewire4/blob/main/images/dw4_decompiled_linux64.png" width="300">
 <br>
 
