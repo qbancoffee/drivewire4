@@ -1,7 +1,8 @@
 # DriveWire 4
 DriveWire 4 Java version
 
-[Download the latest Windows 64 bit release](https://github.com/qbancoffee/drivewire4/releases/latest)
+[Download a release](https://github.com/qbancoffee/drivewire4/releases)
+
 
 
 This repo holds two netbeans projects for two versions of drivewire 4 that have been slightly modified so that they can be compiled and run with newer versions of java.
