@@ -19,7 +19,7 @@ public class DWSerialReader implements SerialPortEventListener
 		this.in = in;
 	}
 
-	
+	@Override
 	public void serialEvent(SerialPortEvent arg0)
 	{
 		 int data;

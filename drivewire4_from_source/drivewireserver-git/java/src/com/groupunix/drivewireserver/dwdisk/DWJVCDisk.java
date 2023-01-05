@@ -124,9 +124,10 @@ public class DWJVCDisk extends DWDisk
 		}
 	}
 
+	
 
 	
-	public void writeSector(byte[] data, boolean update) throws DWDriveWriteProtectedException,	IOException
+	public void writeSector(byte[] data) throws DWDriveWriteProtectedException,	IOException
 	{
 		if (this.getWriteProtect())
 		{
@@ -137,8 +138,7 @@ public class DWJVCDisk extends DWDisk
 			
 			this.sectors.get(this.getLSN()).setData(data);
 			
-			if (update)
-				this.incParam("_writes");
+			this.incParam("_writes");
 			
 		}
 	}

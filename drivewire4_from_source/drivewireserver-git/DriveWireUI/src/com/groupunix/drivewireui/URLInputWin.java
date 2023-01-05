@@ -24,7 +24,7 @@ public class URLInputWin extends Dialog {
 	/**
 	 * Create the dialog.
 	 * @param parent
-	 * @param diskno
+	 * @param style
 	 */
 	public URLInputWin(Shell parent, int diskno) 
 	{

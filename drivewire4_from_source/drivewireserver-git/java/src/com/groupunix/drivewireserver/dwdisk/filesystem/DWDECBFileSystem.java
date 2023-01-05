@@ -8,7 +8,6 @@ import com.groupunix.drivewireserver.DECBDefs;
 import com.groupunix.drivewireserver.DWDefs;
 import com.groupunix.drivewireserver.DriveWireServer;
 import com.groupunix.drivewireserver.dwdisk.DWDisk;
-import com.groupunix.drivewireserver.dwdisk.DWDiskDrives;
 import com.groupunix.drivewireserver.dwdisk.DWDiskSector;
 import com.groupunix.drivewireserver.dwexceptions.DWDiskInvalidSectorNumber;
 import com.groupunix.drivewireserver.dwexceptions.DWDriveWriteProtectedException;
@@ -19,7 +18,6 @@ import com.groupunix.drivewireserver.dwexceptions.DWFileSystemInvalidFATExceptio
 import com.groupunix.drivewireserver.dwexceptions.DWFileSystemInvalidFilenameException;
 import com.groupunix.drivewireserver.dwexceptions.DWInvalidSectorException;
 import com.groupunix.drivewireserver.dwexceptions.DWSeekPastEndOfDeviceException;
-import com.groupunix.drivewireserver.dwprotocolhandler.DWUtils;
 
 public class DWDECBFileSystem extends DWFileSystem
 {
@@ -294,16 +292,13 @@ public class DWDECBFileSystem extends DWFileSystem
 			for (int i = 0;i<256;i++)
 				buf[i] = (byte) 0xFF;
 			
+			this.disk.getSectors().removeAllElements();
+			
 			for (int i =0; i< 630;i++)
 			{
-				this.disk.seekSector(i);
-				this.disk.writeSector(buf, false);
+				this.disk.getSectors().add(new DWDiskSector(this.disk, i, 256, this.disk.getDirect()));
+				this.disk.getSectors().get(i).setData(buf);
 			}
-			
-			this.disk.seekSector(0);
-			
-			this.disk.setParam("_filesystem", DWUtils.prettyFileSystem(DWDiskDrives.getDiskFSType(this.disk.sectors)));
-			
 		}
 		
 	}

@@ -14,7 +14,6 @@ public class UICmdInstanceDisk extends DWCommand {
 	{
 
 		commands.addcommand(new UICmdInstanceDiskShow(dwuiClientThread));
-		commands.addcommand(new UICmdInstanceDiskDos(dwuiClientThread));
 		// commands.addcommand(new UICmdInstanceDiskSerial(dwuiClientThread));
 		// commands.addcommand(new UICmdInstanceDiskStatus(dwuiClientThread));
 	}
@@ -23,7 +22,6 @@ public class UICmdInstanceDisk extends DWCommand {
 	public UICmdInstanceDisk(DWProtocolHandler dwProto) 
 	{
 		commands.addcommand(new UICmdInstanceDiskShow(dwProto));
-		commands.addcommand(new UICmdInstanceDiskDos(dwProto));
 		// commands.addcommand(new UICmdInstanceDiskSerial(dwProto));
 		// commands.addcommand(new UICmdInstanceDiskStatus(dwProto));
 	

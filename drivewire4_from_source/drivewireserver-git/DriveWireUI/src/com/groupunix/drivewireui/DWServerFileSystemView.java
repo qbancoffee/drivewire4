@@ -6,8 +6,6 @@ import java.io.IOException;
 import javax.swing.Icon;
 import javax.swing.filechooser.FileSystemView;
 
-import com.groupunix.drivewireui.exceptions.DWUIOperationFailedException;
-
 public class DWServerFileSystemView extends FileSystemView {
 
 	private String lastdir = ".";

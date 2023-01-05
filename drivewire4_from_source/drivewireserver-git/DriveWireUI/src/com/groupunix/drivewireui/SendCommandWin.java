@@ -169,10 +169,12 @@ public class SendCommandWin extends Dialog
 			this.cmds = cmds;
 		}
 
+		@Override
 		public void run()
 		{
 			Connection connection = new Connection(MainWin.getHost(), MainWin.getPort(), MainWin.getInstance());
 			
+			int tid = -1;
 			
 			try
 			{
@@ -185,8 +187,11 @@ public class SendCommandWin extends Dialog
 					setStatus("Send: " + command, 50 / this.cmds.size());
 					
 					
-						
-					connection.sendCommand(command,MainWin.getInstance());
+					tid = MainWin.taskman.addTask(command);
+				
+					MainWin.taskman.updateTask(tid, UITaskMaster.TASK_STATUS_ACTIVE,"Connecting to server...");
+					
+					connection.sendCommand(tid, command,MainWin.getInstance(),true);
 				  	
 					setStatus("Closing..", 40 / this.cmds.size());
 					
@@ -203,6 +208,7 @@ public class SendCommandWin extends Dialog
 			{
 				
 				setErrorStatus(e.getMessage());
+				MainWin.taskman.updateTask(tid, UITaskMaster.TASK_STATUS_FAILED,e.getMessage());
 			}
 		}
 		

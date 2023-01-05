@@ -30,7 +30,7 @@ public class UICmdServerShowVersion extends DWCommand {
 	{
 		String txt = new String();
 		
-		txt = "DriveWire version " + DriveWireServer.DWVersion + " (" + DriveWireServer.DWVersion.getDate() + ")";
+		txt = "DriveWire version " + DriveWireServer.DWServerVersion + " (" + DriveWireServer.DWServerVersionDate + ")";
 		
 		return(new DWCommandResponse(txt));
 	}

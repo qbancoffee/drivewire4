@@ -31,9 +31,4 @@ public abstract class DWFileSystemDirEntry
 	
 	public abstract boolean isAscii();
 	
-	@Override
-	public String toString()
-	{
-		return getFileName() + "|" + getFileExt() + "|" + getFilePath() + "|" + getFileType() + "|" + isAscii() + "|" + isDirectory();
-	}
 }

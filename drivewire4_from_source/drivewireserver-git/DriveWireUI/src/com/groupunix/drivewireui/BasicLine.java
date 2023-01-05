@@ -1,4 +1,5 @@
 package com.groupunix.drivewireui;
+
 public class BasicLine
 {
 	private String line;
@@ -37,4 +38,3 @@ public class BasicLine
 		return lineno;
 	}
 }
-

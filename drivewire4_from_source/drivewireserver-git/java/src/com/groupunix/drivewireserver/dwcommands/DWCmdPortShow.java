@@ -57,8 +57,8 @@ public class DWCmdPortShow extends DWCommand {
 				{
 					text += String.format(" %-8s", "open(" + dwProto.getVPorts().getOpen(i) + ")");
 				
-					text += String.format(" %-11s", "PD.INT=" + dwProto.getVPorts().getPD_INT(i));
-					text += String.format(" %-11s", "PD.QUT=" + dwProto.getVPorts().getPD_QUT(i));
+					//text += String.format(" %-11s", "PD.INT=" + dwProto.getVPorts().getPD_INT(i));
+					//text += String.format(" %-11s", "PD.QUT=" + dwProto.getVPorts().getPD_QUT(i));
 					text += String.format(" %-9s", "buf: " + dwProto.getVPorts().bytesWaiting(i));
 				
 				}

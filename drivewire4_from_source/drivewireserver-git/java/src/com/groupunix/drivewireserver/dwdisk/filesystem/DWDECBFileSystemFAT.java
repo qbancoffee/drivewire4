@@ -17,7 +17,7 @@ public class DWDECBFileSystemFAT
 	FILE ALLOCATION TABLE
 
 	The  file allocation table (FAT)  is used to  keep track  of  whether or not a granule has been allocated  
-	to  a  file or if it is free. The  FAT is composed of  six control bytes followed by  68   data bytes  â€”  
+	to  a  file or if it is free. The  FAT is composed of  six control bytes followed by  68   data bytes  —  
 	one   byte for  each granule.  The  FAT is stored on  sector two   of the directory track (17). 
 	A   RAM  image of  the FAT is  kept in the disk RAM   for each of the four possible  drives.  
 	 Keeping  an  image of  the FAT in RAM   helps  speed up  the overall  operation of the DOS by  eliminating 
@@ -36,7 +36,7 @@ public class DWDECBFileSystemFAT
 
 	The  second FAT control byte is  used to  govern the need to  write  data from   the FAT RAM   image to  the disk.  
 	If  the value of this  byte is  zero it means   that  the FAT RAM   image  is an  exact  copy of  what   is  
-	currently stored on  the disk. If  the value is nonâ€”zero,  it indicates  that the data in the FAT RAM   image 
+	currently stored on  the disk. If  the value is non—zero,  it indicates  that the data in the FAT RAM   image 
 	has  been changed since the last  time that the FAT was   written to disk.  The  number   stored in this  byte is
 	an  indicator of how  many  granules  have been removed from   the FAT since the last  FAT to disk write. 
 	Some  BASIC  commands, such  as  KILL,   cause an  immediate FAT RAM   image to disk write when  granules are either 
@@ -53,7 +53,7 @@ public class DWDECBFileSystemFAT
 
 	A  granule data byte,  which has been allocated,  will  contain a  value,  which is the number   of the next granule 
 	in the granule chain for that file. If the two   most significant bits (6,7) of a  granule data byte  are set, then 
-	that  granule is the last  granule in a  fileâ€™s granule chain.  The  low   order four bits  will  contain the
+	that  granule is the last  granule in a  file’s granule chain.  The  low   order four bits  will  contain the
 	number   of sectors in the last  granule,  which the  file uses. Even   though a  file may not use all  of the sectors 
 	in the last  granule in the chain, no  other file may  use the sectors.  Disk space is  not allocated on  a  sector basis, 
 	it  is allocated on  a granule basis  and   the granule may  not be   broken  down.  The  smallest one-byte  file

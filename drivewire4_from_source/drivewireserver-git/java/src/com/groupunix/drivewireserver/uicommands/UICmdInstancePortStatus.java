@@ -1,7 +1,5 @@
 package com.groupunix.drivewireserver.uicommands;
 
-import java.util.Iterator;
-
 import com.groupunix.drivewireserver.DWDefs;
 import com.groupunix.drivewireserver.DWUIClientThread;
 import com.groupunix.drivewireserver.DriveWireServer;
@@ -69,15 +67,10 @@ public class UICmdInstancePortStatus extends DWCommand {
 			
 			for (int p = 0;p < gproto.getVPorts().getMaxPorts();p++)
 			{
-				if (!gproto.getVPorts().isNull(p) && (p != gproto.getVPorts().getMaxNPorts()-1) )
+				if (!gproto.getVPorts().isNull(p))
 				{
 					try
 					{
-						if (p < gproto.getVPorts().getMaxNPorts())
-							res += "N|";
-						else
-							res += "Z|"; 
-							
 						res += gproto.getVPorts().prettyPort(p) + "|";
 						
 						if (gproto.getVPorts().isOpen(p))
@@ -110,16 +103,15 @@ public class UICmdInstancePortStatus extends DWCommand {
 							else
 								res += "||";
 							
-							res += gproto.getVPorts().getPD_INT(p) + "|";
-							res += gproto.getVPorts().getPD_QUT(p);
 							
-							// res += new String(gproto.getVPorts().getDD(p));
+							
+							res += new String(gproto.getVPorts().getDD(p)) + "|";
 							
 							
 						}
 						else
 						{
-							res += "closed";
+							res += "closed|";
 						}
 					}
 					catch (DWPortNotValidException e)
@@ -132,23 +124,6 @@ public class UICmdInstancePortStatus extends DWCommand {
 				}
 			}
 		}
-		
-		/*
-		Iterator<DWUIClientThread> itr = DriveWireServer.getDWUIThread().getUIClientThreads().iterator(); 
-		
-		while(itr.hasNext()) 
-		{	
-			DWUIClientThread client = itr.next();
-			
-			// filter for instance
-			if ((client.getInstance() == -1) || (client.getInstance() == this.dwuithread.getInstance()))
-			{
-				res += "U|" + client.getInstance() + "|" + client.getState() + "|" + client.getCurCmd() + "|" + client.getSocket().getInetAddress().getHostAddress() + "|" + client.getSocket().getPort();
-				res += "\r\n";
-				
-			}
-		}
-		*/
 		
 		return(new DWCommandResponse(res));
 	}

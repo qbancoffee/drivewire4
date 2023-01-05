@@ -1,9 +1,11 @@
 package com.groupunix.drivewireui;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -28,6 +30,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 
 import org.apache.commons.configuration.ConfigurationException;
@@ -41,7 +45,6 @@ import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.widgets.Display;
 
 import com.groupunix.drivewireserver.DWDefs;
-import com.groupunix.drivewireui.exceptions.DWUIOperationFailedException;
 
 public class UIUtils {
 
@@ -119,6 +122,9 @@ public class UIUtils {
 	{
 		if (values.size() > 0)
 		{
+			int tid = MainWin.taskman.addTask("Server settings dump");
+			
+			MainWin.taskman.updateTask(tid, UITaskMaster.TASK_STATUS_ACTIVE, "Connecting to server...");
 			
 			Connection conn = new Connection(MainWin.getHost(), MainWin.getPort(), MainWin.getInstance());
 		
@@ -130,7 +136,7 @@ public class UIUtils {
 			while(itr.hasNext())
 			{
 				String val = itr.next();
-				conn.sendCommand("ui server config set " + val + " " + values.get(val),0);
+				conn.sendCommand(tid, "ui server config set " + val + " " + values.get(val),0);
 			}
 		
 			conn.close();
@@ -235,7 +241,10 @@ public class UIUtils {
 	{
 		if (values.size() > 0)
 		{
-				
+			int tid = MainWin.taskman.addTask("Instance settings dump");
+			
+			MainWin.taskman.updateTask(tid, UITaskMaster.TASK_STATUS_ACTIVE, "Connecting to server...");
+			
 			Connection conn = new Connection(MainWin.getHost(), MainWin.getPort(), MainWin.getInstance());
 		
 			conn.Connect();
@@ -246,7 +255,7 @@ public class UIUtils {
 			while(itr.hasNext())
 			{
 				String val = itr.next();
-				conn.sendCommand("dw config set " + val + " " + values.get(val),instance);
+				conn.sendCommand(tid,"dw config set " + val + " " + values.get(val),instance);
 			}
 		
 			conn.close();
@@ -256,7 +265,48 @@ public class UIUtils {
 
 	
 	
-	
+	public static DiskDef getDiskDef(int instance,int diskno) throws IOException, DWUIOperationFailedException
+	{
+		
+		DiskDef disk = new DiskDef(diskno);
+		
+		
+		try 
+		{
+			List<String> res = UIUtils.loadList(instance, "ui instance disk show " + diskno);
+			
+			
+			for (int i = 0;i<res.size();i++)
+			{
+				Pattern p_item = Pattern.compile("^(.+)\\|(.+)");
+				Matcher m = p_item.matcher(res.get(i));
+				
+				if (m.find())
+				{
+					if (m.group(1).startsWith("*"))
+					{
+						if (m.group(1).equals("*loaded"))
+							disk.setLoaded(Boolean.parseBoolean(m.group(2)));
+					}
+					else
+					{
+						disk.setParam(m.group(1), m.group(2));
+					}
+					
+				
+				}
+				
+			}
+		}
+		catch (NumberFormatException e)
+		{
+			throw new DWUIOperationFailedException("Error parsing disk set results: " + e.getMessage());
+		} 
+		
+		
+		return(disk);
+		
+	}
 
 	public static HierarchicalConfiguration getServerConfig() throws UnknownHostException, IOException, ConfigurationException, DWUIOperationFailedException 
 	{
@@ -274,6 +324,90 @@ public class UIUtils {
 	
 	
 
+	public static MIDIStatus getServerMidiStatus() throws IOException, DWUIOperationFailedException 
+	{
+		List<String> res = UIUtils.loadList(MainWin.getInstance(), "ui instance midi");
+		
+		MIDIStatus st = new MIDIStatus();
+		
+		for (String l : res)
+		{
+			String[] kv = l.trim().split("\\|");
+			
+			// ignore anything odd
+			if (kv.length > 1)
+			{
+				String key = kv[0];
+				
+				if (key.equals("cprofile"))
+				{
+					st.setCurrentProfile(kv[1]);
+				}
+				else if (key.equals("cdevice"))
+				{
+					st.setCurrentDevice(kv[1]);
+				}
+				else if (key.equals("enabled"))
+				{
+					st.setEnabled(Boolean.parseBoolean(kv[1]));
+				}
+				else if (key.equals("profile"))
+				{
+					if (kv.length == 3)
+						st.addProfile(kv[1], kv[2]);
+				}
+				else if (key.equals("device"))
+				{
+					if (kv.length == 7)
+						st.addDevice(Integer.parseInt(kv[1]), kv[2], kv[3], kv[4], kv[5], kv[6]);
+				}
+
+				
+			}
+		}
+		
+		return(st);
+		
+	}
+	
+	
+	public static DiskDef[] getServerDisks() throws IOException, DWUIOperationFailedException 
+	{
+		DiskDef[] disks = new DiskDef[256];
+		
+		List<String> res = UIUtils.loadList(MainWin.getInstance(), "ui instance disk show");
+		
+		// get info for loaded drives
+		for (String l : res)
+		{
+			String[] parts = l.trim().split("\\|");
+			
+			if (parts.length == 2)
+			{
+				int drive = Integer.parseInt(parts[0]);
+				disks[drive] = getDiskDef(MainWin.getInstance(), drive);
+			}
+		}
+		
+		// create blank defs for the rest
+		
+		for (int i = 0;i<256;i++)
+		{
+			if (disks[i] == null)
+				disks[i] = new DiskDef(i);
+		}
+		
+		return(disks);
+	}
+
+	
+	
+
+	
+	
+	
+	
+	
 	
 
 	public static DWServerFile[] getFileArray(String uicmd) throws IOException, DWUIOperationFailedException 
@@ -547,24 +681,43 @@ public class UIUtils {
 	{
 		// configure device
 		
+		int tid = MainWin.taskman.addTask("Send configuration to server..");
+		String res = "";
+		
 			
 		try
 		{
 			for (String cmd : cmds)
 			{	
+				res += "Sending command: " + cmd; 
+				MainWin.taskman.updateTask(tid, UITaskMaster.TASK_STATUS_ACTIVE, res);
+			
 				UIUtils.loadList(MainWin.getInstance(), cmd);
+				res += "\tOK\n";
 			}
 			
+			res += "\nRestarting device handler...";
+			MainWin.taskman.updateTask(tid, UITaskMaster.TASK_STATUS_ACTIVE, res);
 			UIUtils.loadList(MainWin.getInstance(), "ui instance reset protodev");
+			res += "\tOK\n";
+			MainWin.taskman.updateTask(tid,UITaskMaster.TASK_STATUS_COMPLETE, res);
+			
 			
 		} 
 		catch (IOException e)
 		{
-			throw  new IOException(e.getMessage());
+			res += "\tFAIL\n\n" + e.getMessage();
+			
+			MainWin.taskman.updateTask(tid,UITaskMaster.TASK_STATUS_FAILED, res);
+			throw  new IOException(e);
 			
 		} 
 		catch (DWUIOperationFailedException e)
 		{
+			res += "\tFAIL\n\n" + e.getMessage();
+			
+			MainWin.taskman.updateTask(tid,UITaskMaster.TASK_STATUS_FAILED, res);
+			
 			throw new DWUIOperationFailedException(e.getMessage());
 		}
 		
@@ -573,9 +726,63 @@ public class UIUtils {
 	}
 
 
+	public static String dumpMIDIStatus(MIDIStatus midiStatus)
+	{
+		String res = "";
+		
+		res += "curdev: " + midiStatus.getCurrentDevice() + "\n";
+		res += "curprof: " + midiStatus.getCurrentProfile() + "\n";
+		for (String s : midiStatus.getProfiles())
+		{
+			res += "profile: " + s + "\n";
+		}
+		
+		return res;
+	}
+
 	
-	
-	
+	public static void saveLogItemsToFile()
+	{
+		Runnable doit = new Runnable() {
+
+			@Override
+			public void run()
+			{
+				String fn = MainWin.getFile(true, false, "", "Save log to...", "Save");
+				
+				if (fn != null)
+				{
+					try
+					{
+						FileWriter fstream = new FileWriter(fn);
+					
+						BufferedWriter out = new BufferedWriter(fstream);
+						
+						synchronized(MainWin.logItems)
+						{
+							for (LogItem li : MainWin.logItems)
+							{
+								out.write(li.toString() + System.getProperty("line.separator"));
+							}
+						}
+						
+						out.close();
+					  
+					}
+					catch (Exception e)
+					{
+						MainWin.showError("Error saving log items", e.getClass().getSimpleName() + ": " + e.getMessage(), UIUtils.getStackTrace(e), false);
+					}
+					  
+				}
+			}
+		
+		};
+		
+		Thread t = new Thread(doit);
+		t.start();
+	}
+
 
 	public static boolean hasArg(String[] args, String arg)
 	{

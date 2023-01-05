@@ -21,7 +21,7 @@ public class ExitDialog extends JDialog {
 		setResizable(false);
 		
 		setTitle("Exiting...");
-		//setIconImage(Toolkit.getDefaultToolkit().getImage(ExitDialog.class.getResource("/status/active_16.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(ExitDialog.class.getResource("/status/active_16.png")));
 		
 		setBounds(100, 100, 278, 126);
 		

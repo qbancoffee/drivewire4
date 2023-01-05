@@ -15,7 +15,7 @@ public class DWDiskLazyWriter implements Runnable {
 		Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
 		Thread.currentThread().setName("dskwriter-" + Thread.currentThread().getId());
 	
-		logger.debug("started, write interval is " + DriveWireServer.serverconfig.getLong("DiskLazyWriteInterval",2000) );
+		logger.debug("started, write interval is " + DriveWireServer.serverconfig.getLong("DiskLazyWriteInterval",15000) );
 		
 		while (wanttodie == false)
 		{

@@ -107,7 +107,7 @@ public class DWDefs
 	public static final int UTILMODE_VMODEMIN = 6;
 	public static final int UTILMODE_TCPLISTEN = 7;
 	public static final int UTILMODE_NINESERVER = 8;
-	public static final int UTILMODE_UICMD = 9;
+	
 	
 	// result codes for DW virtual channel API calls - all subject to change until I know of anyone actually using these on client side
 	public static final byte RC_SUCCESS 						= (byte) 0;
@@ -241,22 +241,6 @@ public class DWDefs
 	public static final String EVENT_ITEM_UICLIENTS = "9";
 	public static final String EVENT_ITEM_MAGIC = "!";
 	
-	public static final String EVENT_ITEM_VPORT = "p";
-	public static final String EVENT_ITEM_VPORT_BYTES = "b";
-	public static final String EVENT_ITEM_VPORT_PDINT = "e";
-	public static final String EVENT_ITEM_VPORT_PDQUT = "f";
-	public static final String EVENT_ITEM_VPORT_DATA = "c";
-	public static final String EVENT_ITEM_VPORT_ACTION = "a";
-	public static final String EVENT_ITEM_VPORT_MODE = "g";
-	
-	public static final int EVENT_ACTION_OPEN = 0;
-	public static final int EVENT_ACTION_CLOSE = 1;
-	public static final int EVENT_ACTION_READ = 2;
-	public static final int EVENT_ACTION_WRITE = 3;
-	public static final int EVENT_ACTION_CREATE = 4;
-	public static final int EVENT_ACTION_DESTROY = 5;
-	public static final int EVENT_ACTION_SETCONNECTED = 7;
-	public static final int EVENT_ACTION_SETDISCONNECTED = 8;
 	
 	public static final int EVENT_MAX_QUEUE_SIZE = 800;
 	public static final int EVENT_QUEUE_LOGDROP_SIZE = 500;
@@ -311,14 +295,6 @@ public class DWDefs
 
 	public static final int COM_MIN_DATURBO_RATE = 57600;
 	public static final int COM_MAX_DATURBO_RATE = 115200;
-
-	
-
-	
-
-	
-
-	
 	
 
 

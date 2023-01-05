@@ -121,9 +121,9 @@ public class SortTreeListener implements SelectionListener {
     /**
      * Find the index of a column
      * 
-     * @@param columns
-     * @@param numOfColumns
-     * @@return int
+     * @param columns
+     * @param numOfColumns
+     * @return int
      */
     private int findColumnIndex(TreeColumn[] columns, TreeColumn column,
             int numOfColumns) {
@@ -140,8 +140,8 @@ public class SortTreeListener implements SelectionListener {
     /**
      * Get the double value from a string
      * 
-     * @@param str
-     * @@return double
+     * @param str
+     * @return double
      */
     private double getDouble(String str) {
         double d;
@@ -156,9 +156,9 @@ public class SortTreeListener implements SelectionListener {
     /**
      * Get the array of string value from the provided TreeItem
      * 
-     * @@param treeItem
-     * @@param numOfColumns
-     * @@return String[]
+     * @param treeItem
+     * @param numOfColumns
+     * @return String[]
      */
     private String[] getColumnValues(TreeItem treeItem, int numOfColumns) {
         String[] values = new String[numOfColumns];
@@ -168,4 +168,3 @@ public class SortTreeListener implements SelectionListener {
         return values;
     }
 }
-

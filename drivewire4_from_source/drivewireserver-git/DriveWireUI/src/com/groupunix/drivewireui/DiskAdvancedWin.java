@@ -121,6 +121,7 @@ public class DiskAdvancedWin extends Dialog {
 		
 		shell.addDisposeListener(new DisposeListener() {
 
+			@Override
 			public void widgetDisposed(DisposeEvent arg0) 
 			{
 				// save size/pos
@@ -461,7 +462,6 @@ public class DiskAdvancedWin extends Dialog {
 			@Override
 			public void menuShown(MenuEvent e) {
 				
-				
 				mntmAddToTable.setEnabled(false);
 				mntmRemoveFromTable.setEnabled(false);
 				mntmSetToDefault.setEnabled(false);
@@ -469,39 +469,36 @@ public class DiskAdvancedWin extends Dialog {
 				mntmWikiHelp.setText("Wiki help...");
 				mntmAddToTable.setText("Add item to main display");
 				
-				if (tableParams.getSelectionIndex() > -1)
+				if (MainWin.getTPIndex(tableParams.getItem(tableParams.getSelectionIndex()).getText(0)) > -1)
 				{
+					mntmRemoveFromTable.setEnabled(true);
+				}
+				else
+				{
+					mntmAddToTable.setEnabled(true);
+				}
 				
-					if (MainWin.getTPIndex(tableParams.getItem(tableParams.getSelectionIndex()).getText(0)) > -1)
+				if (tableParams.getItem(tableParams.getSelectionIndex()).getText(0) != null)
+				{
+					mntmAddToTable.setText("Add " + tableParams.getItem(tableParams.getSelectionIndex()).getText(0) + " to main display");
+					if (!tableParams.getItem(tableParams.getSelectionIndex()).getText(0).startsWith("_") && paramDefs.containsKey(tableParams.getItem(tableParams.getSelectionIndex()).getText(0) + "[@default]"))
 					{
-						mntmRemoveFromTable.setEnabled(true);
-					}
-					else
-					{
-						mntmAddToTable.setEnabled(true);
-					}
-					
-					if (tableParams.getItem(tableParams.getSelectionIndex()).getText(0) != null)
-					{
-						mntmAddToTable.setText("Add " + tableParams.getItem(tableParams.getSelectionIndex()).getText(0) + " to main display");
-						if (!tableParams.getItem(tableParams.getSelectionIndex()).getText(0).startsWith("_") && paramDefs.containsKey(tableParams.getItem(tableParams.getSelectionIndex()).getText(0) + "[@default]"))
+						if ((! tableParams.getItem(tableParams.getSelectionIndex()).getText(1).equals(paramDefs.getString(tableParams.getItem(tableParams.getSelectionIndex()).getText(0) + "[@default]") )) || !(tableParams.getItem(tableParams.getSelectionIndex()).getText(2).equals("") ))   
 						{
-							if ((! tableParams.getItem(tableParams.getSelectionIndex()).getText(1).equals(paramDefs.getString(tableParams.getItem(tableParams.getSelectionIndex()).getText(0) + "[@default]") )) || !(tableParams.getItem(tableParams.getSelectionIndex()).getText(2).equals("") ))   
-							{
-								mntmSetToDefault.setEnabled(true);
-							}
+							mntmSetToDefault.setEnabled(true);
 						}
 					}
-					
-					if (tableParams.getItem(tableParams.getSelectionIndex()).getText(0) != null)
+				}
+				
+				if (tableParams.getItem(tableParams.getSelectionIndex()).getText(0) != null)
+				{
+					if (paramDefs.containsKey(tableParams.getItem(tableParams.getSelectionIndex()).getText(0) + "[@wikiurl]"))
 					{
-						if (paramDefs.containsKey(tableParams.getItem(tableParams.getSelectionIndex()).getText(0) + "[@wikiurl]"))
-						{
-							mntmWikiHelp.setText("Wiki help for " + tableParams.getItem(tableParams.getSelectionIndex()).getText(0) + "...");
-							mntmWikiHelp.setEnabled(true);
-						}
+						mntmWikiHelp.setText("Wiki help for " + tableParams.getItem(tableParams.getSelectionIndex()).getText(0) + "...");
+						mntmWikiHelp.setEnabled(true);
 					}
-				}		
+				}
+				
 			}
 		});
 		tableParams.setMenu(menu);
@@ -651,11 +648,13 @@ public class DiskAdvancedWin extends Dialog {
 
 		
 
+			@Override
 			public void widgetSelected(SelectionEvent arg0) {
 		
 				doToggle(tableParams.getSelectionIndex(), btnToggleItem.getSelection()+"");
 			}
 
+			@Override
 			public void widgetDefaultSelected(SelectionEvent arg0) {
 				
 				
@@ -842,6 +841,7 @@ public class DiskAdvancedWin extends Dialog {
 			public void widgetSelected(SelectionEvent e) {
 				MainWin.doDisplayAsync(new Runnable() {
 
+					@Override
 					public void run() 
 					{
 						MainWin.openURL(this.getClass(),wikiurl);

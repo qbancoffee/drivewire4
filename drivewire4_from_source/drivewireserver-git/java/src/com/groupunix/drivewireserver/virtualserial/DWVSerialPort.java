@@ -12,8 +12,6 @@ import javax.sound.midi.ShortMessage;
 import org.apache.log4j.Logger;
 
 import com.groupunix.drivewireserver.DWDefs;
-import com.groupunix.drivewireserver.DWEvent;
-import com.groupunix.drivewireserver.DriveWireServer;
 import com.groupunix.drivewireserver.dwprotocolhandler.DWUtils;
 import com.groupunix.drivewireserver.dwprotocolhandler.DWVSerialProtocol;
 
@@ -22,7 +20,7 @@ public class DWVSerialPort {
 	private static final Logger logger = Logger.getLogger("DWServer.DWVSerialPort");
 	
 	private static final int INPUT_BUFFER_SIZE = -1;  //infinite
-	private static final int OUTPUT_BUFFER_SIZE = 65535; // huge
+	private static final int OUTPUT_BUFFER_SIZE = 10240; // huge
 	
 	private int port = -1;
 	private DWVSerialProtocol dwProto;
@@ -84,11 +82,6 @@ public class DWVSerialPort {
 			
 		}
 		
-		DWEvent evt = new DWEvent(DWDefs.EVENT_TYPE_VSERIAL, this.dwProto.getHandlerNo());
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT_ACTION, DWDefs.EVENT_ACTION_CREATE + "");
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT, this.port + "");
-		
-		DriveWireServer.submitEvent(evt);
 
 	}
 	
@@ -97,8 +90,8 @@ public class DWVSerialPort {
 	public int bytesWaiting() 
 	{
 		int bytes = inputBuffer.getAvailable();
-		
-		// never admit to client about having more than 255 bytes
+	
+		// never admit to having more than 255 bytes
 		if (bytes < 256)
 			return(bytes);
 		else
@@ -108,7 +101,6 @@ public class DWVSerialPort {
 	
 	public void write(int databyte) 
 	{
-		
 		
 		if (this.port == vports.getMIDIPort())
 		{
@@ -283,14 +275,6 @@ public class DWVSerialPort {
 			}
 		}
 		
-		DWEvent evt = new DWEvent(DWDefs.EVENT_TYPE_VSERIAL, this.dwProto.getHandlerNo());
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT_ACTION, DWDefs.EVENT_ACTION_WRITE + "");
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT, this.port + "");
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT_DATA, (byte)databyte );
-				
-		DriveWireServer.submitEvent(evt);
-		
-		
 	}
 
 	private void sendMIDI(int statusbyte) 
@@ -348,14 +332,6 @@ public class DWVSerialPort {
 		{
 			write(str.charAt(i));
 		}
-		
-		DWEvent evt = new DWEvent(DWDefs.EVENT_TYPE_VSERIAL, this.dwProto.getHandlerNo());
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT_ACTION, DWDefs.EVENT_ACTION_WRITE + "");
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT, this.port + "");
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT_DATA, str.getBytes());
-				
-		DriveWireServer.submitEvent(evt);
-		
 	}
 	
 	
@@ -409,7 +385,7 @@ public class DWVSerialPort {
 	}
 	
 	
-
+	
 	public OutputStream getPortInput()
 	{
 		return(inputBuffer.getOutputStream());
@@ -430,15 +406,6 @@ public class DWVSerialPort {
 		try 
 		{
 			databyte = inputBuffer.getInputStream().read();
-			
-			DWEvent evt = new DWEvent(DWDefs.EVENT_TYPE_VSERIAL, this.dwProto.getHandlerNo());
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT_ACTION, DWDefs.EVENT_ACTION_READ + "");
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT, this.port + "");
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT_DATA, (byte)databyte);
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT_BYTES, inputBuffer.getAvailable() + "");
-			
-			DriveWireServer.submitEvent(evt);
-			
 			return((byte) databyte);
 		} 
 		catch (IOException e) 
@@ -455,18 +422,8 @@ public class DWVSerialPort {
 	{
 		byte[] buf = new byte[tmplen];
 		
-		try 
-		{
+		try {
 			inputBuffer.getInputStream().read(buf, 0, tmplen);
-			
-			DWEvent evt = new DWEvent(DWDefs.EVENT_TYPE_VSERIAL, this.dwProto.getHandlerNo());
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT_ACTION, DWDefs.EVENT_ACTION_READ + "");
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT, this.port + "");
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT_DATA, buf);
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT_BYTES, inputBuffer.getAvailable() + "");
-			
-			DriveWireServer.submitEvent(evt);
-			
 			return(buf);
 			
 		} 
@@ -548,13 +505,6 @@ public class DWVSerialPort {
 		
 		}
 		
-		DWEvent evt = new DWEvent(DWDefs.EVENT_TYPE_VSERIAL, this.dwProto.getHandlerNo());
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT_ACTION, DWDefs.EVENT_ACTION_OPEN + "");
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT, this.port + "");
-		
-		DriveWireServer.submitEvent(evt);
-		
-		
 	}
 	
 	public void close()
@@ -563,12 +513,6 @@ public class DWVSerialPort {
 		{
 			this.opens--;
 			logger.debug("close port " + this.port + ", total opens: " + this.opens + " data in buffer: " + this.inputBuffer.getAvailable());
-			
-			DWEvent evt = new DWEvent(DWDefs.EVENT_TYPE_VSERIAL, this.dwProto.getHandlerNo());
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT_ACTION, DWDefs.EVENT_ACTION_CLOSE + "");
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT, this.port + "");
-			
-			DriveWireServer.submitEvent(evt);
 			
 			// send term if last open and not window
 			if ((this.opens == 0) && (this.getUtilMode() != DWDefs.UTILMODE_NINESERVER))
@@ -621,12 +565,6 @@ public class DWVSerialPort {
 	
 	public void setUtilMode(int mode)
 	{
-		DWEvent evt = new DWEvent(DWDefs.EVENT_TYPE_VSERIAL, this.dwProto.getHandlerNo());
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT_MODE, mode + "");
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT, this.port + "");
-		
-		DriveWireServer.submitEvent(evt);
-		
 		this.utilmode = mode;
 	}
 
@@ -640,12 +578,6 @@ public class DWVSerialPort {
 	{
 		PD_INT = pD_INT;
 		this.inputBuffer.setDW_PD_INT(PD_INT);
-		
-		DWEvent evt = new DWEvent(DWDefs.EVENT_TYPE_VSERIAL, this.dwProto.getHandlerNo());
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT, this.port + "");
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT_PDINT, pD_INT + "");
-		
-		DriveWireServer.submitEvent(evt);
 	}
 
 
@@ -660,13 +592,6 @@ public class DWVSerialPort {
 	{
 		PD_QUT = pD_QUT;
 		this.inputBuffer.setDW_PD_QUT(PD_QUT);
-		
-		DWEvent evt = new DWEvent(DWDefs.EVENT_TYPE_VSERIAL, this.dwProto.getHandlerNo());
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT, this.port + "");
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT_PDQUT, pD_QUT + "");
-		
-		DriveWireServer.submitEvent(evt);
-		
 	}
 
 
@@ -685,18 +610,7 @@ public class DWVSerialPort {
 		logger.debug("command failed: " + perrno + " " + txt);
 		try 
 		{
-			String r = "FAIL " + perrno + " " + txt + (char) 10 + (char) 13;
-			inputBuffer.getOutputStream().write(r.getBytes());
-			
-			DWEvent evt = new DWEvent(DWDefs.EVENT_TYPE_VSERIAL, this.dwProto.getHandlerNo());
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT_ACTION, DWDefs.EVENT_ACTION_WRITE + "");
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT, this.port + "");
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT_DATA, r.getBytes() );
-					
-			DriveWireServer.submitEvent(evt);
-			
-			
-			
+			inputBuffer.getOutputStream().write(("FAIL " + perrno + " " + txt + (char) 10 + (char) 13).getBytes());
 		} 
 		catch (IOException e) 
 		{
@@ -709,15 +623,7 @@ public class DWVSerialPort {
 	{
 		try 
 		{
-			String r = "OK " + txt + (char) 10 + (char) 13;
-			
-			inputBuffer.getOutputStream().write(r.getBytes());
-			
-			DWEvent evt = new DWEvent(DWDefs.EVENT_TYPE_VSERIAL, this.dwProto.getHandlerNo());
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT_ACTION, DWDefs.EVENT_ACTION_WRITE + "");
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT, this.port + "");
-			evt.setParam(DWDefs.EVENT_ITEM_VPORT_DATA, r.getBytes() );
-			
+			inputBuffer.getOutputStream().write(("OK " + txt + (char) 10 + (char) 13).getBytes());
 		} 
 		catch (IOException e) 
 		{
@@ -770,11 +676,6 @@ public class DWVSerialPort {
 		this.porthandler = null;
 		this.wanttodie = true;
 		
-		DWEvent evt = new DWEvent(DWDefs.EVENT_TYPE_VSERIAL, this.dwProto.getHandlerNo());
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT, this.port + "");
-		evt.setParam(DWDefs.EVENT_ITEM_VPORT_ACTION, DWDefs.EVENT_ACTION_DESTROY + "");
-		
-		DriveWireServer.submitEvent(evt);
 		
 	}
 

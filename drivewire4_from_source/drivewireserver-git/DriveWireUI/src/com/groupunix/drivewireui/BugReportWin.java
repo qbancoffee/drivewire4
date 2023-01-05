@@ -20,8 +20,6 @@ import org.apache.commons.configuration.XMLConfiguration;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.layout.GridData;
-import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Dialog;
 import org.eclipse.swt.widgets.Display;
@@ -30,8 +28,9 @@ import org.eclipse.swt.widgets.Link;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.wb.swt.SWTResourceManager;
-
-import com.groupunix.drivewireui.exceptions.DWUIOperationFailedException;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.graphics.Point;
 
 public class BugReportWin extends Dialog {
 
@@ -164,6 +163,7 @@ public class BugReportWin extends Dialog {
 				
 				MainWin.doDisplayAsync(new Runnable() {
 
+					@Override
 					public void run() 
 					{
 						JavaInfoWin jiwin = new JavaInfoWin(shlBugReport, SWT.DIALOG_TRIM);
@@ -354,12 +354,12 @@ public class BugReportWin extends Dialog {
 			// UI panes
 			if (this.getBtnUIText().getSelection())
 			{
-				// TODO surl += "&" + encv("uitxt", MainWin.getUIText());
+				surl += "&" + encv("uitxt", MainWin.getUIText());
 			}
 			
 			if (this.getBtnServerText().getSelection())
 			{
-				// TODO surl += "&" + encv("srvtxt", MainWin.getServerText());
+				surl += "&" + encv("srvtxt", MainWin.getServerText());
 			}
 			
 			
@@ -384,6 +384,8 @@ public class BugReportWin extends Dialog {
 		{
 			// 	finally.. submit this thing
 		
+			int tid = MainWin.taskman.addTask("Submit bug report");
+			MainWin.taskman.updateTask(tid, UITaskMaster.TASK_STATUS_ACTIVE, "Submitting bug report...");
 			
 			URL url;
 			try 
@@ -406,6 +408,7 @@ public class BugReportWin extends Dialog {
 				wr.close();
 				rd.close();
 
+				MainWin.taskman.updateTask(tid, UITaskMaster.TASK_STATUS_COMPLETE, "Bug report accepted, thank you.");
 				
 				res = true;
 			} 

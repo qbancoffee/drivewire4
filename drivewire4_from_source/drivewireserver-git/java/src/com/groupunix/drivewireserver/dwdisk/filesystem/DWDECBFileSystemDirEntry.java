@@ -6,17 +6,17 @@ public class DWDECBFileSystemDirEntry extends DWFileSystemDirEntry
 {
 	/*
 	Byte Description
-	0â€”7 Filename, which is left justified and blank, filled. If byte0 is 0,
-	then the file has been â€˜KILLâ€™ed and the directory entry is available
+	0—7 Filename, which is left justified and blank, filled. If byte0 is 0,
+	then the file has been ‘KILL’ed and the directory entry is available
 	for use. If byte0 is $FF, then the entry and all following entries
 	have never been used.
-	8â€”10 Filename extension
+	8—10 Filename extension
 	11 File type: 0=BASIC, 1=BASIC data, 2=Machine language, 3= Text editor
 	source
 	12 ASCII flag: 0=binary or crunched BASIC, $FF=ASCII
 	13 Number of the first granule in the file
-	14â€”15 Number of bytes used in the last sector of the file
-	16â€”31 Unused (future use)
+	14—15 Number of bytes used in the last sector of the file
+	16—31 Unused (future use)
 	*/
 	
 		
@@ -142,11 +142,5 @@ public class DWDECBFileSystemDirEntry extends DWFileSystemDirEntry
 		return false;
 	}
 	
-	@Override
-	public String toString()
-	{
-		int bls = (0xFF & this.data[14])*256 + (0xFF & this.data[15]);
-		return getFileName() + "|" + getFileExt() + "|" + getFileType() + "|" + isAscii() + "|" + (0xff & getFirstGranule()) + "|" + bls;
-		
-	}
+	
 }

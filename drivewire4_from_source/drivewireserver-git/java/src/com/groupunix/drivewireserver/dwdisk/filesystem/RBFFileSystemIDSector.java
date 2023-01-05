@@ -12,7 +12,7 @@ public class RBFFileSystemIDSector
 	DD.MAP $04 2 Number of bytes in the allocation bit map
 	DD.BIT $06 2 Number of sectors per cluster
 	DD.DIR $08 3 Starting sector of the root directory
-	DD.OWN $0B 2 Ownerâ€™s user number
+	DD.OWN $0B 2 Owner’s user number
 	DD.ATT $0D 1 Disk attributes
 	DD.DSK $0E 2 Disk identification (for internal use)
 	DD.FMT $10 1 Disk format, density, number of sides

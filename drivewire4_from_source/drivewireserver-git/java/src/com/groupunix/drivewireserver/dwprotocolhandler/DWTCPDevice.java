@@ -241,28 +241,28 @@ public class DWTCPDevice implements DWProtocolDevice {
 	}
 
 
-	
+	@Override
 	public String getDeviceName() 
 	{
 		return("listen:" + this.tcpport);
 	}
 
 
-	
+	@Override
 	public String getDeviceType() 
 	{
 		return("tcp");
 	}
 
 
-	
+	@Override
 	public String getClient() 
 	{
 		return this.client;
 	}
 
 
-	
+	@Override
 	public InputStream getInputStream() {
 		// TODO Auto-generated method stub
 		return null;

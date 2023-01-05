@@ -611,7 +611,7 @@ public class DWLibrary extends Composite
 		
 		tree.setMenu(treemenu);
 		
-		//tree.setData(MainWin.libraryroot);
+		tree.setData(MainWin.libraryroot);
 		
 		
 		
@@ -647,7 +647,7 @@ public class DWLibrary extends Composite
 		
 	
 		
-		//tree.setItemCount(MainWin.libraryroot.length);
+		tree.setItemCount(MainWin.libraryroot.length);
 		sashForm.setWeights(new int[] {350, 700});
 		
 		//sashForm.setWeights(new int[] {0, 700});

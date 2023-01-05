@@ -171,7 +171,7 @@ public class DWRawDisk extends DWDisk {
 		     
 		    readres = fis.read(buffer, 0, sectorsize);
 		    
-			while ((readres > -1) && (sector < this.sectors.size()))
+			while (readres > -1)
 			{
 		
 				bytesRead += readres; 
@@ -331,9 +331,8 @@ public class DWRawDisk extends DWDisk {
 	}
 
 
-		
 
-	public void writeSector(byte[] data, boolean update) throws DWDriveWriteProtectedException, IOException
+	public void writeSector(byte[] data) throws DWDriveWriteProtectedException, IOException
 	{
 		
 		if (this.getWriteProtect())
@@ -359,8 +358,7 @@ public class DWRawDisk extends DWDisk {
 			
 			this.sectors.get(effLSN).setData(data);
 			
-			if (update)
-				this.incParam("_writes");
+			this.incParam("_writes");
 			
 			// logger.debug("write sector " + this.LSN + "\r" + DWProtocolHandler.byteArrayToHexString(this.sectors[this.LSN].getData()));
 

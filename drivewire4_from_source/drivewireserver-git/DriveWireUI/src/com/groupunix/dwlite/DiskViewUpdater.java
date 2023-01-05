@@ -13,7 +13,7 @@ public class DiskViewUpdater implements Runnable {
 		this.window = window;
 	}
 
-	
+	@Override
 	public void run() 
 	{
 		while (!wanttodie)

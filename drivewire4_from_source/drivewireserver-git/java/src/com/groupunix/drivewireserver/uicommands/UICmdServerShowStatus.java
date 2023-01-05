@@ -31,8 +31,8 @@ public class UICmdServerShowStatus extends DWCommand {
 	{
 		String text = new String();
 	
-		text += "version|" + DriveWireServer.DWVersion + "\n"; 
-		text += "versiondate|" + DriveWireServer.DWVersion.getDate() + "\n";
+		text += "version|" + DriveWireServer.DWServerVersion + "\n"; 
+		text += "versiondate|" + DriveWireServer.DWServerVersionDate + "\n";
 		
 		text += "totmem|" + Runtime.getRuntime().totalMemory() / 1024 + "\n";
 	    text += "freemem|" + Runtime.getRuntime().freeMemory() / 1024 + "\n";

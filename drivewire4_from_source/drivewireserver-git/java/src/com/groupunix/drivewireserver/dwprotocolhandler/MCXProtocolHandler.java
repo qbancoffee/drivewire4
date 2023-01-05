@@ -809,7 +809,7 @@ public class MCXProtocolHandler implements Runnable, DWProtocol
 	}
 
 
-	
+	@Override
 	public String getStatusText() 
 	{
 		String text = new String();
@@ -827,49 +827,49 @@ public class MCXProtocolHandler implements Runnable, DWProtocol
 
 
 
-	
+	@Override
 	public void syncStorage() {
 		// TODO Auto-generated method stub
 		
 	}
 
 
-	
+	@Override
 	public int getHandlerNo() {
 		// TODO Auto-generated method stub
 		return this.handlerno;
 	}
 
 
-	
+	@Override
 	public Logger getLogger() {
 		// TODO Auto-generated method stub
 		return this.logger;
 	}
 
 
-	
+	@Override
 	public int getCMDCols() {
 		// TODO Auto-generated method stub
 		return 32;
 	}
 
 
-	
+	@Override
 	public DWHelp getHelp() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 
-	
+	@Override
 	public boolean isReady() {
 		// TODO Auto-generated method stub
 		return true;
 	}
 
 
-	
+	@Override
 	public void submitConfigEvent(String propertyName, String string)
 	{
 		// TODO Auto-generated method stub
@@ -877,7 +877,7 @@ public class MCXProtocolHandler implements Runnable, DWProtocol
 	}
 
 
-	
+	@Override
 	public long getNumOps()
 	{
 		// TODO Auto-generated method stub
@@ -885,7 +885,7 @@ public class MCXProtocolHandler implements Runnable, DWProtocol
 	}
 
 
-	
+	@Override
 	public long getNumDiskOps()
 	{
 		// TODO Auto-generated method stub
@@ -893,7 +893,7 @@ public class MCXProtocolHandler implements Runnable, DWProtocol
 	}
 
 
-	
+	@Override
 	public long getNumVSerialOps()
 	{
 		// TODO Auto-generated method stub
@@ -901,7 +901,7 @@ public class MCXProtocolHandler implements Runnable, DWProtocol
 	}
 
 
-	
+	@Override
 	public DWProtocolTimers getTimers()
 	{
 		// TODO Auto-generated method stub
@@ -909,39 +909,39 @@ public class MCXProtocolHandler implements Runnable, DWProtocol
 	}
 
 
-	
+	@Override
 	public boolean isStarted() 
 	{
 		return this.started;
 	}
 
 
-	
+	@Override
 	public boolean isConnected() {
 		// TODO Auto-generated method stub
 		return false;
 	}
 	
-	
+	@Override
 	public boolean hasPrinters() 
 	{
 		
 		return true;
 	}
 	
-	
+	@Override
 	public boolean hasDisks() {
 		
 		return true;
 	}
 	
-	
+	@Override
 	public boolean hasMIDI() {
 		
 		return false;
 	}
 	
-	
+	@Override
 	public boolean hasVSerial() {
 		
 		return false;

@@ -110,8 +110,7 @@ public class DWUtils
 	        ch = (byte) (in[i] & 0x0F); // Strip off
 
 	        out.append(pseudo[ (int) ch]); // convert the
-	        
-	        out.append(':');
+
 	        i++;
 
 	    }
@@ -342,9 +341,6 @@ public class DWUtils
 
 		case DWDefs.UTILMODE_DWCMD:
 			res = "dw cmd";
-			break;
-		case DWDefs.UTILMODE_UICMD:
-			res = "ui cmd";
 			break;
 		case DWDefs.UTILMODE_TCPOUT:
 			res = "tcp out";
@@ -851,9 +847,9 @@ public class DWUtils
 				res[pos++] = f.getName().getBytes()[i];
 			
 		
-			System.out.println(f.getName() + "\t" + f.getName().length() + "\t" + f.length());
+			//System.out.println(f.getName() + "\t" + f.length());
 			
-			System.out.println( byteArrayToHexString(res, res.length) );
+			
 			
 			return(new String(res));
 		}

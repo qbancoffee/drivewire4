@@ -43,10 +43,8 @@ public class DWSIDEImageDisk extends DWDisk
 		
 	}
 
-	
-	
 	@Override
-	public void writeSector(byte[] data, boolean update) throws DWDriveWriteProtectedException, IOException
+	public void writeSector(byte[] data) throws DWDriveWriteProtectedException, IOException
 	{
 		// TODO Auto-generated method stub
 		

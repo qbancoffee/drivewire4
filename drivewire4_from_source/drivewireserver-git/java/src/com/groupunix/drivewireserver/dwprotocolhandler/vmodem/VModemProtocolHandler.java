@@ -68,7 +68,7 @@ public class VModemProtocolHandler implements Runnable, DWVSerialProtocol
 	
 
 	
-	
+	@Override
 	public void run() 
 	{
 		
@@ -99,7 +99,7 @@ public class VModemProtocolHandler implements Runnable, DWVSerialProtocol
 		{
 			boolean wanttodie = false;
 			
-			
+			@Override
 			public void run() 
 			{
 				while (!wanttodie)
@@ -225,7 +225,7 @@ public class VModemProtocolHandler implements Runnable, DWVSerialProtocol
 
 
 
-	
+	@Override
 	public void shutdown() 
 	{
 		logger.debug("vmodem handler #" + handlerno + ": shutdown requested");
@@ -236,49 +236,49 @@ public class VModemProtocolHandler implements Runnable, DWVSerialProtocol
 			this.protodev.shutdown();
 	}
 
-	
+	@Override
 	public boolean isDying() 
 	{
 		return wanttodie;
 	}
 
-	
+	@Override
 	public boolean isStarted() 
 	{
 		return this.started ;
 	}
 
-	
+	@Override
 	public boolean isReady() 
 	{
 		return this.ready ;
 	}
 
-	
+	@Override
 	public HierarchicalConfiguration getConfig() 
 	{
 		return this.config;
 	}
 
-	
+	@Override
 	public DWProtocolDevice getProtoDev() 
 	{
 		return this.protodev;
 	}
 
-	
+	@Override
 	public GregorianCalendar getInitTime() 
 	{
 		return this.inittime;
 	}
 
-	
+	@Override
 	public String getStatusText() 
 	{
 		return "VModem status TODO";
 	}
 
-	
+	@Override
 	public void resetProtocolDevice() 
 	{
 		logger.debug("resetting serial port");
@@ -293,62 +293,62 @@ public class VModemProtocolHandler implements Runnable, DWVSerialProtocol
 		
 	}
 
-	
+	@Override
 	public void syncStorage() 
 	{
 		// noop
 		
 	}
 
-	
+	@Override
 	public int getHandlerNo() 
 	{
 		return this.handlerno;
 	}
 
-	
+	@Override
 	public Logger getLogger() 
 	{
 		return this.logger;
 	}
 
-	
+	@Override
 	public int getCMDCols() 
 	{
 		return 0;
 	}
 
-	
+	@Override
 	public DWHelp getHelp() 
 	{
 		return this.dwhelp ;
 	}
 
-	
+	@Override
 	public void submitConfigEvent(String propertyName, String string) 
 	{
 		// noop
 	}
 
-	
+	@Override
 	public long getNumOps() 
 	{
 		return 0;
 	}
 
-	
+	@Override
 	public long getNumDiskOps() 
 	{
 		return 0;
 	}
 
-	
+	@Override
 	public long getNumVSerialOps() 
 	{
 		return 0;
 	}
 
-	
+	@Override
 	public DWProtocolTimers getTimers() 
 	{
 		return this.timers;
@@ -356,33 +356,33 @@ public class VModemProtocolHandler implements Runnable, DWVSerialProtocol
 
 
 
-	
+	@Override
 	public boolean isConnected() 
 	{
 		return this.connected ;
 	}
 
 
-	
+	@Override
 	public boolean hasPrinters() 
 	{
 		
 		return false;
 	}
 	
-	
+	@Override
 	public boolean hasDisks() {
 		
 		return false;
 	}
 
-	
+	@Override
 	public boolean hasMIDI() {
 		
 		return false;
 	}
 
-	
+	@Override
 	public boolean hasVSerial() {
 		
 		return true;
@@ -390,7 +390,7 @@ public class VModemProtocolHandler implements Runnable, DWVSerialProtocol
 
 
 
-	
+	@Override
 	public DWVSerialPorts getVPorts() 
 	{
 		return this.vSerialPorts;

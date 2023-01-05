@@ -51,6 +51,8 @@ public class UICmdSync extends DWCommand {
 			}
 			*/
 			
+			// ready for new log events
+			this.dwuiref.setDropLog(false);
 		} 
 		catch (IOException e1) 
 		{
@@ -58,8 +60,8 @@ public class UICmdSync extends DWCommand {
 			wanttodie = true;
 		}
 		
-		// set event filter
-		this.dwuiref.setEventFilter(new byte[] { DWDefs.EVENT_TYPE_DISK, DWDefs.EVENT_TYPE_STATUS, DWDefs.EVENT_TYPE_LOG, DWDefs.EVENT_TYPE_INSTANCECONFIG, DWDefs.EVENT_TYPE_SERVERCONFIG, DWDefs.EVENT_TYPE_MIDI  });
+		
+		
 	
 		while ((wanttodie == false) && (!dwuiref.getSocket().isClosed()))
 		{

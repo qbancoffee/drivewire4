@@ -20,7 +20,6 @@ public class DWError
 		
 		// parse summary strings from DW server
 		
-		/*
 		StringBuffer myStringBuffer = new StringBuffer();
 		Matcher m = Pattern.compile("FAIL \\d+").matcher(summary);
 		while (m.find()) 
@@ -30,7 +29,6 @@ public class DWError
 		m.appendTail(myStringBuffer);
 		
 		this.summary = myStringBuffer.toString();
-		*/
 	}
 	
 	

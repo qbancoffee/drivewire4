@@ -532,7 +532,7 @@ public class DWProtocolHandler implements Runnable, DWVSerialProtocol
 	
 	private void DoOP_AARON()
 	{
-		logger.warn("DriveWire " + DriveWireServer.DWVersion.getDescription() + ": I am the millipede");
+		logger.warn("DriveWire " + DriveWireServer.DWServerVersion + " (" + DriveWireServer.DWServerVersionDate + ") by Aaron Wolfe");
 		
 	}
 
@@ -1720,7 +1720,7 @@ public class DWProtocolHandler implements Runnable, DWVSerialProtocol
 	}
 
 
-	
+	@Override
 	public String getStatusText() 
 	{
 		String text = new String();
@@ -1758,7 +1758,7 @@ public class DWProtocolHandler implements Runnable, DWVSerialProtocol
 	}
 
 
-	
+	@Override
 	public void syncStorage() 
 	{
 		if ((this.isInOp()) && (this.syncSkipped < DWDefs.DISK_MAX_SYNC_SKIPS))
@@ -1801,21 +1801,21 @@ public class DWProtocolHandler implements Runnable, DWVSerialProtocol
 	}
 
 
-	
+	@Override
 	public boolean isReady() 
 	{
 		return this.ready ;
 	}
 
 
-	
+	@Override
 	public void submitConfigEvent(String key, String val)
 	{
 		DriveWireServer.submitInstanceConfigEvent(this.handlerno, key, val);
 	}
 
 
-	
+	@Override
 	public long getNumOps()
 	{
 		// TODO Auto-generated method stub
@@ -1823,7 +1823,7 @@ public class DWProtocolHandler implements Runnable, DWVSerialProtocol
 	}
 
 
-	
+	@Override
 	public long getNumDiskOps()
 	{
 		// TODO Auto-generated method stub
@@ -1831,7 +1831,7 @@ public class DWProtocolHandler implements Runnable, DWVSerialProtocol
 	}
 
 
-	
+	@Override
 	public long getNumVSerialOps()
 	{
 		// TODO Auto-generated method stub
@@ -1844,39 +1844,39 @@ public class DWProtocolHandler implements Runnable, DWVSerialProtocol
 	}
 
 
-	
+	@Override
 	public DWProtocolTimers getTimers()
 	{
 			return this.timers;
 	}
 
 
-	
+	@Override
 	public boolean isStarted() {
 		
 		return this.started;
 	}
 
-	
+	@Override
 	public boolean hasPrinters() 
 	{
 		
 		return true;
 	}
 	
-	
+	@Override
 	public boolean hasDisks() {
 		
 		return true;
 	}
 	
-	
+	@Override
 	public boolean hasMIDI() {
 		
 		return true;
 	}
 	
-	
+	@Override
 	public boolean hasVSerial() {
 		
 		return true;

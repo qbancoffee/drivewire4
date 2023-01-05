@@ -11,9 +11,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.lang.reflect.Field;
-import java.net.ServerSocket;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
@@ -48,17 +49,10 @@ import com.groupunix.drivewireserver.dwprotocolhandler.vmodem.VModemProtocolHand
 public class DriveWireServer 
 {
 
-	public static final int DWVersionMajor = 4;
-	public static final int DWVersionMinor = 3;
-	public static final int DWVersionBuild = 4;
-	public static final String DWVersionRevision = "f";
-	@SuppressWarnings("deprecation")
-	public static final Date DWVersionDate = new Date(2013 - 1900, 10 - 1, 21);
+	public static final String DWServerVersion = "4.3.3p";
+	public static final String DWServerVersionDate = "09/17/2013";
 	
-	public static final Version DWVersion = new Version(DWVersionMajor, DWVersionMinor, DWVersionBuild, DWVersionRevision, DWVersionDate);
-	
-	
-	static Logger logger = Logger.getLogger(com.groupunix.drivewireserver.DriveWireServer.class);
+	private static Logger logger = Logger.getLogger(com.groupunix.drivewireserver.DriveWireServer.class);
 	private static ConsoleAppender consoleAppender;
 	private static DWLogAppender dwAppender;
 	private static FileAppender fileAppender;
@@ -301,14 +295,14 @@ public class DriveWireServer
 		// 	set up initial logging config
         initLogging();
         
-        logger.info("DriveWire Server " + DWVersion + " starting");
-        //logger.info("Heap max: " + Runtime.getRuntime().maxMemory() / 1024 / 1024 + "MB " + " cur: " + Runtime.getRuntime().totalMemory() / 1024 / 1024 + "MB");
+        logger.info("DriveWire Server v" + DWServerVersion + " starting");
+        logger.debug("Heap max: " + Runtime.getRuntime().maxMemory() / 1024 / 1024 + "MB " + " cur: " + Runtime.getRuntime().totalMemory() / 1024 / 1024 + "MB");
 		// load server settings
         try 
         {
-        	
     		// try to load/parse config
     		serverconfig = new XMLConfiguration(configfile);
+    		
     		// only backup if it loads
     		if (useBackup)
     			backupConfig(configfile);
@@ -321,52 +315,46 @@ public class DriveWireServer
 		}
 
         
-        // start UI server first, so we can bail if UIorBust
-        if (applyUISettings() == true)
-        {
-	        
-	        
-	        // apply settings to logger
-	        applyLoggingSettings();
-	        
-	        /* not needed with NRSerialJava
-	    	// Try to add native rxtx to lib path
-			if (serverconfig.getBoolean("LoadRXTX",true))
-			{
-			   loadRXTX();
-			}
-			*/
-			
-			// test for RXTX..
-			if (serverconfig.getBoolean("UseRXTX", true) && !checkRXTXLoaded())
-			{
-				logger.fatal("UseRXTX is set, but RXTX native libraries could not be loaded");
-				logger.fatal("Please see http://sourceforge.net/apps/mediawiki/drivewireserver/index.php");
-				System.exit(-1);
-			}
-			
-			
-	
-	    	// add server config listener
-	    	serverconfig.addConfigurationListener(new DWServerConfigListener());    	
-	    	
-	    	// apply configuration
-	    	
-	    	// auto save
-	    	if (serverconfig.getBoolean("ConfigAutosave",true))
-	    	{
-	    		logger.debug("Auto save of configuration is enabled");
-	    		serverconfig.setAutoSave(true);
-	    	}
-	    	
-	
-			
-	    	// start protocol handler instance(s)
-	    	startProtoHandlers();
-	    	
-	    	// start lazy writer
-			startLazyWriter();
+        // apply settings to logger
+        applyLoggingSettings();
+		
+    	
+    	// Try to add native rxtx to lib path
+		if (serverconfig.getBoolean("LoadRXTX",true))
+		{
+		   loadRXTX();
+		}
+		
+		// test for RXTX..
+		if (serverconfig.getBoolean("UseRXTX", true) && !checkRXTXLoaded())
+		{
+			logger.fatal("UseRXTX is set, but RXTX native libraries could not be loaded");
+			logger.fatal("Please see http://sourceforge.net/apps/mediawiki/drivewireserver/index.php?title=Installation");
+			System.exit(-1);
+		}
+
+    	// add server config listener
+    	serverconfig.addConfigurationListener(new DWServerConfigListener());    	
+    	
+    	// apply configuration
+    	
+    	// auto save
+    	if (serverconfig.getBoolean("ConfigAutosave",true))
+    	{
+    		logger.debug("Auto save of configuration is enabled");
+    		serverconfig.setAutoSave(true);
     	}
+    	
+
+		
+    	// start protocol handler instance(s)
+    	startProtoHandlers();
+    	
+    	// start lazy writer
+		startLazyWriter();
+    	
+		// start UI server
+		applyUISettings();
 
 	}
 
@@ -523,7 +511,6 @@ public class DriveWireServer
 
 
 
-	@SuppressWarnings("unused")
 	private static void loadRXTX() 
 	{
 		
@@ -796,7 +783,7 @@ public class DriveWireServer
 
 
 
-	public static boolean applyUISettings() 
+	public static void applyUISettings() 
 	{
 		if ((uiT != null) && (uiT.isAlive()))
 		{
@@ -814,38 +801,12 @@ public class DriveWireServer
 		
 		if (serverconfig.getBoolean("UIEnabled",false))
 		{
-			ServerSocket srvr = null;
-			
-			// check for port in use (another server providing UI on our port)
-			try 
-			{
-				// check for listen address
-					
-				srvr = new ServerSocket(serverconfig.getInt("UIPort",6800));
-				logger.info("UI listening on port " + srvr.getLocalPort());
-
-			} 
-			catch (IOException e2) 
-			{
-				
-				// BAIL if UIorBust
-				if (serverconfig.getBoolean("UIorBust",true))
-					return false;
-				
-				logger.warn("Error opening UI socket: " + e2.getClass().getSimpleName() + " " + e2.getMessage());
-				
-			}
-			
-			if (srvr != null)
-			{
-				uiObj = new DWUIThread( srvr );
-				uiT = new Thread(uiObj);
-				uiT.start();
-			}
-			
+		
+			uiObj = new DWUIThread( serverconfig.getInt("UIPort",6800));
+			uiT = new Thread(uiObj);
+			uiT.start();
 		}
 
-		return true;
 	}
 
 
@@ -1185,13 +1146,6 @@ public class DriveWireServer
 		}
 	}
 
-	public static void submitEvent(DWEvent evt) 
-	{
-		if (uiObj != null)
-		{
-			uiObj.submitEvent(evt);
-		}
-	}
 
 
 
@@ -1317,9 +1271,35 @@ public class DriveWireServer
 
 
 
-	
+	public static void handleUncaughtException(Thread thread, Throwable thrw)
+	{
+		String msg = "Exception in thread " + thread.getName();
+		
+		if (thrw.getClass().getSimpleName() != null)
+			msg += ": " + thrw.getClass().getSimpleName();
+		
+		if (thrw.getMessage() != null)
+			msg += ": " + thrw.getMessage();
+		
+		if (DriveWireServer.logger != null)
+		{
+			logger.error(msg);
+			logger.info(getStackTrace(thrw));
+		}
+		
+		System.out.println("--------------------------------------------------------------------------------");
+		System.out.println(msg);
+		System.out.println("--------------------------------------------------------------------------------");
+		thrw.printStackTrace();
+	}
 
-	
+
+	public static String getStackTrace(Throwable aThrowable) {
+	    final Writer result = new StringWriter();
+	    final PrintWriter printWriter = new PrintWriter(result);
+	    aThrowable.printStackTrace(printWriter);
+	    return result.toString();
+	  }
 	
 	
 	
@@ -1369,16 +1349,5 @@ public class DriveWireServer
 	{
 		return logger;
 	}
-	
-	public static DWUIThread getDWUIThread()
-	{
-		return DriveWireServer.uiObj;
-	}
-
-
-
-
-	
-	
 	
 }

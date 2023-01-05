@@ -72,20 +72,20 @@ public class DWVPrinterFX80 implements DWVPrinterDriver {
 	
 	}
 
-	
+	@Override
 	public void addByte(byte data) throws IOException 
 	{
 		this.printBuffer.getOutputStream().write(data);
 	}
 
-	
+	@Override
 	public String getDriverName() 
 	{
 
 		return("FX80");
 	}
 
-	
+	@Override
 	public void flush() throws NumberFormatException, IOException, DWPrinterNotDefinedException, DWPrinterFileError 
 	{
 		
@@ -638,7 +638,7 @@ public class DWVPrinterFX80 implements DWVPrinterDriver {
 	}
 
 	
-	
+	@Override
 	public String getPrinterName() 
 	{
 		return(this.config.getString("[@name]","?noname?"));

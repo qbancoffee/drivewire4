@@ -177,7 +177,7 @@ public class DWAPISerial {
 			
 			Thread inputT = new Thread(new Runnable(){
 
-				
+				@Override
 				public void run() 
 				{
 					boolean wanttodie = false;
@@ -225,7 +225,7 @@ public class DWAPISerial {
 			
 			Thread outputT = new Thread(new Runnable(){
 
-				
+				@Override
 				public void run() 
 				{
 					boolean wanttodie = false;

@@ -10,8 +10,6 @@ import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
 
-import com.groupunix.drivewireui.diskstatus.DiskStatusWin;
-
 public class DiskDef implements Cloneable
 {
 	private int drive = -1;
@@ -24,7 +22,7 @@ public class DiskDef implements Cloneable
 	
 	private HierarchicalConfiguration params;
 	
-	private Image diskgraph = new Image(null, DiskStatusWin.DGRAPH_WIDTH, DiskStatusWin.DGRAPH_HEIGHT);
+	private Image diskgraph = new Image(null, DiskWin.DGRAPH_WIDTH, DiskWin.DGRAPH_HEIGHT);
 	private HashMap<Integer,Integer> sectors = new HashMap<Integer,Integer>();
 	
 	
@@ -36,7 +34,10 @@ public class DiskDef implements Cloneable
 
 	
 	
+	private DiskWin diskwin = null;
 	private boolean graphchanged = true;
+	private DiskAdvancedWin paramwin = null;
+	
 	
 	
 	
@@ -47,7 +48,19 @@ public class DiskDef implements Cloneable
 		this.gc = new GC(this.diskgraph); 
 		this.makeNewDGraph();
 		
-		
+		if (MainWin.config.getBoolean("DiskWin_" + driveno + "_open", false))
+		{
+			final DiskDef ref = this;
+			MainWin.getDisplay().asyncExec(new Runnable() {
+				  public void run()
+				  {
+					  setDiskwin(new DiskWin(ref , MainWin.getDiskWinInitPos(drive).x,MainWin.getDiskWinInitPos(drive).y));
+					  getDiskwin().open(MainWin.getDisplay());
+					  
+				  }
+			  });
+			
+		}
 	}
 	
 	
@@ -59,8 +72,8 @@ public class DiskDef implements Cloneable
 			
 			this.gc.setAdvanced(true);
 			
-			this.gc.setBackground(DiskStatusWin.colorDiskBG);
-			this.gc.fillRectangle(0,0, DiskStatusWin.DGRAPH_WIDTH, DiskStatusWin.DGRAPH_HEIGHT);
+			this.gc.setBackground(DiskWin.colorDiskBG);
+			this.gc.fillRectangle(0,0, DiskWin.DGRAPH_WIDTH, DiskWin.DGRAPH_HEIGHT);
 		
 			this.gc.setTextAntialias(SWT.ON);
 			//this.gc.setAntialias(SWT.ON);
@@ -76,6 +89,91 @@ public class DiskDef implements Cloneable
 
 
 
+	public void setParam(final String key, final Object val)
+	{
+	
+		// actions don't go into params..
+		if (key.startsWith("*"))
+		{
+				
+			if (key.equals("*clean"))
+			{
+				markGraphClean(Integer.parseInt(val.toString()));
+			}
+			else if (key.equals("*insert"))
+			{
+				this.loaded = true;
+				this.makeNewDGraph();
+				
+			}	
+			else if (key.equals("*eject"))
+			{
+				this.loaded = false;
+				this.makeNewDGraph();
+			}
+			
+		}
+		else
+		{
+			// parameters
+			this.params.setProperty(key, val);
+			
+			
+			// graph params
+			if (key.equals("_reads") && !val.equals("0") && this.params.containsKey("_reads"))
+			{
+				markGraphRead(this.getLsn());
+			}
+			else if (key.equals("_writes") && !val.equals("0") && this.params.containsKey("_writes"))
+			{
+				markGraphWrite(this.getLsn());
+			}
+			else if (key.equals("_sectors"))
+			{
+				this.graphchanged = true;
+			}
+			
+		
+		}
+		
+		// notify our paramwin 
+		if (this.hasParamwin())
+		{
+			MainWin.getDisplay().asyncExec(new Runnable() {
+				  public void run()
+				  {
+					  if (hasParamwin())
+						  if (val == null)
+								paramwin.submitEvent(key, "");
+							else
+								paramwin.submitEvent(key, val.toString());
+						  
+				  }
+			  });
+			
+		}
+		
+		// notify our diskwin
+		if (this.hasDiskwin())
+		{
+				MainWin.getDisplay().asyncExec(new Runnable() {
+					  public void run()
+					  {
+						 if (hasDiskwin())
+						 {
+							if (val == null)
+								diskwin.submitEvent(key, "");
+							else
+								diskwin.submitEvent(key, val.toString());
+						 }
+					  }
+				  });
+			
+		}
+		
+		
+		
+	}
 	
 	private void markGraphClean(int sector)
 	{
@@ -268,25 +366,25 @@ public class DiskDef implements Cloneable
 	 		
 	 	if (this.graphchanged)
 	 	{
-			this.graphscale = ((double)DiskStatusWin.DGRAPH_WIDTH / (double)(this.getSectors() - this.getOffset()));
+			this.graphscale = ((double)DiskWin.DGRAPH_WIDTH / (double)(this.getSectors() - this.getOffset()));
 			
 			//System.out.println("diskdef get graph: " + this.graphscale + "  cache size: " + this.sectors.size() + " advanced: " + gc.getAdvanced());
 	  
 			int[] tri = new int[6];
 				
-			this.gc.setFont(DiskStatusWin.fontDiskGraph);
-			this.gc.setBackground(DiskStatusWin.colorDiskBG);
-			this.gc.fillRectangle(0,0, DiskStatusWin.DGRAPH_WIDTH, 15);
+			this.gc.setFont(DiskWin.fontDiskGraph);
+			this.gc.setBackground(DiskWin.colorDiskBG);
+			this.gc.fillRectangle(0,0, DiskWin.DGRAPH_WIDTH, 15);
 			
 			
-			this.gc.setForeground(DiskStatusWin.colorDiskGraphFG );
-			this.gc.setBackground(DiskStatusWin.colorDiskBG);
+			this.gc.setForeground(DiskWin.colorDiskGraphFG );
+			this.gc.setBackground(DiskWin.colorDiskBG);
 			
 			this.gc.drawText("" + this.getOffset(), 1, 0, true);
-			this.gc.drawText("" + this.getSectors() , DiskStatusWin.DGRAPH_WIDTH - gc.textExtent("" + this.getSectors()).x, 0, true);
+			this.gc.drawText("" + this.getSectors() , DiskWin.DGRAPH_WIDTH - gc.textExtent("" + this.getSectors()).x, 0, true);
 			
-			int p1 = DiskStatusWin.DGRAPH_WIDTH / 4;
-			int p2 = DiskStatusWin.DGRAPH_WIDTH / 2 + 60;
+			int p1 = DiskWin.DGRAPH_WIDTH / 4;
+			int p2 = DiskWin.DGRAPH_WIDTH / 2 + 60;
 			
 			int readpos = p1;
 			int writepos = p2;
@@ -318,7 +416,7 @@ public class DiskDef implements Cloneable
 			tri[2] = tri[0];
 			tri[4] = tri[0]+7;
 			
-			this.gc.setBackground(DiskStatusWin.colorDiskDirty);
+			this.gc.setBackground(DiskWin.colorDiskDirty);
 			this.gc.fillPolygon(tri);
 			
 			
@@ -326,40 +424,40 @@ public class DiskDef implements Cloneable
 			@SuppressWarnings("unused")
 			int changes = 0;
 			
-			this.gc.setBackground(DiskStatusWin.colorBlack);
-			this.gc.setForeground(DiskStatusWin.colorDiskBG);
+			this.gc.setBackground(DiskWin.colorBlack);
+			this.gc.setForeground(DiskWin.colorDiskBG);
 			
 			
-			for (int i = 0;i<DiskStatusWin.DGRAPH_WIDTH;i++)
+			for (int i = 0;i<DiskWin.DGRAPH_WIDTH;i++)
 			{
 				Color curcol = getGraphColorFor(i);
 				
 				if (!curcol.equals(gc.getBackground()))
 				{					
-					gc.fillGradientRectangle(lastchange, 20, lastchange + i, DiskStatusWin.DGRAPH_HEIGHT-35, true);
+					gc.fillGradientRectangle(lastchange, 20, lastchange + i, DiskWin.DGRAPH_HEIGHT-35, true);
 					gc.setBackground(curcol);
 					lastchange = i;
 					changes++;
 				}
 			}
 			
-			gc.fillGradientRectangle(lastchange, 20, DiskStatusWin.DGRAPH_WIDTH - lastchange, DiskStatusWin.DGRAPH_HEIGHT-35, true);
+			gc.fillGradientRectangle(lastchange, 20, DiskWin.DGRAPH_WIDTH - lastchange, DiskWin.DGRAPH_HEIGHT-35, true);
 			
 			
 					
 			// footer
-			this.gc.setBackground(DiskStatusWin.colorDiskBG);
-			this.gc.fillRectangle(0,DiskStatusWin.DGRAPH_HEIGHT-15, DiskStatusWin.DGRAPH_WIDTH, DiskStatusWin.DGRAPH_HEIGHT);
+			this.gc.setBackground(DiskWin.colorDiskBG);
+			this.gc.fillRectangle(0,DiskWin.DGRAPH_HEIGHT-15, DiskWin.DGRAPH_WIDTH, DiskWin.DGRAPH_HEIGHT);
 			
 
 			
 			
 			tri[0] = (int) (this.graphscale * this.lastread)+1;
-			tri[1] = DiskStatusWin.DGRAPH_HEIGHT-15;
+			tri[1] = DiskWin.DGRAPH_HEIGHT-15;
 			tri[2] = tri[0]+7;
-			tri[3] = DiskStatusWin.DGRAPH_HEIGHT-7;
+			tri[3] = DiskWin.DGRAPH_HEIGHT-7;
 			tri[4] = tri[0]-7;
-			tri[5] = DiskStatusWin.DGRAPH_HEIGHT-7;
+			tri[5] = DiskWin.DGRAPH_HEIGHT-7;
 			
 			this.gc.setBackground(MainWin.colorGreen);
 			this.gc.fillPolygon(tri);
@@ -368,7 +466,7 @@ public class DiskDef implements Cloneable
 			tri[2] = tri[0]+7;
 			tri[4] = tri[0]-7;
 			
-			this.gc.setBackground(DiskStatusWin.colorDiskDirty);
+			this.gc.setBackground(DiskWin.colorDiskDirty);
 			this.gc.fillPolygon(tri);
 			
 			
@@ -400,12 +498,12 @@ public class DiskDef implements Cloneable
 					return(MainWin.colorGreen);
 				
 				if (scache > 0)
-					return(DiskStatusWin.colorDiskClean);
+					return(DiskWin.colorDiskClean);
 				
 			}
 		//}
 		
-		return DiskStatusWin.colorDiskGraphBG;
+		return DiskWin.colorDiskGraphBG;
 	}
 
 	
@@ -453,12 +551,68 @@ public class DiskDef implements Cloneable
 
 
 
+	public void setDiskwin(DiskWin diskwin)
+	{
+		this.diskwin = diskwin;
+	}
+
+
+
+	public DiskWin getDiskwin()
+	{
+		return diskwin;
+	}
+
+
+
+	public boolean hasDiskwin()
+	{
+		if (this.diskwin == null)
+			return false;
+		
+		if (this.diskwin.shlDwDrive == null)
+			return false;
+		
+		if (this.diskwin.shlDwDrive.isDisposed())
+			return false;
+		
+		return true;
+	}
+
+
 
 	public int getDriveNo()
 	{
 		return this.drive;
 	}
 
+
+
+	public void setParamwin(DiskAdvancedWin win)
+	{
+		this.paramwin = win;
+	}
+	
+	public DiskAdvancedWin getParamwin()
+	{
+		return paramwin;
+	}
+
+
+
+	public boolean hasParamwin()
+	{
+		if (this.paramwin == null)
+			return false;
+		
+		if (this.paramwin.shell == null)
+			return false;
+		
+		if (this.paramwin.shell.isDisposed())
+			return false;
+		
+		return true;
+	}
 
 
 

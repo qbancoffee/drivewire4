@@ -57,7 +57,7 @@ public class WindowPrefs extends JDialog {
 		this.sp = sp;
 		
 		setTitle("DW Lite Window Preferences");
-		//setIconImage(Toolkit.getDefaultToolkit().getImage(WindowPrefs.class.getResource("/dw/dw4square.jpg")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(WindowPrefs.class.getResource("/dw/dw4square.jpg")));
 		setBounds(100, 100, 450, 322);
 		getContentPane().setLayout(new BorderLayout());
 		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
