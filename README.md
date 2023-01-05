@@ -1,5 +1,5 @@
 # DriveWire 4
-DriveWire 4 Java version
+DriveWire 4 Java version by Aaron Wolfe
 
 - [Download the Latest release](https://github.com/qbancoffee/drivewire4/releases/latest)
 - [DriveWire4 for All  Java not included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p)
@@ -10,7 +10,7 @@ DriveWire 4 Java version
 
 
 
-This repo holds two netbeans projects for two versions of drivewire 4 that have been slightly modified so that they can be compiled and run with newer versions of java.
+This repo holds two netbeans projects for two versions of DriveWire 4 by Aaron Wolfe that have been slightly modified so that they can be compiled and run with newer versions of java.
 
 - drivewire4_from_source is DriveWire4 version 4.3.3p assembled from the source files available on sourceforge.<br>
 Get the original source files from sourceforge.
