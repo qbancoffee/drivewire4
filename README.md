@@ -1,13 +1,18 @@
 # DriveWire 4
 DriveWire 4 Java version
 
-[Download a release](https://github.com/qbancoffee/drivewire4/releases)
+- [Download the Latest release](https://github.com/qbancoffee/drivewire4/releases/latest)
+- [DriveWire4 for All  Java not included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p)
+- [DriveWire4 for linux x86_64 with Java included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p_linux_x86_64)
+- [DriveWire4 for linux arm_64 with Java included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p_linux_arm_64)
+- [DriveWire4 for Windows x64 with Java included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p_Windowsx64)
+- [DriveWire4 for MacOSX x86_64 with Java included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p_MacOSX)
 
 
 
 This repo holds two netbeans projects for two versions of drivewire 4 that have been slightly modified so that they can be compiled and run with newer versions of java.
 
-- drivewire4_from_source is version of DriveWire 4 java assembled from the source files available on sourceforge.<br>
+- drivewire4_from_source is DriveWire4 version 4.3.3p assembled from the source files available on sourceforge.<br>
 Get the original source files from sourceforge.
 https://sourceforge.net/projects/drivewireserver/<br>
 
@@ -18,30 +23,25 @@ Watch this video to see how the sourceforge version was modified to compile and 
 - [Compiling and running DriveWire 4 with OpenJDK 17](https://youtu.be/7fjNQZ2uRJI)
 
 
-To compile an run, make sure you have:
+To compile and run, make sure you have:
 - A JDK installed, I used OpenJDK 17 but any other JDK should work as well.
 - ant
 - NetBeans 16 or higher.
 <br>
 With ant installed, navigate to the project directory and type the following to compile:
-```bas
+```bash
 ant
 ```
-
-To run the program type the following:
-
-```bash
-ant run
-```
-<br>
 Unfortunately this NetBeans project and ant are closely tied together and I can't figure out how to decouple them enough to where ant works correctly without first having to open the project and building at least once with NetBeans. The following should work but it doesn't at first:
 
-For the drivewire4_from_source project.
-```bash
-java -jar dist/dw4nb.jar
-Error: Unable to initialize main class com.groupunix.drivewireui.MainWin
-Caused by: java.lang.NoClassDefFoundError: org/apache/log4j/Layout
-```
+For the drivewire4_from_source project use the script for your Operating system after compiling.
+
+- drivewire4_linux_x86_64
+- drivewire4_linux_arm_64
+- drivewire4_windows_x86_64.bat
+- drivewire4_mac_x86_64
+
+
 For the drivewire4_decompiled version.
 ```bash
 java -jar dist/drivewire_decompiled.jar
@@ -58,6 +58,9 @@ This is quickly solved by either updating that path manually or opening the proj
 After running it, you'll notice that the UI is very differnt from the UI that one sees when running the latest version of DriveWire 4.
 I suspect this might be a version isssue so hopefully someone will have the source for that and one day this repo can be updated.
 See screenshots of the UI below.
+
+
+
 ## Screenshots
 <br>
 
