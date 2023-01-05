@@ -1,5 +1,5 @@
 # DriveWire 4
-DriveWire 4 Java version by Aaron Wolfe
+DriveWire 4 Java by Aaron Wolfe
 
 - [Download the Latest release](https://github.com/qbancoffee/drivewire4/releases/latest)
 - [DriveWire4 for All  Java not included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p)
