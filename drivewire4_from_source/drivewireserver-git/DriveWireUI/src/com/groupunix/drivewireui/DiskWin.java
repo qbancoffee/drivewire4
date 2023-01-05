@@ -114,7 +114,7 @@ public class DiskWin {
 
 	
 	/**
-	 * @wbp.parser.entryPoint
+	 * 
 	 */
 	
 	public void open(final Display display) 

@@ -34,7 +34,7 @@ public class ErrorWin extends Dialog {
 	 * Create the dialog.
 	 * @param parent
 	 * @param style
-	 * @wbp.parser.constructor
+	 * 
 	 */
 	public ErrorWin(Shell parent, int style, String title, String summary, String detail) {
 		super(parent, style);

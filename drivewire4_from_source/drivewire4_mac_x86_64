@@ -1,0 +1,3 @@
+#/bin/bash
+
+java -Djava.library.path=/rxtx/mac -XstartOnFirstThread -cp ./swt/linux/swt.jar:./dist/lib/:dist/dw4nb.jar com.groupunix.drivewireui.MainWin "$@"

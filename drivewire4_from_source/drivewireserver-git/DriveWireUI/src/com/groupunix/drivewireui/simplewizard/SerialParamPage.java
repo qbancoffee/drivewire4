@@ -40,7 +40,7 @@ public class SerialParamPage extends WizardPage
 
 	/**
 	 * Create contents of the wizard.
-	 * @param parent
+	 * 
 	 */
 	
 	@Override

@@ -809,7 +809,7 @@ public class MainWin {
 
 	/**
 	 * Create contents of the window.
-	 * @wbp.parser.entryPoint
+	 * 
 	 */
 	protected void createContents() {
 		shell = new Shell();
