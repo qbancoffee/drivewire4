@@ -6,7 +6,6 @@ DriveWire 4 Java by Aaron Wolfe
 - [DriveWire4 for linux x86_64 with Java included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p_linux_x86_64)
 - [DriveWire4 for linux arm_64 with Java included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p_linux_arm_64)
 - [DriveWire4 for Windows x64 with Java included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p_Windowsx64)
-- [DriveWire4 for MacOSX x86_64 with Java included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p_MacOSX)
 
 
 
