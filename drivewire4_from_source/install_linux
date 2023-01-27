@@ -1,0 +1,31 @@
+#/bin/bash
+INSTALLDIR="$HOME/drive_wire_4_java"
+
+if [ -d $INSTALLDIR ]; then
+    rm -rf $INSTALLDIR
+fi
+
+mkdir "$INSTALLDIR"
+cp -R * "$INSTALLDIR"
+touch "$INSTALLDIR/start"
+touch "$INSTALLDIR/uninstall_linux"
+chmod +x "$INSTALLDIR/uninstall_linux"
+
+echo "cd $INSTALLDIR" > "$INSTALLDIR/start"
+
+EXEC="java -cp $INSTALLDIR/swt/linux/swt.jar:$INSTALLDIR/dist/lib/:$INSTALLDIR/dist/dw4nb.jar com.groupunix.drivewireui.MainWin"
+
+echo "$EXEC" >> "$INSTALLDIR/start"
+
+echo "Path=$INSTALLDIR" >> "$INSTALLDIR/drivewire4.desktop"
+echo "Exec=/bin/bash $INSTALLDIR/start" >> $INSTALLDIR/drivewire4.desktop
+echo "Icon= $INSTALLDIR/dw4_icon.png" >> "$INSTALLDIR/drivewire4.desktop"
+
+cp "$INSTALLDIR/drivewire4.desktop" "$HOME/.local/share/applications"
+
+echo "if [ -d $INSTALLDIR ]; then" >$INSTALLDIR/uninstall_linux
+echo "    rm -rf $INSTALLDIR" >> $INSTALLDIR/uninstall_linux
+echo "fi" >> $INSTALLDIR/uninstall_linux
+
+echo "rm $HOME/.local/share/applications/drivewire4.desktop" >> $INSTALLDIR/uninstall_linux
+
