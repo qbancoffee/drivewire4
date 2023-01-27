@@ -1,9 +1,17 @@
 #/bin/bash
 INSTALLDIR="$HOME/drive_wire_4_java"
 
+
 if [ -d $INSTALLDIR ]; then
     rm -rf $INSTALLDIR
 fi
+
+ARCH=`uname -m`
+SWTDIR="linux_arm"
+if [ "$ARCH" == "x86_64" ]; then
+    SWTDIR="linux"
+fi
+
 
 mkdir "$INSTALLDIR"
 cp -R * "$INSTALLDIR"
@@ -13,7 +21,7 @@ chmod +x "$INSTALLDIR/uninstall_linux"
 
 echo "cd $INSTALLDIR" > "$INSTALLDIR/start"
 
-EXEC="java -cp $INSTALLDIR/swt/linux/swt.jar:$INSTALLDIR/dist/lib/:$INSTALLDIR/dist/dw4nb.jar com.groupunix.drivewireui.MainWin"
+EXEC="java -Djava.library.path=$INSTALLDIR/lib -cp $INSTALLDIR/swt/$SWTDIR/swt.jar:$INSTALLDIR/dist/lib/:$INSTALLDIR/dist/dw4nb.jar com.groupunix.drivewireui.MainWin"
 
 echo "$EXEC" >> "$INSTALLDIR/start"
 
