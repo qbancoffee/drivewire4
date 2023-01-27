@@ -3,6 +3,8 @@ package com.groupunix.drivewireui;
 
 
 
+
+import com.google.common.io.Resources;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -88,6 +90,9 @@ import com.groupunix.drivewireui.updatewizard.NoUpdateDialog;
 import com.groupunix.drivewireui.updatewizard.UpdateWizard;
 import com.groupunix.dwlite.DWLite;
 import com.swtdesigner.SWTResourceManager;
+import java.lang.reflect.Method;
+import java.net.URL;
+import java.net.URLClassLoader;
 
 
 
@@ -281,9 +286,51 @@ public class MainWin {
 	public static Vector<OS9BufferGroup> os9BufferGroups;
 	private static boolean serverLocal = false;
 	
-	
-	public static void main(String[] args) 
-	{
+    public static void main(String[] args) {
+
+//        File jarFile = null;
+//        String libPath="drivewireserver-git/java/lib/";
+//        
+//
+//        if (System.getProperty("os.arch").contains("aarch64")) {
+//
+//            // load library that calls XinitThreads() so it doesn't crash on arm64
+//            if (System.getProperty("os.name").contains("Linux")) {
+//                System.loadLibrary("x");
+//                jarFile = new File(libPath + "swt_linux_arm_64.jar");
+//                
+//            }
+//
+//        }// end if
+//
+//        // check for amd64
+//        if (System.getProperty("os.arch").contains("amd64")) {
+//            if (System.getProperty("os.name").contains("Windows")) {
+//                jarFile = new File(libPath + "swt_win_amd_64.jar");
+//            }
+//
+//            if (System.getProperty("os.name").contains("Linux")) {
+//                jarFile = new File(libPath + "swt_linux_amd_64.jar");
+//            }
+//
+//            if (System.getProperty("os.name").contains("Mac")) {
+//                jarFile = new File(libPath + "swt_mac_amd_64.jar");
+//            }
+//
+//        }//end if
+
+       
+        if (System.getProperty("os.arch").contains("aarch64")) {
+
+            // load library that calls XinitThreads() so it doesn't crash on arm64
+            if (System.getProperty("os.name").contains("Linux")) {
+                System.loadLibrary("x");
+                
+            }
+
+        }// end if
+
+
 		// args we care about
 		MainWin.noServer = UIUtils.hasArg(args,"noserver");
 		
