@@ -47,6 +47,24 @@ Run the ant command again.
 ant
 ```
 
+If you are going to run this on a raspberry pi that uses the X11 windowing system, then you'll need a small library that calls XInitThreads(). In order to use SWT, XInitThreads() needs to be called beforehand. For whatver reason, SWT does not take care of this so we must. 
+I found and modified a small library "xdll.cpp" that someone made to solve this issue and it can be found in drivewire4/drivewire4_from_source
+
+Make sure you are compiling this on a raspberry pi and and that you have the X11 develeopment headers and g++ installed.
+to compile issue the following command. You can also cross compile this for arm64 from your dev computer but I haven't tried that yet.
+
+```bash
+g++ -o libx.so -shared -fPIC -Wl,-soname,libx.so -L/usr/lib/X11 -I/usr/include/X11 xdll.cpp -lX11
+```
+
+Copy the newly created shared library "libx.so" to "drivewire4/drivewire4_from_source/lib"
+
+Yo can now start DriveWire 4 using the included script for arm64.
+```bash
+./drivewire4_linux_arm_64
+```
+
+
 For the drivewire4_from_source project use the script for your Operating system after compiling.
 
 - drivewire4_linux_x86_64
