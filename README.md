@@ -14,17 +14,16 @@ This repo holds two netbeans projects for two versions of DriveWire 4 by Aaron W
 Get the original source files from sourceforge.
 https://sourceforge.net/projects/drivewireserver/<br>
 
-- drivewire4_decompiled is a version of the sources obtained from the decompilation of DW4UI.jar.
-<br>
-Watch this video to see how the sourceforge version was modified to compile and run with Java 17.
-
-- [Compiling and running DriveWire 4 with OpenJDK 17](https://youtu.be/7fjNQZ2uRJI)
 
 
+### Compiling
 To compile and run, make sure you have:
 - A JDK installed, I used OpenJDK 17 but any other JDK should work as well.
 - ant
 - NetBeans 16 or higher.
+For use on ARM64 you'll need to compile a small shared library so you'll need.
+- g++
+- X11 development headers
 <br>
 With ant installed, navigate to the project directory "drivewire4/drivewire4_from_source" and type the following to compile:
 
@@ -81,7 +80,13 @@ Caused by: java.lang.NoClassDefFoundError: org/apache/log4j/Layout
 ```
 <br>
 
+- drivewire4_decompiled is a version of the sources obtained from the decompilation of DW4UI.jar.
+<br>
+Watch this video to see how the sourceforge version was modified to compile and run with Java 17.
 
+- [Compiling and running DriveWire 4 with OpenJDK 17](https://youtu.be/7fjNQZ2uRJI)
+
+  
 This is because the lib folder with all of the required libraries was not created in the dist folder. Ant uses "nbproject/private/private.properties" to get the path to the JDK from NetBeans. In my case "user.properties.file=/home/rockyhill/snap/netbeans/74/build.properties".
 <br>
 This is quickly solved by either updating that path manually or opening the project in NetBeans and building once. This is a minor annoyance but it's solvable.
