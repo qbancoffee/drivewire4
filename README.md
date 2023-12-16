@@ -26,12 +26,26 @@ To compile and run, make sure you have:
 - ant
 - NetBeans 16 or higher.
 <br>
-With ant installed, navigate to the project directory and type the following to compile:
+With ant installed, navigate to the project directory "drivewire4/drivewire4_from_source" and type the following to compile:
 
 ```bash
 ant
 ```
-Unfortunately this NetBeans project and ant are closely tied together and I can't figure out how to decouple them enough to where ant works correctly without first having to open the project and building at least once with NetBeans. The following should work but it doesn't at first:
+Depending on the version of ant you have this step might produce an error. you'll see something like the following.
+
+```bash
+BUILD FAILED
+/home/rockyhill/Downloads/src/drivewire4/drivewire4_from_source/nbproject/build-impl.xml:1560: /home/rockyhill/Downloads/src/drivewire4/drivewire4_from_source/build/test/classes does not exist.
+```
+to solve this all you need to do is create test/classes directory inside of the newly created build directory. on linux you can issue the following command.
+```bash
+mkdir -p build/test/classes
+```
+
+Run the ant command again.
+```bash
+ant
+```
 
 For the drivewire4_from_source project use the script for your Operating system after compiling.
 
