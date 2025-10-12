@@ -38,11 +38,10 @@ echo "fi" >> $INSTALLDIR/uninstall_linux
 
 echo "rm $HOME/.local/share/applications/drivewire4.desktop" >> $INSTALLDIR/uninstall_linux
 
-#Here we are going to a URL to a local copy of HDB-DOS
+#Here we are going to add a URL to a local copy of HDB-DOS
 
 LOCALURL="file\:\/\/"${INSTALLDIR//\//\\/}"\/hdb-dos\/index.html"
 
-echo $LOCALURL
 PATTERN="<\/Local>"
 ENTRY="<Folder title=\"HDB-DOS\"><URL title=\"Load HDB-DOS\">"$LOCALURL"<\/URL><\/Folder><\/Local>"
 
