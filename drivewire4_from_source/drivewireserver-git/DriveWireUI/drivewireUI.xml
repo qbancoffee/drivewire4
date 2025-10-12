@@ -369,8 +369,8 @@
 <Browser_Height>691</Browser_Height>
 <Browser_x>161</Browser_x>
 <Browser_y>80</Browser_y>
-<Browser_homepage>http://cococoding.com/dw4</Browser_homepage>
-<Browser_helppage>http://cococoding.com/dw4/browserhelp</Browser_helppage>
+<Browser_homepage>https://github.com/qbancoffee/drivewire4/wiki/DriveWire-4</Browser_homepage>
+<Browser_helppage>https://github.com/qbancoffee/drivewire4/wiki/DriveWire-4-Help</Browser_helppage>
 <Library>
     <Local>
     <Path title="cocomax.dsk">e:/cocodisks/COCOMAX.DSK</Path>

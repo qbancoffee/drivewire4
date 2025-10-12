@@ -20,7 +20,6 @@ import org.eclipse.swt.widgets.Canvas;
 import org.eclipse.swt.widgets.Dialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
-
 import com.swtdesigner.SWTResourceManager;
 
 public class AboutWin extends Dialog {

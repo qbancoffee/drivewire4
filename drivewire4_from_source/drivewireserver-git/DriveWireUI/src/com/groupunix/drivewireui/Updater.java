@@ -12,7 +12,7 @@ import org.apache.commons.configuration.XMLConfiguration;
 public class Updater 
 {
 
-	public static final String UPDATEURL = "http://dwupdate.cococoding.com";
+	public static final String UPDATEURL = "https://github.com/qbancoffee/drivewire4/wiki/DriveWire-4";
 	
 	private XMLConfiguration upconf;
 	
