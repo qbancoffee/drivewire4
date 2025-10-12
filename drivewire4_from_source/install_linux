@@ -22,8 +22,7 @@ chmod +x "$INSTALLDIR/uninstall_linux"
 echo "#!/bin/bash" >> "$INSTALLDIR/start"
 echo "cd $INSTALLDIR" >> "$INSTALLDIR/start"
 
-EXEC="GDK_BACKEND=x11 java -Djava.library.path=$INSTALLDIR/lib -cp $INSTALLDIR/swt/$SWTDIR/swt.jar:$INSTALLDIR/dist/lib/:$INSTALLDIR/dist/dw4nb.jar com.groupunix.drivewireui.MainWin ""$@"" "
-
+EXEC="GDK_BACKEND=x11 java -Djava.library.path=$INSTALLDIR/lib -cp $INSTALLDIR/swt/$SWTDIR/swt.jar:$INSTALLDIR/dist/lib/:$INSTALLDIR/dist/dw4nb.jar com.groupunix.drivewireui.MainWin \"\$@\" "
 echo "$EXEC" >> "$INSTALLDIR/start"
 
 echo "Path=$INSTALLDIR" >> "$INSTALLDIR/drivewire4.desktop"
