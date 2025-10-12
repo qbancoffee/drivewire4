@@ -1,3 +1,0 @@
-#/bin/bash
-
-java -XstartOnFirstThread -cp ./swt/mac/swt.jar:./dist/lib/:dist/dw4nb.jar com.groupunix.drivewireui.MainWin "$@"
