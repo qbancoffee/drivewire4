@@ -5,7 +5,7 @@ DriveWire 4 Java by Aaron Wolfe
 - [Download the Latest release](https://github.com/qbancoffee/drivewire4/releases/latest)
 - [DriveWire4 for All  Java not included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p)
 - [DriveWire4 for linux x86_64 with Java included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p_linux_x86_64)
-- [DriveWire4 for linux arm_64 with Java included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p_linux_arm_64)
+- [DriveWire4 for linux arm_64 with Java included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.4p_linux_aarch64)
 - [DriveWire4 for Windows x64 with Java included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.3p_Windowsx64)
 
 This repo holds two netbeans projects for two versions of DriveWire 4 by Aaron Wolfe that have been slightly modified so that they can be compiled and run with newer versions of java.
