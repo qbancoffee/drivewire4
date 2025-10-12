@@ -1,3 +1,2 @@
-#/bin/bash
-
-java -Djava.library.path=./lib -cp ./swt/linux_arm/swt.jar:./dist/lib/:dist/dw4nb.jar com.groupunix.drivewireui.MainWin "$@"
+#!/bin/bash
+GDK_BACKEND=x11 java -Djava.library.path=./lib -cp ./swt/linux_arm/swt.jar:./dist/lib/:dist/dw4nb.jar com.groupunix.drivewireui.MainWin "$@"

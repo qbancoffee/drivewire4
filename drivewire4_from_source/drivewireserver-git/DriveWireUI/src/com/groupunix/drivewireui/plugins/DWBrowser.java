@@ -206,7 +206,7 @@ public class DWBrowser extends Composite
 			@Override
 			public void mouseDown(MouseEvent arg0) {
 				
-				browser.setUrl(MainWin.config.getString("Browser_helppage","http://cococoding.com/dw4/browserhelp"));
+				browser.setUrl(MainWin.config.getString("Browser_helppage","https://github.com/qbancoffee/drivewire4/wiki/DriveWire-4-Help"));
 				
 			}
 		});
@@ -392,7 +392,7 @@ public class DWBrowser extends Composite
 			}
 			else
 			{
-				// browser.setUrl(MainWin.config.getString("Browser_homepage", "http://cococoding.com/cloud") );
+				// browser.setUrl(MainWin.config.getString("Browser_homepage", "https://github.com/qbancoffee/drivewire4/wiki/DriveWire-4-Cloud") );
 			}
 			
 		

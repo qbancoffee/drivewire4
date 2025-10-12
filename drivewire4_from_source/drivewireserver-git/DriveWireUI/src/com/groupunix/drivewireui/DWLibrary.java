@@ -62,7 +62,7 @@ import com.swtdesigner.SWTResourceManager;
 
 public class DWLibrary extends Composite
 {
-	private static final String DEFAULT_URL = "http://cococoding.com/dw4";
+	private static final String DEFAULT_URL = "https://github.com/qbancoffee/drivewire4/wiki/DriveWire-4";
 	
 	public static final int TYPE_UNKNOWN = -1;
 	public static final int TYPE_FOLDER_MOUNTED = 0;
