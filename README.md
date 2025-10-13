@@ -21,18 +21,18 @@ Outdated or broken URLs have been removed from the bookmark menu, and new, relev
 The bookmark menu now includes:
 
 - **NitrOS9**  
-    - NitrOS 9 Documentation Wiki  
+    - [NitrOS 9 Documentation Wiki](https://sourceforge.net/projects/nitros9/)  
 - **Software Websites**  
-    - Curtis Boyle’s Games Site  
-    - Mike Snyder’s COCO Quest  
+    - [Curtis Boyle’s Games Site](http://www.lcurtisboyle.com/nitros9/coco_game_list.html)
+    - [Mike Snyder’s COCO Quest](https://cocoquest.com/#DOWNLOAD)
 - **DriveWire Websites**
-    - DriveWire 4 Wiki *(in development)*  
-    - DriveWire 4 GitHub Repository  
-    - DriveWire4 SourceForge Repository *(discontinued)*  
-    - Official DriveWire Repository *(Boisy Pitre)*  
-    - pyDriveWire  
+    - [DriveWire 4 Wiki *(in development)*](https://github.com/qbancoffee/drivewire4/wiki/DriveWire-4)
+    - [DriveWire 4 GitHub Repository](https://github.com/qbancoffee/drivewire4)
+    - [DriveWire4 SourceForge Repository *(discontinued)*](https://sourceforge.net/projects/drivewireserver/)
+    - [Official DriveWire Repository *(Boisy Pitre)*](https://github.com/boisy/DriveWire)
+    - [pyDriveWire](https://github.com/n6il/pyDriveWire)
 - **HDB-DOS**  
-    - Load HDB-DOS  
+    - [Load HDB-DOS](https://github.com/qbancoffee/drivewire4/wiki/DriveWire-4)
 
 ---
 
