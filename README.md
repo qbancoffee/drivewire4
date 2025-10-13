@@ -32,7 +32,7 @@ The bookmark menu now includes:
     - [Official DriveWire Repository *(Boisy Pitre)*](https://github.com/boisy/DriveWire)
     - [pyDriveWire](https://github.com/n6il/pyDriveWire)
 - **HDB-DOS**  
-    - [Load HDB-DOS](https://github.com/qbancoffee/drivewire4/wiki/DriveWire-4)
+    - [Load HDB-DOS](https://github.com/qbancoffee/drivewire4/wiki/HDB%E2%80%90DOS)
 
 ---
 
