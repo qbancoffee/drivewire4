@@ -3,6 +3,98 @@ DriveWire 4 Java by Aaron Wolfe
 
 Latest version is 4.3.4p
 
+
+## Quality of Life Improvements
+
+### SWT Library Update
+
+The SWT library has been updated from version **4.2.4 (2012)** to **4.37 (September 2025)**.  
+This update brings a wide range of improvements to SWT, most notably within the embedded browser component.
+
+As a result, DriveWire 4 can now load more modern web pages and support current web technologies.  
+Outdated or broken URLs have been removed from the bookmark menu, and new, relevant links have been added.
+
+---
+
+### Updated Bookmark Menu
+
+The bookmark menu now includes:
+
+- **NitrOS9**  
+    - NitrOS 9 Documentation Wiki  
+- **Software Websites**  
+    - Curtis Boyle’s Games Site  
+    - Mike Snyder’s COCO Quest  
+- **DriveWire Websites**
+    - DriveWire 4 Wiki *(in development)*  
+    - DriveWire 4 GitHub Repository  
+    - DriveWire4 SourceForge Repository *(discontinued)*  
+    - Official DriveWire Repository *(Boisy Pitre)*  
+    - pyDriveWire  
+- **HDB-DOS**  
+    - Load HDB-DOS  
+
+---
+
+### Enhanced Browser Capabilities
+
+Leveraging the new SWT library, DriveWire 4 can now render HTML `<audio>` controls within its built-in browser.  
+The **Load HDB-DOS** page is a local web page that includes an HTML audio player for three HDB-DOS WAV files:
+
+- CoCo 1  
+- CoCo 2  
+- CoCo 3  
+
+These WAV files can be played directly within the DriveWire 4 browser, allowing for convenient and integrated HDB-DOS loading across CoCo systems.
+
+---
+
+### Prepackaged Releases
+
+Prepackaged releases are available for:
+
+- **Windows**  
+- **Linux x86_64**  
+- **Linux aarch_64**
+
+Each release is bundled with its own **Java Runtime Environment (JRE)** in a self-contained directory.  
+Installation scripts are provided that will:
+
+- Copy DriveWire 4 and its bundled JRE to your system  
+- Create a desktop launcher  
+- Create an uninstall script  
+
+These installers do **not** install Java system-wide and will **not interfere with existing Java installations**, allowing DriveWire 4 to run as a fully standalone application.
+
+---
+
+### Linux Installation Note
+
+Before running DriveWire 4 for the first time on Linux, ensure that the package  
+`libswt-webkit-gtk-4-jni` is installed.  
+
+If this library is missing, DriveWire 4 may behave abnormally and alter its installation files.  
+In such cases, reinstalling DriveWire 4 **after** installing `libswt-webkit-gtk-4-jni` will be necessary.
+
+---
+
+### Platform Compatibility
+
+This version of DriveWire 4 has been tested and confirmed to work on:
+
+- **Ubuntu (x86_64)**  
+- **Raspbian aarch64 (Raspberry Pi)**  
+- **Windows 10**  
+- **Windows 11**
+
+Although startup scripts are included for **Intel** and **ARM Macs**, functionality has not been verified due to lack of hardware for testing.
+
+---
+
+
+
+
+
 ## Download compiled versions 
 - [DriveWire4 4.3.4p for Windows x64 with Java included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.4p_Windows_x64)
 - [DriveWire4 4.3.4p for All  Java not included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.4p)
