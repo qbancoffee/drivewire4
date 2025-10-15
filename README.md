@@ -121,7 +121,7 @@ To compile and run, make sure you have:
 - ant
 - NetBeans 16 or higher.(you don't stricly need this if you just want to compile)
   
-The following was tested under linux but it shoulw work the same under Windows.
+The following was tested under linux but it should work the same under Windows.
 With ant installed, navigate to the project directory "drivewire4/drivewire4_from_source" and type the following to compile:
 
 ```bash
