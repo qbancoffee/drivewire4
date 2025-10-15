@@ -117,13 +117,11 @@ https://sourceforge.net/projects/drivewireserver/<br>
 
 ### Compiling
 To compile and run, make sure you have:
-- A JDK installed, I used OpenJDK 17 but any other JDK should work as well.
+- Java JDK 17 or greater installed.
 - ant
-- NetBeans 16 or higher.
-For use on ARM64 you'll need to compile a small shared library so you'll need.
-- g++
-- X11 development headers
-<br>
+- NetBeans 16 or higher.(you don't stricly need this if you just want to compile)
+  
+The following was tested under linux but it shoulw work the same under Windows.
 With ant installed, navigate to the project directory "drivewire4/drivewire4_from_source" and type the following to compile:
 
 ```bash
@@ -144,12 +142,17 @@ Run the ant command again.
 ```bash
 ant
 ```
-
+For use on ARM64 you'll need to compile a small shared library so you'll need.
+- g++
+- X11 development headers
+<br>
 If you are going to run this on a raspberry pi that uses the X11 windowing system, then you'll need a small library that calls XInitThreads(). In order to use SWT, XInitThreads() needs to be called beforehand. For whatver reason, SWT does not take care of this so we must. 
 I found and modified a small library "xdll.cpp" that someone made to solve this issue and it can be found in drivewire4/drivewire4_from_source
 
 Make sure you are compiling this on a raspberry pi and and that you have the X11 develeopment headers and g++ installed.
 to compile issue the following command. You can also cross compile this for arm64 from your dev computer but I haven't tried that yet.
+
+
 
 ```bash
 g++ -o libx.so -shared -fPIC -Wl,-soname,libx.so -L/usr/lib/X11 -I/usr/include/X11 xdll.cpp -lX11
@@ -157,7 +160,7 @@ g++ -o libx.so -shared -fPIC -Wl,-soname,libx.so -L/usr/lib/X11 -I/usr/include/X
 
 Copy the newly created shared library "libx.so" to "drivewire4/drivewire4_from_source/lib"
 
-Yo can now start DriveWire 4 using the included script for arm64.
+You can now start DriveWire 4 using the included script for arm64.
 ```bash
 ./drivewire4_linux_arm_64
 ```
@@ -168,22 +171,8 @@ For the drivewire4_from_source project use the script for your Operating system 
 - drivewire4_linux_x86_64
 - drivewire4_linux_arm_64
 - drivewire4_windows_x86_64.bat
-- drivewire4_mac_x86_64
-
-
-For the drivewire4_decompiled version.
-```bash
-java -jar dist/drivewire_decompiled.jar
-Error: Unable to initialize main class com.groupunix.drivewireui.MainWin
-Caused by: java.lang.NoClassDefFoundError: org/apache/log4j/Layout
-```
-<br>
-
-- drivewire4_decompiled is a version of the sources obtained from the decompilation of DW4UI.jar.
-<br>
-Watch this video to see how the sourceforge version was modified to compile and run with Java 17.
-
-- [Compiling and running DriveWire 4 with OpenJDK 17](https://youtu.be/7fjNQZ2uRJI)
+- drivewire4_macosx.x86_64
+- drivewire4_macosx.aarch64
 
   
 Ant uses "nbproject/private/private.properties" to get the path to the JDK from NetBeans. In my case "user.properties.file=/home/rockyhill/snap/netbeans/74/build.properties".
