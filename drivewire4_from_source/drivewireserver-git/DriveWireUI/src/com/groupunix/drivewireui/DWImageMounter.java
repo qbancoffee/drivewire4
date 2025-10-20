@@ -19,12 +19,8 @@ import org.eclipse.swt.widgets.Dialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.MessageBox;
 import org.eclipse.swt.widgets.Shell;
-import org.eclipse.swt.widgets.Spinner;
 
-/**
- *
- * @author pedro
- */
+
 public class DWImageMounter extends Dialog {
 
     private boolean appendDOSFile = false;
@@ -91,7 +87,7 @@ public class DWImageMounter extends Dialog {
                 }
                 if (rc == SWT.YES) {
 
-                    List<String> cmds = new ArrayList<String>();
+                    List<String> cmds = new ArrayList<>();
                     int spinnerOffset = 0;
 
                     //adding the files to dw.
@@ -130,7 +126,7 @@ public class DWImageMounter extends Dialog {
 
             } catch (FileSystemException e) {
                 // TODO Auto-generated catch block
-                e.printStackTrace();
+
             }
 
         } else {
@@ -255,10 +251,10 @@ public class DWImageMounter extends Dialog {
         FileObject zipFile = fsManager.resolveFile(zipUri);
 
         try {
-            List<String> fileUris = new ArrayList<String>();
+            List<String> fileUris = new ArrayList<>();
             // Start traversal from the root of the zip
             collectAllFiles(zipFile, fileUris);
-            return fileUris.toArray(new String[0]);
+            return fileUris.toArray(String[]::new);
         } finally {
             // Clean up
             zipFile.close();
@@ -304,15 +300,10 @@ public class DWImageMounter extends Dialog {
     protected void sendCommandDialog(final List<String> cmd, final String title, final String message) {
         final Shell shell = MainWin.getMainShell();
 
-        display.asyncExec(
-                new Runnable() {
-            public void run() {
-
-                SendCommandWin win = new SendCommandWin(shell, SWT.DIALOG_TRIM, cmd, title, message);
-
-                win.open();
-
-            }
+        display.asyncExec(() -> {
+            SendCommandWin win = new SendCommandWin(shell, SWT.DIALOG_TRIM, cmd, title, message);
+            
+            win.open();
         });
 
     }

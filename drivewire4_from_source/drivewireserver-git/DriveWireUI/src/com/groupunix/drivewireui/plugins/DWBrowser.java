@@ -191,7 +191,7 @@ public class DWBrowser extends Composite {
                 // Code to execute when the spinner value changes
                 int selectedValue = spinnerDrive.getSelection();
                 MainWin.table.setSelection(selectedValue);
-                System.out.println("Selected value: " + selectedValue);
+
             }
         });
 
@@ -222,19 +222,20 @@ public class DWBrowser extends Composite {
         fd_toolBar_1.top = new FormAttachment(0, 8);
         toolBar_1.setLayoutData(fd_toolBar_1);
 
-        toolBookmarks = new ToolItem(toolBar_1, SWT.NONE);
-        toolBookmarks.addSelectionListener(new SelectionAdapter() {
-            @Override
-            public void widgetSelected(SelectionEvent arg0) {
-                if (isBookmark(comboURL.getText())) {
-                    removeBookmark(comboURL.getText());
-                } else {
-                    addBookmark(comboURL.getText());
-                }
-            }
-        });
-        toolBookmarks.setToolTipText("Add/Remove bookmark");
-        toolBookmarks.setImage(SWTResourceManager.getImage(DWBrowser.class, "/menu/bookmark-new-2.png"));
+//        toolBookmarks = new ToolItem(toolBar_1, SWT.NONE);
+//        toolBookmarks.addSelectionListener(new SelectionAdapter() {
+//            @Override
+//            public void widgetSelected(SelectionEvent arg0) {
+//                if (isBookmark(comboURL.getText())) {
+//                    removeBookmark(comboURL.getText());
+//                } else {
+//                    addBookmark(comboURL.getText());
+//                }
+//            }
+//        });
+//        toolBookmarks.setToolTipText("Add/Remove bookmark");
+//        toolBookmarks.setImage(SWTResourceManager.getImage(DWBrowser.class, "/menu/bookmark-new-2.png"));
+//        toolBookmarks.setEnabled(false);
 
         // Create combo URL, attached between left toolbar and right toolbar_1
         comboURL = new Combo(header, SWT.NONE);
@@ -365,11 +366,11 @@ public class DWBrowser extends Composite {
     }
 
     protected void toggleBookmarkIcon(String url) {
-        if (isBookmark(url)) {
-            toolBookmarks.setImage(SWTResourceManager.getImage(DWBrowser.class, "/menu/bookmark-del-2.png"));
-        } else {
-            toolBookmarks.setImage(SWTResourceManager.getImage(DWBrowser.class, "/menu/bookmark-new-2.png"));
-        }
+//        if (isBookmark(url)) {
+//            toolBookmarks.setImage(SWTResourceManager.getImage(DWBrowser.class, "/menu/bookmark-del-2.png"));
+//        } else {
+//            toolBookmarks.setImage(SWTResourceManager.getImage(DWBrowser.class, "/menu/bookmark-new-2.png"));
+//        }
 
     }
 

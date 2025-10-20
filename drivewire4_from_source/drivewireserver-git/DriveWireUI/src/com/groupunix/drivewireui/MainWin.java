@@ -98,9 +98,9 @@ public class MainWin {
 
     public static final int DWUIVersionMajor = 4;
     public static final int DWUIVersionMinor = 3;
-    public static final int DWUIVersionBuild = 3;
-    public static final String DWUIVersionRevision = "o";
-    public static final String DWUIVersionDate = "06/21/2013";
+    public static final int DWUIVersionBuild = 5;
+    public static final String DWUIVersionRevision = "p";
+    public static final String DWUIVersionDate = "10/20/2025";
 
     public static final Version DWUIVersion = new Version(DWUIVersionMajor, DWUIVersionMinor, DWUIVersionBuild, DWUIVersionRevision, DWUIVersionDate);
 
@@ -481,23 +481,23 @@ public class MainWin {
 
         // game over.  flag to let threads know.
         host = null;
+        if (!UIUtils.hasArg(args, "liteui")) {
+            menu_tools.addMenuListener(new MenuListener() {
 
-        menu_tools.addMenuListener(new MenuListener() {
+                @Override
+                public void menuHidden(MenuEvent arg0) {
 
-            @Override
-            public void menuHidden(MenuEvent arg0) {
+                }
 
-            }
+                @Override
+                public void menuShown(MenuEvent arg0) {
+                    // set menu toggles
+                    mntmHdbdosTranslation.setSelection(MainWin.getInstanceConfig().getBoolean("HDBDOSMode", false));
+                    mntmRestartClientsOnOpen.setSelection(MainWin.getInstanceConfig().getBoolean("RestartClientsOnOpen", false));
+                }
 
-            @Override
-            public void menuShown(MenuEvent arg0) {
-                // set menu toggles
-                mntmHdbdosTranslation.setSelection(MainWin.getInstanceConfig().getBoolean("HDBDOSMode", false));
-                mntmRestartClientsOnOpen.setSelection(MainWin.getInstanceConfig().getBoolean("RestartClientsOnOpen", false));
-            }
-
-        });
-
+            });
+        }
     }
 
     private static void startDWServer(final String[] args) {
@@ -953,19 +953,19 @@ public class MainWin {
 
         mntmRestartClientsOnOpen.setText("Restart clients when server starts");
 
-        new MenuItem(menu_tools, SWT.SEPARATOR);
-
-        final MenuItem mntmCheckUpdates = new MenuItem(menu_tools, SWT.NONE);
-       
-        mntmCheckUpdates.addSelectionListener(new SelectionAdapter() {
-            @Override
-            public void widgetSelected(SelectionEvent e) {
-                doUpdateCheck();
-
-            }
-        });
-        mntmCheckUpdates.setText("Check for new version...");
-        mntmCheckUpdates.setImage(org.eclipse.wb.swt.SWTResourceManager.getImage(MainWin.class, "/menu/wand.png"));
+//        new MenuItem(menu_tools, SWT.SEPARATOR);
+//
+//        final MenuItem mntmCheckUpdates = new MenuItem(menu_tools, SWT.NONE);
+//       
+//        mntmCheckUpdates.addSelectionListener(new SelectionAdapter() {
+//            @Override
+//            public void widgetSelected(SelectionEvent e) {
+//                doUpdateCheck();
+//
+//            }
+//        });
+//        mntmCheckUpdates.setText("Check for new version...");
+//        mntmCheckUpdates.setImage(org.eclipse.wb.swt.SWTResourceManager.getImage(MainWin.class, "/menu/wand.png"));
         
 
         // config menu
@@ -1072,7 +1072,7 @@ public class MainWin {
 
                 mntmUseRemoteFile.setSelection(config.getBoolean("UseRemoteFilebrowser", false));
                 mntmNoBrowsers.setSelection(config.getBoolean("NoBrowsers", false));
-                mntmCheckUpdates.setSelection(config.getBoolean("CheckForUpdates", true));
+                //mntmCheckUpdates.setSelection(config.getBoolean("CheckForUpdates", true));
             }
         });
 
@@ -1223,16 +1223,16 @@ public class MainWin {
 
         new MenuItem(menu_help, SWT.SEPARATOR);
 
-        MenuItem mntmSubmitBugReport = new MenuItem(menu_help, SWT.NONE);
-        mntmSubmitBugReport.setImage(org.eclipse.wb.swt.SWTResourceManager.getImage(MainWin.class, "/menu/bug.png"));
-        mntmSubmitBugReport.addSelectionListener(new SelectionAdapter() {
-            @Override
-            public void widgetSelected(SelectionEvent e) {
-                BugReportWin brwin = new BugReportWin(shell, SWT.DIALOG_TRIM, "User submitted", "User submitted", "User submitted");
-                brwin.open();
-            }
-        });
-        mntmSubmitBugReport.setText("Submit bug report...");
+//        MenuItem mntmSubmitBugReport = new MenuItem(menu_help, SWT.NONE);
+//        mntmSubmitBugReport.setImage(org.eclipse.wb.swt.SWTResourceManager.getImage(MainWin.class, "/menu/bug.png"));
+//        mntmSubmitBugReport.addSelectionListener(new SelectionAdapter() {
+//            @Override
+//            public void widgetSelected(SelectionEvent e) {
+//                BugReportWin brwin = new BugReportWin(shell, SWT.DIALOG_TRIM, "User submitted", "User submitted", "User submitted");
+//                brwin.open();
+//            }
+//        });
+//        mntmSubmitBugReport.setText("Submit bug report...");
 
         new MenuItem(menu_help, SWT.SEPARATOR);
 
