@@ -11,9 +11,9 @@ Latest version is 4.3.4p
 
 
 
-## Quality of Life Improvements
+# Quality of Life Improvements
 
-### SWT Library Update
+## SWT Library Update
 
 The SWT library has been updated from version **4.2.4 (2012)** to **4.37 (September 2025)**.  
 This update brings a wide range of improvements to SWT, most notably within the embedded browser component.
@@ -21,29 +21,26 @@ This update brings a wide range of improvements to SWT, most notably within the 
 As a result, DriveWire 4 can now load more modern web pages and support current web technologies.  
 Outdated or broken URLs have been removed from the bookmark menu, and new, relevant links have been added.
 
----
-
-### Updated Bookmark Menu
+## Updated Bookmark Menu
 
 The bookmark menu now includes:
 
 - **NitrOS9**  
-    - [NitrOS 9 Documentation Wiki](https://sourceforge.net/projects/nitros9/)  
+  - [NitrOS 9 Documentation Wiki](https://sourceforge.net/projects/nitros9/)  
+  - [NitrOS 9 Ease Of Use Project](http://www.lcurtisboyle.com/nitros9/nitros9.html)  
 - **Software Websites**  
-    - [Curtis Boyle’s Games Site](http://www.lcurtisboyle.com/nitros9/coco_game_list.html)
-    - [Mike Snyder’s COCO Quest](https://cocoquest.com/#DOWNLOAD)
-- **DriveWire Websites**
-    - [DriveWire 4 Wiki *(in development)*](https://github.com/qbancoffee/drivewire4/wiki/DriveWire-4)
-    - [DriveWire 4 GitHub Repository](https://github.com/qbancoffee/drivewire4)
-    - [DriveWire4 SourceForge Repository *(discontinued)*](https://sourceforge.net/projects/drivewireserver/)
-    - [Official DriveWire Repository *(Boisy Pitre)*](https://github.com/boisy/DriveWire)
-    - [pyDriveWire](https://github.com/n6il/pyDriveWire)
-- **HDB-DOS**  
-    - [Load HDB-DOS](https://github.com/qbancoffee/drivewire4/wiki/HDB%E2%80%90DOS)
+  - [Curtis Boyle’s Games Site](http://www.lcurtisboyle.com/nitros9/coco_game_list.html)  
+  - [The Color Computer Archive](https://colorcomputerarchive.com/)  
+  - [Mike Snyder’s COCO Quest](https://cocoquest.com)  
+- **DriveWire Websites**  
+  - [DriveWire 4 Wiki *(in development)*](https://github.com/qbancoffee/drivewire4/wiki/DriveWire-4)  
+  - [DriveWire 4 GitHub Repository](https://github.com/qbancoffee/drivewire4)  
+  - [DriveWire4 SourceForge Repository *(discontinued)*](https://sourceforge.net/projects/drivewireserver/)  
+  - [Official DriveWire Repository *(Boisy Pitre)*](https://github.com/boisy/DriveWire)  
+  - [pyDriveWire](https://github.com/n6il/pyDriveWire)  
+  - [DriveWire Codebase](https://github.com/qbancoffee/drivewire4)  
 
----
-
-### Enhanced Browser Capabilities
+## Enhanced Browser Capabilities
 
 Leveraging the new SWT library, DriveWire 4 can now render HTML `<audio>` controls within its built-in browser.  
 The **Load HDB-DOS** page is a local web page that includes an HTML audio player for three HDB-DOS WAV files:
@@ -54,9 +51,58 @@ The **Load HDB-DOS** page is a local web page that includes an HTML audio player
 
 These WAV files can be played directly within the DriveWire 4 browser, allowing for convenient and integrated HDB-DOS loading across CoCo systems.
 
----
+Although the browser component itself no longer handles disk or archive mounting, it now seamlessly integrates with the new **DWImageMounter** system to provide consistent behavior when interacting with DSK or archive files.  
+The toolbar spinner is now visible and fully functional, providing clear feedback during browser-based operations.
 
-### Prepackaged Releases
+Users can now **insert images directly from the Color Computer Archive**, a feature that was not previously possible.  
+This improvement is due to two key factors:  
+1. The previous SWT version did not render the website correctly, preventing interaction with download links.  
+2. The archive distributes disk images within ZIP files, with DSK files one level deeper than the archive root, a structure older versions could not traverse.  
+
+With SWT 4.37 and the `DWImageMounter.java` ZIP traversal logic, DriveWire 4 can now properly access and mount these images directly from the site.
+
+`DWBrowser.java` has also been enhanced to improve drive management and user interaction within the browser interface.  
+Users can **insert** or **append** a drive by clicking on its associated row in the drive table.  
+Clicking a row updates the drive number displayed in the browser spinner, keeping the interface synchronized.  
+Conversely, changing the spinner’s value whether by typing a number or using the **+** and **–** buttons, highlights the corresponding drive row.
+
+The **floppy disk icon** located to the left of the spinner can be clicked to **toggle Append Mode** directly from the browser toolbar, providing a quick way to switch between standard and append behaviors.
+
+## Disk and File Management Enhancements
+
+All functionality related to loading or mounting **CoCo image and binary files** has been moved from `DWBrowser.java` to a new, dedicated class: `DWImageMounter.java`.  
+While DriveWire 4 has long supported these file types, this change delegates management of them to `DWImageMounter.java` rather than `DWBrowser.java`.  
+
+`DWImageMounter.java` handles all CoCo-related disk and binary extensions, including:  
+**BIN, DSK, VHD, BAS, ARC, IMG, DMK, OS9, and ZIP.**  
+
+It is responsible for traversing ZIP files, locating valid images (including those nested within subdirectories), and prompting the user to load them.  
+Because this logic has been centralized, the following features now share the same core implementation:
+
+- **Insert disk for drive X**  
+- **Insert disk from URL for drive X**  
+- **Load disks directly from the web browser**
+- **Append to inserted DSK image**
+
+As a result, improvements or fixes to mounting behavior apply consistently across all use cases.
+
+Appending to files has also been implemented.  
+A new **Append** menu item has been added to the disk table context menu, and a **Toggle Append Mode** option is available under the **Tools** menu for quick activation.
+
+## Stability and UI Fixes
+
+In several areas of the user interface, shell handling and event management have been improved for better reliability.
+
+A bug that prevented loading multiple files due to use of an inactive shell has been resolved by replacing references to `getActiveShell()` with `Display.getMainShell()`.  
+This method is part of the SWT **Display** class and ensures the correct shell is always returned, active or not.
+
+Other stability improvements include:
+
+- Fixing a bug in the **Tools** menu event handler logic that would cause DriveWire 4 to crash.  
+- Resolving a crash when selecting **Display Timers** from the **Tools** menu.  
+  This issue was caused by a null shell reference for the timers dialog; using the main shell reference from the Display now prevents the crash entirely.
+
+## Prepackaged Releases
 
 Prepackaged releases are available for:
 
@@ -73,9 +119,7 @@ Installation scripts are provided that will:
 
 These installers do **not** install Java system-wide and will **not interfere with existing Java installations**, allowing DriveWire 4 to run as a fully standalone application.
 
----
-
-### Linux Installation Note
+## Linux Installation Note
 
 Before running DriveWire 4 for the first time on Linux, ensure that the package  
 `libswt-webkit-gtk-4-jni` is installed.  
@@ -83,9 +127,7 @@ Before running DriveWire 4 for the first time on Linux, ensure that the package
 If this library is missing, DriveWire 4 may behave abnormally and alter its installation files.  
 In such cases, reinstalling DriveWire 4 **after** installing `libswt-webkit-gtk-4-jni` will be necessary.
 
----
-
-### Platform Compatibility
+## Platform Compatibility
 
 This version of DriveWire 4 has been tested and confirmed to work on:
 
@@ -96,7 +138,6 @@ This version of DriveWire 4 has been tested and confirmed to work on:
 
 Although startup scripts are included for **Intel** and **ARM Macs**, functionality has not been verified due to lack of hardware for testing.
 
----
 
 
 
