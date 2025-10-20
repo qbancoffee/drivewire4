@@ -1,11 +1,13 @@
 package com.groupunix.drivewireui;
 
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Dialog;
 import org.eclipse.swt.widgets.DirectoryDialog;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
+import org.eclipse.swt.widgets.Shell;
 
-public class LocalFileBrowser implements Runnable
+public class LocalFileBrowser extends Dialog implements Runnable 
 {
 	String startpath;
 	boolean dir;
@@ -15,15 +17,18 @@ public class LocalFileBrowser implements Runnable
 	String[] fileext;
 	
 	String selected = null;
+        private Shell shell;
 	
-	public LocalFileBrowser(final boolean save, final boolean dir, final String startpath, final String title, final String buttontext, String[] fileext)
+	public LocalFileBrowser(Shell parent, final boolean save, final boolean dir, final String startpath, final String title, final String buttontext, String[] fileext)
 	{
+                super(parent);
 		this.startpath = startpath;
 		this.dir = dir;
 		this.save = save;
 		this.title = title;
 		this.buttontext = buttontext;
 		this.fileext = fileext;
+                shell = parent;
 	}
 	
 	
@@ -35,9 +40,9 @@ public class LocalFileBrowser implements Runnable
 			FileDialog fd;
 			
 			if (save)
-				fd = new FileDialog(Display.getCurrent().getActiveShell(), SWT.SAVE);
+				fd = new FileDialog(shell, SWT.SAVE);
 			else
-				fd = new FileDialog(Display.getCurrent().getActiveShell(), SWT.OPEN);
+				fd = new FileDialog(shell, SWT.OPEN);
 			
 	        fd.setText(title);
 	        fd.setFilterPath(startpath);
