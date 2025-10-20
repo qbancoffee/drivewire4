@@ -77,7 +77,7 @@ public class DWBrowser extends Composite {
     private ToolBar toolBar_1;
     private ToolItem toolBookmarks;
     private ToolBar toolBar_2;
-    private ToolItem toolDrive;
+    public static ToolItem toolDrive;
 
     //public boolean append_mode = MainWin.append_mode;
 
@@ -205,11 +205,13 @@ public class DWBrowser extends Composite {
             @Override
             public void widgetSelected(SelectionEvent arg0) {
                 if (MainWin.append_mode) {
-                    toolDrive.setImage(SWTResourceManager.getImage(DWBrowser.class, "/menu/disk-insert.png"));
+                    toolDrive.setImage(org.eclipse.wb.swt.SWTResourceManager.getImage(DWBrowser.class, "/menu/disk-insert.png"));
                     MainWin.append_mode = false;
+                    //MainWin.mntmAppendEnable.setText("Enable Append Mode");
                 } else {
-                    toolDrive.setImage(SWTResourceManager.getImage(DWBrowser.class, "/menu/new-disk-16.png"));
+                    toolDrive.setImage(org.eclipse.wb.swt.SWTResourceManager.getImage(DWBrowser.class, "/menu/new-disk-16.png"));
                     MainWin.append_mode = true;
+                    //MainWin.mntmAppendEnable.setText("Disable Append Mode");
                 }
             }
         });

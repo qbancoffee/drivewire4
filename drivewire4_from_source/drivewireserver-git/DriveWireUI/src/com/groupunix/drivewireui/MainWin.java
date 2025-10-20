@@ -82,6 +82,7 @@ import com.groupunix.drivewireui.library.MountedFolderLibraryItem;
 import com.groupunix.drivewireui.nineserver.NineServer;
 import com.groupunix.drivewireui.nineserver.OS9BufferGroup;
 import com.groupunix.drivewireui.plugins.DWBrowser;
+import static com.groupunix.drivewireui.plugins.DWBrowser.toolDrive;
 import com.groupunix.drivewireui.simplewizard.SimpleWizard;
 import com.groupunix.drivewireui.updatewizard.NoUpdateDialog;
 import com.groupunix.drivewireui.updatewizard.UpdateWizard;
@@ -269,6 +270,7 @@ public class MainWin {
     private static boolean serverLocal = false;
     public static boolean append_mode = false;
     public static int sdisk=0;
+    
 
     public static void main(String[] args) {
 
@@ -494,6 +496,7 @@ public class MainWin {
                     // set menu toggles
                     mntmHdbdosTranslation.setSelection(MainWin.getInstanceConfig().getBoolean("HDBDOSMode", false));
                     mntmRestartClientsOnOpen.setSelection(MainWin.getInstanceConfig().getBoolean("RestartClientsOnOpen", false));
+                    
                 }
 
             });
@@ -892,6 +895,32 @@ public class MainWin {
         });
         mntmEjectAllDisks.setText("Eject all disks");
 
+        MenuItem mntmAppendEnable;
+        mntmAppendEnable = new MenuItem(menu_tools, SWT.NONE);
+        mntmAppendEnable.setImage(org.eclipse.wb.swt.SWTResourceManager.getImage(MainWin.class, "/menu/disk-insert.png"));
+        mntmAppendEnable.addSelectionListener(new SelectionAdapter() {
+            @Override
+            public void widgetSelected(SelectionEvent e) {
+                if (MainWin.append_mode) {
+                    if (toolDrive != null) {
+                        toolDrive.setImage(org.eclipse.wb.swt.SWTResourceManager.getImage(DWBrowser.class, "/menu/disk-insert.png"));
+                    }
+                    MainWin.append_mode = false;
+                    //mntmAppendEnable.setText("Enable Append Mode");
+                } else {
+                    if (toolDrive != null) {
+                        toolDrive.setImage(org.eclipse.wb.swt.SWTResourceManager.getImage(DWBrowser.class, "/menu/new-disk-16.png"));
+                    }
+                    MainWin.append_mode = true;
+                    //mntmAppendEnable.setText("Disable Append Mode");
+                }
+            }
+        });
+        mntmAppendEnable.setText("Toggle Append Mode");
+        
+        
+        
+        
         new MenuItem(menu_tools, SWT.SEPARATOR);
 
         mntmHdbdosTranslation = new MenuItem(menu_tools, SWT.CHECK);
@@ -1303,7 +1332,9 @@ public class MainWin {
             public void widgetSelected(SelectionEvent e) {
                 MainWin.currentDisk = table.getSelectionIndex();
                 MainWin.sdisk = table.getSelectionIndex();
-                DWBrowser.spinnerDrive.setSelection(MainWin.sdisk);
+                if (DWBrowser.spinnerDrive != null) {
+                    DWBrowser.spinnerDrive.setSelection(MainWin.sdisk);
+                }
 
             }
         });
@@ -3362,5 +3393,6 @@ public class MainWin {
     public static Shell getMainShell() {
         return shell;
     }
+    
 
 }
