@@ -191,6 +191,7 @@ public class DWBrowser extends Composite {
                 // Code to execute when the spinner value changes
                 int selectedValue = spinnerDrive.getSelection();
                 MainWin.table.setSelection(selectedValue);
+                MainWin.sdisk = selectedValue;
 
             }
         });
