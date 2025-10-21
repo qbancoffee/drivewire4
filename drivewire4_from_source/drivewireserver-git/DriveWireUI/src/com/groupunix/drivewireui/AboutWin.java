@@ -551,8 +551,8 @@ public class AboutWin extends Dialog {
 							if (scrollFont != null)
 								scrollFont.dispose();
 							
-							scrollFont = UIUtils.findFont(shell.getDisplay(), fontmap, folks.get(curpos), wx, 90);
-							e.gc.setFont(scrollFont);
+							//scrollFont = UIUtils.findFont(shell.getDisplay(), fontmap, folks.get(curpos), wx, 90);
+							e.gc.setFont(shell.getFont());
 							namewid = e.gc.stringExtent(folks.get(curpos)).x;
 							namehi = e.gc.stringExtent(folks.get(curpos)).y;
 							lockup1();
