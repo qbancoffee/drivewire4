@@ -1,7 +1,7 @@
 # DriveWire 4
 DriveWire 4 Java by Aaron Wolfe
 
-Latest version is 4.3.4p
+Latest version is 4.3.5p
 
 ## Download compiled versions 
 - [DriveWire4 4.3.5p for Windows x64 with Java included](https://github.com/qbancoffee/drivewire4/releases/tag/4.3.5p_Windows_x64)
