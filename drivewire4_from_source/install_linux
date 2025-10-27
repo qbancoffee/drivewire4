@@ -31,7 +31,7 @@ chmod +x "$INSTALLDIR/uninstall_linux"
 echo "#!/bin/bash" >> "$INSTALLDIR/start"
 echo "cd $INSTALLDIR" >> "$INSTALLDIR/start"
 
-EXEC="GDK_BACKEND=x11 $INSTALLDIR/zulu_openjdk-21-jre/bin/java -Djava.library.path=$INSTALLDIR/lib -cp $INSTALLDIR/swt/$SWTDIR/swt.jar:$INSTALLDIR/dist/lib/:$INSTALLDIR/dist/dw4nb.jar com.groupunix.drivewireui.MainWin \"\$@\" "
+EXEC="GDK_BACKEND=x11 java -Djava.library.path=$INSTALLDIR/lib -cp $INSTALLDIR/swt/$SWTDIR/swt.jar:$INSTALLDIR/dist/lib/:$INSTALLDIR/dist/dw4nb.jar com.groupunix.drivewireui.MainWin \"\$@\" "
 
 echo "$EXEC" >> "$INSTALLDIR/start"
 
@@ -47,10 +47,9 @@ echo "fi" >> $INSTALLDIR/uninstall_linux
 
 echo "rm $HOME/.local/share/applications/drivewire4.desktop" >> $INSTALLDIR/uninstall_linux
 
-#Here we are going to a URL to a local copy of HDB-DOS
+#Here we are going to add a URL to a local copy of HDB-DOS
 
 LOCALURL="file\:\/\/"${INSTALLDIR//\//\\/}"\/hdb-dos\/index.html"
-
 
 PATTERN="<\/Local>"
 ENTRY="<Folder title=\"HDB-DOS\"><URL title=\"Load HDB-DOS\">"$LOCALURL"<\/URL><\/Folder><\/Local>"
